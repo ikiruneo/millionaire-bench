@@ -23,6 +23,8 @@ python3 benchmark_llm.py
 	- Enter `0` to play all 45 rounds sequentially
 	- Enter a number between `1`-`45` to play with that question set (1x15 Questions)
 
+note: `benchmark_minimal.py` is a rudimentary implementation that i use for my local benchmarks. it is only tested to work in LM Studio and does not include advanced features such as API key support, concurrency, reasoning prompts, or safer answer parsing.
+
 ## Benchmark Results
 
 ### Locally by myself
