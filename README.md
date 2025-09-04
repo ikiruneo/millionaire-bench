@@ -38,6 +38,7 @@ python3 benchmark_llm.py
 | qwen/qwen3-4b-2507 | 4B | 4B | 948€ | 0 | T:0.7, K:40, P:0.8, Min:0.05 |
 | granite-3.2-8b | 8B | 8B | 620€ | 0 | T:0.6, K:50, P:0.9, Min:0.05 |
 | meta-llama-3.1-8b-instruct | 8B | 8B | 484€ | 0 | T:0.6, K:40, P:0.9, Min:0.05 |
+| gemma-3n-e4b | 8B | 4B | 383€ | 0 | T:1, K:64, P:0.95 |
 | phi-4-mini-instruct | 3B | 3B | 157€ | 0 | T:0.8, K:40, P:0.95, Min:0.05 |
 | gemma-3-4b | 4B | 4B | 156€ | 0 | T:1, K:64, P:0.95, Min:0 |
 | llama-3.2-3b-instruct | 3B | 3B | 125€ | 0 | T:0.6, K:40, P:0.9, Min:0.05 |
