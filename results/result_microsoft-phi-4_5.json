@@ -6,8 +6,8 @@
     "top_p": 0.9,
     "min_p": 0.05
   },
-  "total_parameters": "4B",
-  "active_parameters": "4B",
+  "total_parameters": "14B",
+  "active_parameters": "14B",
   "rounds": [
     {
       "start_question": 1,
