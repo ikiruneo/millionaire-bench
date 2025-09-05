@@ -33,20 +33,22 @@ note: `benchmark_minimal.py` is a rudimentary implementation that i use for my l
 | qwen3-30b-a3b-2507 | 30B | 3B | 118.111€ | 5 | T:0.7, K:20, P:0.8 |
 | gpt-oss-20b (low) | 21B | 4B | 80.177€ | 3 | T:1, K:0, P:1.0, reasoning |
 | mistral-small-3.2 | 24B | 24B | 63.812€ | 2 | T:0.15, K:40, P:0.95 |
-| human | N/A | N/A | 36.000€ | N/A | Jokers: 3 or 4 |
+| human | N/A | N/A | 36.000€ | 0,15 | Jokers: 3 or 4 |
 | mistral-nemo-instruct-2407 | 12B | 12B | 34.383€ | 1 | T:0.3, K:-1, P:0.77 |
 | microsoft/phi-4 | 14B | 14B | 25.987€ | 1 | T:0.6, K:40, P:0.9 |
 | gemma-3-12b | 12B | 12B | 24.291€ | 1 | T:0.8, K:40, P:0.9 |
 | hermes-4-14b | 14B | 14B | 14.916€ | 0 | T:0.6, K:20, P:0.95 |
-| qwen/qwen3-4b-2507 | 4B | 4B | 948€ | 0 | T:0.7, K:40, P:0.8 |
+| qwen3-4b-2507 | 4B | 4B | 948€ | 0 | T:0.7, K:40, P:0.8 |
 | granite-3.2-8b | 8B | 8B | 620€ | 0 | T:0.6, K:50, P:0.9 |
 | meta-llama-3.1-8b-instruct | 8B | 8B | 484€ | 0 | T:0.6, K:40, P:0.9 |
 | gemma-3n-e4b | 8B | 4B | 383€ | 0 | T:1, K:64, P:0.95 |
+| qwen3-1.7b-thinking | 1.7B | 1.7B | 356€ | 0 | T:0.6, K:20, P:0.95, reasoning |
 | phi-4-mini-instruct | 3B | 3B | 157€ | 0 | T:0.8, K:40, P:0.95 |
 | gemma-3-4b | 4B | 4B | 156€ | 0 | T:1, K:64, P:0.95 |
 | llama-3.2-3b-instruct | 3B | 3B | 125€ | 0 | T:0.6, K:40, P:0.9 |
+| qwen3-1.7b | 1.7B | 1.7B | 57€ | 0 | T:0.7, K:20, P:0.8 |
 
-*one run for reasoning models. median result out of five runs for non-reasoning. human score is the average winnings from the first 999 shows ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
+*median result out of five runs. one run for `gpt-oss-20b`. human score is the average winnings from the first 999 shows ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
 ### User Submitted
 
 | Model Name | Total Params | Active Params | Average Winnings | Million Wins | Parameters |

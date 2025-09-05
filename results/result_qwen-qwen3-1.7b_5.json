@@ -1,0 +1,237 @@
+{
+  "model": "qwen/qwen3-1.7b",
+  "model_parameters": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20
+  },
+  "rounds": [
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:50"
+    },
+    {
+      "correct_answers": 1,
+      "final_amount": "50€",
+      "timestamp": "2025-09-05 02:43:50"
+    },
+    {
+      "correct_answers": 2,
+      "final_amount": "100€",
+      "timestamp": "2025-09-05 02:43:51"
+    },
+    {
+      "correct_answers": 1,
+      "final_amount": "50€",
+      "timestamp": "2025-09-05 02:43:51"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:51"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:51"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:52"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:52"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:52"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:52"
+    },
+    {
+      "correct_answers": 2,
+      "final_amount": "100€",
+      "timestamp": "2025-09-05 02:43:53"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:53"
+    },
+    {
+      "correct_answers": 5,
+      "final_amount": "500€",
+      "timestamp": "2025-09-05 02:43:54"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:54"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:54"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:54"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:55"
+    },
+    {
+      "correct_answers": 4,
+      "final_amount": "300€",
+      "timestamp": "2025-09-05 02:43:55"
+    },
+    {
+      "correct_answers": 2,
+      "final_amount": "100€",
+      "timestamp": "2025-09-05 02:43:56"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:56"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:56"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:56"
+    },
+    {
+      "correct_answers": 1,
+      "final_amount": "50€",
+      "timestamp": "2025-09-05 02:43:57"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:57"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:57"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:57"
+    },
+    {
+      "correct_answers": 2,
+      "final_amount": "100€",
+      "timestamp": "2025-09-05 02:43:58"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:58"
+    },
+    {
+      "correct_answers": 1,
+      "final_amount": "50€",
+      "timestamp": "2025-09-05 02:43:58"
+    },
+    {
+      "correct_answers": 2,
+      "final_amount": "100€",
+      "timestamp": "2025-09-05 02:43:59"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:43:59"
+    },
+    {
+      "correct_answers": 1,
+      "final_amount": "50€",
+      "timestamp": "2025-09-05 02:43:59"
+    },
+    {
+      "correct_answers": 2,
+      "final_amount": "100€",
+      "timestamp": "2025-09-05 02:44:00"
+    },
+    {
+      "correct_answers": 3,
+      "final_amount": "200€",
+      "timestamp": "2025-09-05 02:44:00"
+    },
+    {
+      "correct_answers": 1,
+      "final_amount": "50€",
+      "timestamp": "2025-09-05 02:44:01"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:44:01"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:44:01"
+    },
+    {
+      "correct_answers": 3,
+      "final_amount": "200€",
+      "timestamp": "2025-09-05 02:44:02"
+    },
+    {
+      "correct_answers": 1,
+      "final_amount": "50€",
+      "timestamp": "2025-09-05 02:44:02"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:44:02"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:44:03"
+    },
+    {
+      "correct_answers": 1,
+      "final_amount": "50€",
+      "timestamp": "2025-09-05 02:44:03"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:44:03"
+    },
+    {
+      "correct_answers": 0,
+      "final_amount": "0€",
+      "timestamp": "2025-09-05 02:44:03"
+    },
+    {
+      "correct_answers": 1,
+      "final_amount": "50€",
+      "timestamp": "2025-09-05 02:44:04"
+    }
+  ],
+  "average_final_amount": "50€",
+  "million_wins": 0
+}
