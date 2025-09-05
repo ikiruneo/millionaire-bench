@@ -5,11 +5,11 @@ import time
 import os
 
 # Configuration
-SYSTEM_PROMPT = "You are a contestant on 'Who Wants to Be a Millionaire' and must answer questions in German. Think carefully and choose the best answer from the four options. Answer EXCLUSIVELY with a single letter: A, B, C or D. No other explanation, just the letter! Example: If A is the correct answer, answer only: A"
+SYSTEM_PROMPT = "Du bist ein Kandidat bei 'Wer wird Millionaer' und musst Fragen auf Deutsch beantworten. Denke sorgfaeltig nach und waehle die beste Antwort aus den vier Optionen. Antworte AUSCHLIESSLICH mit einem einzigen Buchstaben: A, B, C oder D. Keine andere Erklaerung, nur der Buchstabe! Beispiel: Wenn A die richtige Antwort ist, antworte nur: A"
 LLM_SERVER_URL = "http://localhost:1234/v1/chat/completions"
-TEMPERATURE = 1
+TEMPERATURE = 0.8
 TOP_P = 0.95
-TOP_K = 64
+TOP_K = 40
 
 # Prize amounts
 PRIZE_AMOUNTS = {
