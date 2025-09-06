@@ -93,7 +93,7 @@ thanks to the reddit users `FullOf_Bad_Ideas` and `Pauli1_Go` for their help.
 ### Different quant tests
 | Model Name | Q4_K_M | Q8_0 | Difference |
 |------------|--------|------|------------|
-| qwen3-4b-instruct-2507 | 643€ | 4.457€ | +593% |
+| qwen3-4b-instruct-2507 | 624€ | 4.457€ | +13% |
 | gemma-3-4b | 103€ | 141€ | +36% |
 | llama-3.2-3b-instruct | 104€ | 78€ | -25% |
 
