@@ -2,330 +2,146 @@
   "model": "qwen/qwen3-4b-2507",
   "model_parameters": {
     "temperature": 0.7,
-    "top_k": 40,
-    "top_p": 0.8,
-    "min_p": 0.05
+    "top_k": 20,
+    "top_p": 0.8
   },
-  "total_parameters": "4B",
-  "active_parameters": "4B",
   "rounds": [
     {
-      "start_question": 1,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 1
+      "correct_answers": 0
     },
     {
-      "start_question": 2,
-      "correct_answers": 9,
-      "final_amount": "8.000€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 2
+      "correct_answers": 7
     },
     {
-      "start_question": 3,
-      "correct_answers": 8,
-      "final_amount": "4.000€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 3
+      "correct_answers": 8
     },
     {
-      "start_question": 4,
-      "correct_answers": 1,
-      "final_amount": "50€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 4
+      "correct_answers": 1
     },
     {
-      "start_question": 5,
-      "correct_answers": 1,
-      "final_amount": "50€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 5
+      "correct_answers": 1
     },
     {
-      "start_question": 6,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 6
+      "correct_answers": 0
     },
     {
-      "start_question": 7,
-      "correct_answers": 1,
-      "final_amount": "50€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 7
+      "correct_answers": 1
     },
     {
-      "start_question": 8,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 8
+      "correct_answers": 0
     },
     {
-      "start_question": 9,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 9
+      "correct_answers": 0
     },
     {
-      "start_question": 10,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 10
+      "correct_answers": 0
     },
     {
-      "start_question": 11,
-      "correct_answers": 1,
-      "final_amount": "50€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 11
+      "correct_answers": 1
     },
     {
-      "start_question": 12,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 12
+      "correct_answers": 0
     },
     {
-      "start_question": 13,
-      "correct_answers": 4,
-      "final_amount": "300€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 13
+      "correct_answers": 3
     },
     {
-      "start_question": 14,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 14
+      "correct_answers": 0
     },
     {
-      "start_question": 15,
-      "correct_answers": 1,
-      "final_amount": "50€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 15
+      "correct_answers": 1
     },
     {
-      "start_question": 16,
-      "correct_answers": 2,
-      "final_amount": "100€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 16
+      "correct_answers": 2
     },
     {
-      "start_question": 17,
-      "correct_answers": 3,
-      "final_amount": "200€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 17
+      "correct_answers": 2
     },
     {
-      "start_question": 18,
-      "correct_answers": 3,
-      "final_amount": "200€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 18
+      "correct_answers": 3
     },
     {
-      "start_question": 19,
-      "correct_answers": 2,
-      "final_amount": "100€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 19
+      "correct_answers": 2
     },
     {
-      "start_question": 20,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 20
+      "correct_answers": 0
     },
     {
-      "start_question": 21,
-      "correct_answers": 3,
-      "final_amount": "200€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 21
+      "correct_answers": 3
     },
     {
-      "start_question": 22,
-      "correct_answers": 3,
-      "final_amount": "200€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 22
+      "correct_answers": 3
     },
     {
-      "start_question": 23,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 23
+      "correct_answers": 0
     },
     {
-      "start_question": 24,
-      "correct_answers": 7,
-      "final_amount": "2.000€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 24
+      "correct_answers": 0
     },
     {
-      "start_question": 25,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 25
+      "correct_answers": 0
     },
     {
-      "start_question": 26,
-      "correct_answers": 9,
-      "final_amount": "8.000€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 26
+      "correct_answers": 9
     },
     {
-      "start_question": 27,
-      "correct_answers": 9,
-      "final_amount": "8.000€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 27
+      "correct_answers": 9
     },
     {
-      "start_question": 28,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 28
+      "correct_answers": 0
     },
     {
-      "start_question": 29,
-      "correct_answers": 8,
-      "final_amount": "4.000€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 29
+      "correct_answers": 8
     },
     {
-      "start_question": 30,
-      "correct_answers": 3,
-      "final_amount": "200€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 30
+      "correct_answers": 3
     },
     {
-      "start_question": 31,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 31
+      "correct_answers": 0
     },
     {
-      "start_question": 32,
-      "correct_answers": 1,
-      "final_amount": "50€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 32
+      "correct_answers": 2
     },
     {
-      "start_question": 33,
-      "correct_answers": 2,
-      "final_amount": "100€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 33
+      "correct_answers": 2
     },
     {
-      "start_question": 34,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 34
+      "correct_answers": 0
     },
     {
-      "start_question": 35,
-      "correct_answers": 1,
-      "final_amount": "50€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 35
+      "correct_answers": 1
     },
     {
-      "start_question": 36,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 36
+      "correct_answers": 0
     },
     {
-      "start_question": 37,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 37
+      "correct_answers": 0
     },
     {
-      "start_question": 38,
-      "correct_answers": 3,
-      "final_amount": "200€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 38
+      "correct_answers": 3
     },
     {
-      "start_question": 39,
-      "correct_answers": 4,
-      "final_amount": "300€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 39
+      "correct_answers": 4
     },
     {
-      "start_question": 40,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 40
+      "correct_answers": 0
     },
     {
-      "start_question": 41,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 41
+      "correct_answers": 0
     },
     {
-      "start_question": 42,
-      "correct_answers": 2,
-      "final_amount": "100€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 42
+      "correct_answers": 1
     },
     {
-      "start_question": 43,
-      "correct_answers": 2,
-      "final_amount": "100€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 43
+      "correct_answers": 2
     },
     {
-      "start_question": 44,
-      "correct_answers": 0,
-      "final_amount": "0€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 44
+      "correct_answers": 0
     },
     {
-      "start_question": 45,
-      "correct_answers": 1,
-      "final_amount": "50€",
-      "timestamp": "2025-09-03 11:54:02",
-      "question_number": 45
+      "correct_answers": 1
     }
   ],
-  "average_final_amount": "815€",
-  "average_correctness_percentage": 67.63,
+  "average_final_amount": "633€",
   "million_wins": 0
 }
