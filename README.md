@@ -35,6 +35,7 @@ note: `benchmark_minimal.py` is a rudimentary implementation that i use for my l
 | mistral-small-3.2 | 24B | 24B | 63.812€ | 2 | T:0.15, K:40, P:0.95 |
 | human | N/A | N/A | 36.000€ | 0,15 | Jokers: 3 or 4 |
 | mistral-nemo-instruct-2407 | 12B | 12B | 34.383€ | 1 | T:0.3, K:-1, P:0.77 |
+| qwen3-4b-2507-thinking | 4B | 4B | 27.343€ | 0 | T:0.6, K:20, P:0.95 |
 | microsoft/phi-4 | 14B | 14B | 25.987€ | 1 | T:0.6, K:40, P:0.9 |
 | gemma-3-12b | 12B | 12B | 24.291€ | 1 | T:0.8, K:40, P:0.9 |
 | hermes-4-14b | 14B | 14B | 14.916€ | 0 | T:0.6, K:20, P:0.95 |
