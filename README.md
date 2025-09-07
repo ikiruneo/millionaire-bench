@@ -27,7 +27,7 @@ note: `benchmark_minimal.py` is a rudimentary implementation that i use for my l
 
 ## Benchmark Results
 
-### Locally by myself
+### Local
 | Model Name | Total Params | Active Params | Average Winnings* | Million Wins | Parameters |
 |------------|---------------|--------------|------------------|--------------|------------|
 | qwen3-30b-a3b-2507 | 30B | 3B | 118.111€ | 5 | T:0.7, K:20, P:0.8 |
@@ -49,8 +49,8 @@ note: `benchmark_minimal.py` is a rudimentary implementation that i use for my l
 | llama-3.2-3b-instruct | 3B | 3B | 125€ | 0 | T:0.6, K:40, P:0.9 |
 | qwen3-1.7b | 1.7B | 1.7B | 57€ | 0 | T:0.7, K:20, P:0.8 |
 
-*median result out of five runs. one run for `gpt-oss-20b`. human score is the average winnings from the first 999 shows ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
-### User Submitted
+*median result out of five runs, often less for reasoning models due to ressouce limitation (1 run ~1h). human score is the average winnings from the first 999 shows ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
+### User Submitted (1 run only)
 
 | Model Name | Total Params | Active Params | Average Winnings | Million Wins | Parameters |
 |:-------------------------------------------|:-------------|:--------------|:-----------------|:-------------|:----------------------------|
