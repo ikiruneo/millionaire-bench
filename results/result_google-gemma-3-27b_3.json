@@ -1,0 +1,147 @@
+{
+  "model": "google/gemma-3-27b",
+  "model_parameters": {
+    "temperature": 0.8,
+    "top_k": 40,
+    "top_p": 0.9
+  },
+  "rounds": [
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 7
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 5
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 11
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 14
+    },
+    {
+      "correct_answers": 5
+    },
+    {
+      "correct_answers": 5
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 6
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 7
+    },
+    {
+      "correct_answers": 7
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 4
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 3
+    }
+  ],
+  "average_final_amount": "35.522€",
+  "million_wins": 1
+}

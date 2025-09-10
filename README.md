@@ -38,6 +38,7 @@ note: `benchmark_minimal.py` is a rudimentary implementation that i use for my l
 | qwen3-4b-2507-thinking | 4B | 4B | 27.343€ | 1 | T:0.6, K:20, P:0.95, reasoning |
 | microsoft/phi-4 | 14B | 14B | 25.987€ | 1 | T:0.6, K:40, P:0.9 |
 | gemma-3-12b | 12B | 12B | 24.291€ | 1 | T:0.8, K:40, P:0.9 |
+| gemma-3-27b | 27B | 27B | 15.039€ | 0 | T:0.8, K:40, P:0.9 |
 | hermes-4-14b | 14B | 14B | 14.916€ | 0 | T:0.6, K:20, P:0.95 |
 | qwen3-4b-2507 | 4B | 4B | 624€ | 0 | T:0.7, K:20, P:0.8 |
 | granite-3.2-8b | 8B | 8B | 620€ | 0 | T:0.6, K:50, P:0.9 |
