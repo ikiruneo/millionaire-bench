@@ -28,33 +28,34 @@ note: `benchmark_minimal.py` is a rudimentary implementation that i use for my l
 ## Benchmark Results
 
 ### Local
-| Model Name | Total Params | Active Params | Average Winnings* | Million Wins | Parameters |
-|------------|---------------|--------------|------------------|--------------|------------|
-| qwen3-30b-a3b-2507 | 30B | 3B | 118.111€ | 5 | T:0.7, K:20, P:0.8 |
-| gpt-oss-20b (low) | 21B | 4B | 80.177€ | 3 | T:1, K:0, P:1.0, reasoning |
-| mistral-small-3.2 | 24B | 24B | 63.812€ | 2 | T:0.15, K:40, P:0.95 |
-| human | N/A | N/A | 36.000€ | 0,15 | Jokers: 3 or 4 |
-| mistral-nemo-instruct-2407 | 12B | 12B | 34.383€ | 1 | T:0.3, K:-1, P:0.77 |
-| qwen3-4b-2507-thinking | 4B | 4B | 27.343€ | 1 | T:0.6, K:20, P:0.95, reasoning |
-| microsoft/phi-4 | 14B | 14B | 25.987€ | 1 | T:0.6, K:40, P:0.9 |
-| gemma-3-12b | 12B | 12B | 24.291€ | 1 | T:0.8, K:40, P:0.9 |
-| gemma-3-27b | 27B | 27B | 15.039€ | 0 | T:0.8, K:40, P:0.9 |
-| hermes-4-14b | 14B | 14B | 14.916€ | 0 | T:0.6, K:20, P:0.95 |
-| qwen3-4b-2507 | 4B | 4B | 624€ | 0 | T:0.7, K:20, P:0.8 |
-| granite-3.2-8b | 8B | 8B | 620€ | 0 | T:0.6, K:50, P:0.9 |
-| meta-llama-3.1-8b-instruct | 8B | 8B | 484€ | 0 | T:0.6, K:40, P:0.9 |
-| gemma-3n-e4b | 8B | 4B | 383€ | 0 | T:1, K:64, P:0.95 |
-| qwen3-1.7b-thinking | 1.7B | 1.7B | 356€ | 0 | T:0.6, K:20, P:0.95, reasoning |
-| phi-4-mini-instruct | 3B | 3B | 157€ | 0 | T:0.8, K:40, P:0.95 |
-| gemma-3-4b | 4B | 4B | 156€ | 0 | T:1, K:64, P:0.95 |
-| llama-3.2-3b-instruct | 3B | 3B | 125€ | 0 | T:0.6, K:40, P:0.9 |
-| qwen3-1.7b | 1.7B | 1.7B | 57€ | 0 | T:0.7, K:20, P:0.8 |
+| Model Name | Total Params | Active Params | Average Winnings* | Million Wins | Sampling | Thinking |
+|------------|---------------|--------------|------------------|--------------|------------|------|
+| qwen3-30b-a3b-2507 | 30B | 3B | 118.111€ | 5 | T:0.7, K:20, P:0.8 | No |
+| gpt-oss-20b | 21B | 4B | 80.177€ | 3 | T:1, K:0, P:1.0 | Low |
+| mistral-small-3.2 | 24B | 24B | 63.812€ | 2 | T:0.15, K:40, P:0.95 | No |
+| human | N/A | N/A | 36.000€ | 0,15 | Jokers: 3 or 4 | Yes |
+| mistral-nemo-instruct-2407 | 12B | 12B | 34.383€ | 1 | T:0.3, K:-1, P:0.77 | No |
+| qwen3-4b-2507 | 4B | 4B | 27.343€ | 1 | T:0.6, K:20, P:0.95 | Yes |
+| phi-4 | 14B | 14B | 25.987€ | 1 | T:0.6, K:40, P:0.9 | No |
+| magistral-small-2509 | 24B | 24B | 25.003€ | 0 | T:0.7, K:40, P:0.95 | No |
+| gemma-3-12b | 12B | 12B | 24.291€ | 1 | T:0.8, K:40, P:0.9 | No |
+| gemma-3-27b | 27B | 27B | 15.039€ | 0 | T:0.8, K:40, P:0.9 | No |
+| hermes-4-14b | 14B | 14B | 14.916€ | 0 | T:0.6, K:20, P:0.95 | No |
+| qwen3-4b-2507 | 4B | 4B | 624€ | 0 | T:0.7, K:20, P:0.8 | No |
+| granite-3.2-8b | 8B | 8B | 620€ | 0 | T:0.6, K:50, P:0.9 | No |
+| meta-llama-3.1-8b-instruct | 8B | 8B | 484€ | 0 | T:0.6, K:40, P:0.9 | No |
+| gemma-3n-e4b | 8B | 4B | 383€ | 0 | T:1, K:64, P:0.95 | No |
+| qwen3-1.7b | 1.7B | 1.7B | 356€ | 0 | T:0.6, K:20, P:0.95 | Yes |
+| phi-4-mini-instruct | 3B | 3B | 157€ | 0 | T:0.8, K:40, P:0.95 | No |
+| gemma-3-4b | 4B | 4B | 156€ | 0 | T:1, K:64, P:0.95 | No |
+| llama-3.2-3b-instruct | 3B | 3B | 125€ | 0 | T:0.6, K:40, P:0.9 | No |
+| qwen3-1.7b | 1.7B | 1.7B | 57€ | 0 | T:0.7, K:20, P:0.8 | No |
 
-*median result out of five runs, often less for reasoning models due to ressouce limitation (1 run ~1h). human score is the average winnings from the first 999 shows ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
-### User Submitted (1 run only)
+*median result out of five runs, often less for reasoning models due to resource limitation (one 24b run can take multiple hours). human score is the average winnings from the first 999 shows ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
+### Cloud
 
-| Model Name | Total Params | Active Params | Average Winnings | Million Wins | Parameters |
-|:-------------------------------------------|:-------------|:--------------|:-----------------|:-------------|:----------------------------|
+| Model Name | Total Params | Active Params | Average Winnings | Million Wins | Sampling |
+|-------------------------------------------|-------------|--------------|-----------------|-------------|----------------------------|
 | gpt-5 (medium) | N/A | N/A | 813.783€ | 36 | T:0.6, P:1 |
 | google/gemini-2.5-pro | N/A | N/A | 742.004€ | 33 | T:0.6, P:1 |
 | o3 (medium) | N/A | N/A | 716.546€ | 31 | T:0.6, P:1 |
@@ -90,7 +91,7 @@ note: `benchmark_minimal.py` is a rudimentary implementation that i use for my l
 | meta-llama/llama-3.2-1b-instruct | 1B | 1B | 155€ | 0 | T:0.6, P:1 |
 | meta-llama/llama-3.2-3b-instruct | 3B | 3B | 121€ | 0 | T:0.6, P:1 |
 
-thanks to the reddit users `FullOf_Bad_Ideas` and `Pauli1_Go` for their help.
+1 run only. thanks to the reddit users `FullOf_Bad_Ideas` and `Pauli1_Go` for their help.
 
 ### Different quant tests
 | Model Name | Q4_K_M | Q8_0 | Difference |
