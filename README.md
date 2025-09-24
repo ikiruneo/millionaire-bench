@@ -48,6 +48,7 @@ note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 | qwen3-1.7b                 | 1.7B         | 1.7B          | Yes      | 0            | 356€              |
 | phi-4-mini-instruct        | 3B           | 3B            | No       | 0            | 157€              |
 | gemma-3-4b                 | 4B           | 4B            | No       | 0            | 156€              |
+| lfm2-2.6b                  | 2.6B         | 2.6B          | No       | 0            | 126€              |
 | llama-3.2-3b-instruct      | 3B           | 3B            | No       | 0            | 125€              |
 | qwen3-1.7b                 | 1.7B         | 1.7B          | No       | 0            | 57€               |
 
