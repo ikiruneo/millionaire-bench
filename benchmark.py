@@ -7,11 +7,11 @@ import re
 import threading
 import itertools
 
-SYSTEM_PROMPT = "Du bist ein Kandidat bei 'Wer wird Millionär' und musst Fragen auf Deutsch beantworten. Wähle die richtige Antwort aus den vier Optionen. Antworte AUSCHLIESSLICH mit einem einzigen Buchstaben: A, B, C oder D. Keine andere Erklärung, nur der Buchstabe! Beispiel: Wenn A die richtige Antwort ist, antworte nur: A"
+SYSTEM_PROMPT = "Du bist ein Kandidat bei 'Wer wird Millionär'. Wähle die richtige Antwort aus den vier Optionen. Antworte AUSCHLIESSLICH mit einem einzigen Buchstaben: A, B, C oder D. Keine andere Erklärung, nur der Buchstabe! Beispiel: Wenn A die richtige Antwort ist, antworte nur: A"
 SERVER_URL = "http://localhost:1234"
-API_KEY = ""  # Add your API key here if required by your LLM server
-MODEL_NAME = "qwen3-0.6b"
-TEMPERATURE = 0.7
+API_KEY = ""
+MODEL_NAME = "lfm2-2.6b"
+TEMPERATURE = 0.3
 TOP_K = 40
 TOP_P = 0.95
 FAIL_CHARS = "123456789ABCDEF"
@@ -29,7 +29,7 @@ def calculate_average_amount(rounds):
 
 model_name = MODEL_NAME
 header = f"""
-Who Wants to Be a Millionaire? Benchmark
+Wer wird Millionär? Benchmark
 ==================================================
 Model:  {model_name}
 URL:    {SERVER_URL}
