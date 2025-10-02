@@ -41,6 +41,7 @@ note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 | gemma-3-12b                | 12B          | 12B           | No       | 1            | 24.291€           |
 | gemma-3-27b                | 27B          | 27B           | No       | 0            | 15.039€           |
 | hermes-4-14b               | 14B          | 14B           | No       | 0            | 14.916€           |
+| apertus-8b                 | 8B           | 8B            | No       | 0            | 1.998€            |
 | granite-4.0-h-small        | 32B          | 9B            | No       | 0            | 764€              |
 | qwen3-4b-2507              | 4B           | 4B            | No       | 0            | 624€              |
 | granite-3.2-8b             | 8B           | 8B            | No       | 0            | 620€              |
