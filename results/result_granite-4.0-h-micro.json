@@ -1,0 +1,147 @@
+{
+  "model": "granite-4.0-h-micro",
+  "model_parameters": {
+    "temperature": 1,
+    "top_k": 0,
+    "top_p": 1
+  },
+  "rounds": [
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 7
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
+    }
+  ],
+  "average_final_amount": "82€",
+  "million_wins": 0
+}

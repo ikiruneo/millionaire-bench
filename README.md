@@ -41,16 +41,19 @@ note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 | gemma-3-12b                | 12B          | 12B           | No       | 1            | 24.291€           |
 | gemma-3-27b                | 27B          | 27B           | No       | 0            | 15.039€           |
 | hermes-4-14b               | 14B          | 14B           | No       | 0            | 14.916€           |
+| granite-4.0-h-small        | 32B          | 9B            | No       | 0            | 764€              |
 | qwen3-4b-2507              | 4B           | 4B            | No       | 0            | 624€              |
 | granite-3.2-8b             | 8B           | 8B            | No       | 0            | 620€              |
 | meta-llama-3.1-8b-instruct | 8B           | 8B            | No       | 0            | 484€              |
 | gemma-3n-e4b               | 8B           | 4B            | No       | 0            | 383€              |
 | qwen3-1.7b                 | 1.7B         | 1.7B          | Yes      | 0            | 356€              |
+| granite-4-h-tiny           | 7B           | 1B            | No       | 0            | 321€              |
 | phi-4-mini-instruct        | 3B           | 3B            | No       | 0            | 157€              |
 | gemma-3-4b                 | 4B           | 4B            | No       | 0            | 156€              |
 | lfm2-2.6b                  | 2.6B         | 2.6B          | No       | 0            | 126€              |
 | llama-3.2-3b-instruct      | 3B           | 3B            | No       | 0            | 125€              |
-| ministral-8b-2410          | 8b           | 8b            | No       | 0            | 60€               |
+| granite-4.0-h-micro        | 3B           | 3B            | No       | 0            | 100€              |
+| ministral-8b-2410          | 8B           | 8B            | No       | 0            | 60€               |
 | qwen3-1.7b                 | 1.7B         | 1.7B          | No       | 0            | 57€               |
 
 *median result out of five runs, often less for reasoning models due to resource limitation (one 24b run can take multiple hours). human score is the average winnings from the first 999 shows ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
