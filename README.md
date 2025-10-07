@@ -49,6 +49,7 @@ note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 | gemma-3n-e4b               | 8B           | 4B            | No       | 0            | 383€              |
 | qwen3-1.7b                 | 1.7B         | 1.7B          | Yes      | 0            | 356€              |
 | granite-4-h-tiny           | 7B           | 1B            | No       | 0            | 321€              |
+| lfm2-8b-a1b                | 8B           | 1.5B          | No       | 0            | 303€              |
 | phi-4-mini-instruct        | 3B           | 3B            | No       | 0            | 157€              |
 | gemma-3-4b                 | 4B           | 4B            | No       | 0            | 156€              |
 | lfm2-2.6b                  | 2.6B         | 2.6B          | No       | 0            | 126€              |
