@@ -6,6 +6,7 @@ import time
 import requests
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from statistics import median
 
 # Static answer schema - no need to be configurable
 ANSWER_SCHEMA = {
@@ -136,6 +137,40 @@ def calculate_average_amount(rounds):
         return f"{average:,.0f}€".replace(",", ".")
     else:
         return f"{int(average)}€"
+
+def calculate_median_amount(rounds):
+    """Calculate median final amount from rounds"""
+    if not rounds:
+        return "0€"
+
+    amount_mapping = {
+        "0€": 0,
+        "50€": 50,
+        "100€": 100,
+        "200€": 200,
+        "300€": 300,
+        "500€": 500,
+        "1.000€": 1000,
+        "2.000€": 2000,
+        "4.000€": 4000,
+        "8.000€": 8000,
+        "16.000€": 16000,
+        "32.000€": 32000,
+        "64.000€": 64000,
+        "125.000€": 125000,
+        "500.000€": 500000,
+        "1.000.000€": 1000000,
+    }
+
+    amounts = [amount_mapping[round_data["final_amount"]] for round_data in rounds]
+    median_value = median(amounts)
+
+    if median_value >= 1000000:
+        return f"{median_value:,.1f}€".replace(",", ".")
+    elif median_value >= 1000:
+        return f"{median_value:,.0f}€".replace(",", ".")
+    else:
+        return f"{int(median_value)}€"
 
 def play_single_game(questions, start_question=1, silent=False):
     """Play a single game with one question"""
@@ -590,6 +625,7 @@ def play_game(questions, start_question=1):
     
     # Calculate and add average final amount and correctness percentage
     results_data["average_final_amount"] = calculate_average_amount(results_data["rounds"])
+    results_data["median_final_amount"] = calculate_median_amount(results_data["rounds"])
     results_data["average_correctness_percentage"] = calculate_average_correctness_percentage(results_data["rounds"])
     
     # Count million wins (questions with 15 correct answers)

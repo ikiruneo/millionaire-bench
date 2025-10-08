@@ -28,76 +28,76 @@ note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 
 ### Local
 
-| Model Name                 | Total Params | Active Params | Thinking | Million Wins | Average Winnings* |
-| -------------------------- | ------------ | ------------- | -------- | ------------ | ----------------- |
-| qwen3-30b-a3b-2507         | 30B          | 3B            | No       | 5            | 118.111€          |
-| gpt-oss-20b                | 21B          | 4B            | Low      | 3            | 80.177€           |
-| mistral-small-3.2          | 24B          | 24B           | No       | 2            | 63.812€           |
-| human                      | N/A          | N/A           | Yes      | 0,15         | 36.000€           |
-| mistral-nemo-instruct-2407 | 12B          | 12B           | No       | 1            | 34.383€           |
-| qwen3-4b-2507              | 4B           | 4B            | Yes      | 1            | 27.343€           |
-| phi-4                      | 14B          | 14B           | No       | 1            | 25.987€           |
-| magistral-small-2509       | 24B          | 24B           | No       | 0            | 25.003€           |
-| gemma-3-12b                | 12B          | 12B           | No       | 1            | 24.291€           |
-| gemma-3-27b                | 27B          | 27B           | No       | 0            | 15.039€           |
-| hermes-4-14b               | 14B          | 14B           | No       | 0            | 14.916€           |
-| apertus-8b                 | 8B           | 8B            | No       | 0            | 1.998€            |
-| granite-4.0-h-small        | 32B          | 9B            | No       | 0            | 764€              |
-| qwen3-4b-2507              | 4B           | 4B            | No       | 0            | 624€              |
-| granite-3.2-8b             | 8B           | 8B            | No       | 0            | 620€              |
-| meta-llama-3.1-8b-instruct | 8B           | 8B            | No       | 0            | 484€              |
-| gemma-3n-e4b               | 8B           | 4B            | No       | 0            | 383€              |
-| qwen3-1.7b                 | 1.7B         | 1.7B          | Yes      | 0            | 356€              |
-| granite-4-h-tiny           | 7B           | 1B            | No       | 0            | 321€              |
-| lfm2-8b-a1b                | 8B           | 1.5B          | No       | 0            | 303€              |
-| phi-4-mini-instruct        | 3B           | 3B            | No       | 0            | 157€              |
-| gemma-3-4b                 | 4B           | 4B            | No       | 0            | 156€              |
-| lfm2-2.6b                  | 2.6B         | 2.6B          | No       | 0            | 126€              |
-| llama-3.2-3b-instruct      | 3B           | 3B            | No       | 0            | 125€              |
-| granite-4.0-h-micro        | 3B           | 3B            | No       | 0            | 100€              |
-| ministral-8b-2410          | 8B           | 8B            | No       | 0            | 60€               |
-| qwen3-1.7b                 | 1.7B         | 1.7B          | No       | 0            | 57€               |
+| Model Name                 | Total Params | Active Params | Thinking | Million Wins | Median | Average   |
+| -------------------------- | ------------ | ------------- | -------- | ------------ | ------ | --------- |
+| mistral‑small‑3.2          | 24 B         | 24 B          | No       | 2            | 500 €  | 63.812 €  |
+| qwen3‑30b‑a3b‑2507         | 30 B         | 3 B           | No       | 5            | 200 €  | 118.111 € |
+| phi‑4                      | 14 B         | 14 B          | No       | 1            | 200 €  | 25.987 €  |
+| magistral‑small‑2509       | 24 B         | 24 B          | No       | 0            | 200 €  | 25.003 €  |
+| gpt‑oss‑20b                | 21 B         | 4 B           | Low      | 3            | 100 €  | 80.177 €  |
+| mistral‑nemo‑instruct‑2407 | 12 B         | 12 B          | No       | 1            | 100 €  | 34.383 €  |
+| qwen3‑4b‑thinking‑2507     | 4 B          | 4 B           | Yes      | 1            | 100 €  | 27.343 €  |
+| gemma‑3‑12b                | 12 B         | 12 B          | No       | 1            | 100 €  | 24.291 €  |
+| gemma‑3‑27b                | 27 B         | 27 B          | No       | 0            | 100 €  | 15.039 €  |
+| hermes‑4‑14b               | 14 B         | 14 B          | No       | 0            | 100 €  | 14.916 €  |
+| apertus:8b                 | 8 B          | 8 B           | No       | 0            | 100 €  | 1.998 €   |
+| granite‑4.0‑h‑small        | 32 B         | 9 B           | No       | 0            | 100 €  | 764 €     |
+| granite‑3.2‑8b             | 8 B          | 8 B           | No       | 0            | 100 €  | 620 €     |
+| qwen3‑4b‑2507              | 4 B          | 4 B           | No       | 0            | 50 €   | 624 €     |
+| llama‑3.1‑8b‑instruct      | 8 B          | 8 B           | No       | 0            | 50 €   | 484 €     |
+| gemma‑3n‑e4b               | 8 B          | 4 B           | No       | 0            | 50 €   | 383 €     |
+| qwen3‑1.7b‑thinking        | 1.7 B        | 1.7 B         | Yes      | 0            | 50 €   | 356 €     |
+| granite‑4‑h‑tiny           | 7 B          | 1 B           | No       | 0            | 50 €   | 321 €     |
+| lfm2:8b‑a1b                | 8 B          | 1.5 B         | No       | 0            | 50 €   | 303 €     |
+| gemma‑3‑4b                 | 4 B          | 4 B           | No       | 0            | 50 €   | 158 €     |
+| lfm2‑2.6b                  | 2.6 B        | 2.6 B         | No       | 0            | 50 €   | 126 €     |
+| granite‑4.0‑h‑micro        | 3 B          | 3 B           | No       | 0            | 50 €   | 100 €     |
+| phi‑4‑mini‑instruct        | 3 B          | 3 B           | No       | 0            | 0 €    | 157 €     |
+| llama‑3.2‑3b‑instruct      | 3 B          | 3 B           | No       | 0            | 0 €    | 125 €     |
+| ministral‑8b‑instruct‑2410 | 8 B          | 8 B           | No       | 0            | 0 €    | 60 €      |
+| qwen3‑1.7b                 | 1.7 B        | 1.7 B         | No       | 0            | 0 €    | 57 €      |
 
-*median result out of five runs, often less for reasoning models due to resource limitation (one 24b run can take multiple hours). human score is the average winnings from the first 999 shows ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
+*Average* is the median average out of five runs, often less runs for big or thinking models due to resource limitation (one run can take multiple hours). human average winnings of the first 999 shows is 36.000€ ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
 
 ### Cloud
 
-| Model Name                               | Total Params | Active Params | Million Wins | Average Winnings |
-| ---------------------------------------- | ------------ | ------------- | ------------ | ---------------- |
-| gpt-5 (medium)                           | N/A          | N/A           | 36           | 813.783€         |
-| google/gemini-2.5-pro                    | N/A          | N/A           | 33           | 742.004€         |
-| o3 (medium)                              | N/A          | N/A           | 31           | 716.546€         |
-| o4-mini (medium)                         | N/A          | N/A           | 21           | 512.221€         |
-| z-ai/glm-4.5-FP8                         | 355B         | 32B           | 17           | 410.813€         |
-| qwen/qwen3-235b-a22b                     | 235B         | 22B           | 15           | 369.027€         |
-| gpt-4o                                   | N/A          | N/A           | 12           | 302.186€         |
-| gpt-5-nano (medium)                      | N/A          | N/A           | 12           | 299.494€         |
-| z-ai-glm-4.5-air-FP8                     | 106B         | 12B           | 12           | 281.459€         |
-| gpt-5 (minimal)                          | N/A          | N/A           | 11           | 277.661€         |
-| openai/gpt-oss-120b                      | 120B         | 120B          | 11           | 275.564€         |
-| gpt-4.1                                  | N/A          | N/A           | 10           | 256.073€         |
-| google/gemini-2.5-flash                  | N/A          | N/A           | 7            | 205.816€         |
-| qwen/qwq-32b                             | 32B          | 32B           | 8            | 197.799€         |
-| qwen/qwen3-235b-a22b-2507                | 235B         | 22B           | 7            | 163.144€         |
-| deepseek/deepseek-chat-v3-0324           | 67.1B        | 67.1B         | 6            | 161.492€         |
-| meta-llama/llama-4-maverick              | 400B         | 18B           | 6            | 161.411€         |
-| c4ai-command-a-03-2025                   | 111B         | 111B          | 6            | 155.636€         |
-| deepseek/deepseek-chat-v3.1              | 68.5B        | 68.5B         | 6            | 142.581€         |
-| moonshotai/kimi-k2                       | 1T           | 32B           | 4            | 125.136€         |
-| gpt-4.1-mini                             | N/A          | N/A           | 3            | 113.616€         |
-| qwen/qwen3-coder                         | 480B         | 480B          | 4            | 92.022€          |
-| Behemoth-123B-v1.2                       | 123B         | 123B          | 3            | 84.963€          |
-| gpt-4o-mini                              | N/A          | N/A           | 2            | 74.698€          |
-| google/gemini-2.5-flash-lite             | N/A          | N/A           | 2            | 63.107€          |
-| meta-llama/llama-3.3-70b-instruct        | 70B          | 70B           | 2            | 58.309€          |
-| gpt-5-mini (minimal)                     | N/A          | N/A           | 1            | 53.618€          |
-| mistralai/mistral-small-3.2-24b-instruct | 24B          | 24B           | 1            | 41.017€          |
-| gpt-4.1-nano                             | N/A          | N/A           | 1            | 37.838€          |
-| google/gemma-3-27b-it                    | 27B          | 27B           | 0            | 7.634€           |
-| gpt-5-nano (minimal)                     | N/A          | N/A           | 0            | 2.324€           |
-| microsoft/phi-4                          | 14B          | 14B           | 0            | 1.892€           |
-| meta-llama/llama-3.2-1b-instruct         | 1B           | 1B            | 0            | 155€             |
-| meta-llama/llama-3.2-3b-instruct         | 3B           | 3B            | 0            | 121€             |
+| Model Name                     | Total Params | Active Params | Million Wins | Median      | Average   |
+| ------------------------------ | ------------ | ------------- | ------------ | ----------- | --------- |
+| gpt‑5 (medium)                 | N/A          | N/A           | 36           | 1.000.000 € | 813.783 € |
+| gemini‑2.5‑pro                 | N/A          | N/A           | 33           | 1.000.000 € | 742.004 € |
+| o3 (medium)                    | N/A          | N/A           | 31           | 1.000.000 € | 716.546 € |
+| gpt‑5‑mini (medium)            | N/A          | N/A           | 31           | 1.000.000 € | 673.838 € |
+| o4‑mini (medium)               | N/A          | N/A           | 21           | 500.000 €   | 512.221 € |
+| glm‑4.5‑FP8                    | 355 B        | 32 B          | 17           | 64.000 €    | 410.813 € |
+| qwen3‑235b‑a22b                | 235 B        | 22 B          | 15           | 64.000 €    | 369.027 € |
+| gpt‑4o                         | N/A          | N/A           | 12           | 16.000 €    | 302.186 € |
+| gpt‑5‑nano (medium)            | N/A          | N/A           | 12           | 16.000 €    | 299.494 € |
+| gemini‑2.5‑flash               | N/A          | N/A           | 7            | 16.000 €    | 205.816 € |
+| gpt‑5‑nano (minimal)           | N/A          | N/A           | 11           | 8 000 €     | 277.661 € |
+| gpt‑4.1                        | N/A          | N/A           | 10           | 8 000 €     | 256.073 € |
+| deepseek-chat‑v3‑0324          | 67.1 B       | 67.1 B        | 6            | 4 000 €     | 161.492 € |
+| gpt‑oss‑120b                   | 120 B        | 120 B         | 11           | 2 000 €     | 275.564 € |
+| qwq‑32b                        | 32 B         | 32 B          | 8            | 2 000 €     | 197.799 € |
+| c4ai‑command‑a‑03‑2025         | 111 B        | 111 B         | 6            | 2 000 €     | 155.636 € |
+| kimi‑k2                        | 1 T          | 32 B          | 4            | 2 000 €     | 125.136 € |
+| gpt‑4.1‑mini                   | N/A          | N/A           | 3            | 2 000 €     | 113.616 € |
+| qwen3‑235b‑a22b‑2507           | 235 B        | 22 B          | 7            | 1 000 €     | 163.144 € |
+| gpt‑4o‑mini                    | N/A          | N/A           | 2            | 1 000 €     | 74.698 €  |
+| gpt‑5‑mini (minimal)           | N/A          | N/A           | 1            | 1 000 €     | 53.618 €  |
+| llama‑4‑maverick               | 400 B        | 18 B          | 6            | 500 €       | 161.411 € |
+| deepseek-chat‑v3.1             | 68.5 B       | 68.5 B        | 6            | 500 €       | 142.581 € |
+| gemini‑2.5‑flash‑lite          | N/A          | N/A           | 2            | 500 €       | 63.107 €  |
+| mistral‑small‑3.2‑24b‑instruct | 24 B         | 24 B          | 1            | 500 €       | 41.017 €  |
+| glm‑4.5‑air‑FP8                | N/A          | N/A           | 0            | 300 €       | 281.459 € |
+| Behemoth‑123B‑v1.2             | N/A          | N/A           | 3            | 300 €       | 84.963 €  |
+| gpt‑4.1‑nano                   | N/A          | N/A           | 1            | 300 €       | 37.838 €  |
+| gemma‑3‑27b‑it                 | 27 B         | 27 B          | 0            | 300 €       | 7.634 €   |
+| qwen3‑coder                    | 480 B        | 480 B         | 4            | 200 €       | 92.022 €  |
+| llama‑3.3‑70b‑instruct         | 70 B         | 70 B          | 2            | 200 €       | 58.309 €  |
+| gpt‑5‑nano (minimal)           | N/A          | N/A           | 0            | 100 €       | 2.324 €   |
+| phi‑4                          | 14 B         | 14 B          | 0            | 50 €        | 1.892 €   |
+| llama‑3.2‑1b‑instruct          | 1 B          | 1 B           | 0            | 0 €         | 155 €     |
+| llama‑3.2‑3b‑instruct          | 3 B          | 3 B           | 0            | 0 €         | 121 €     |
 
 1 run only. thanks to the reddit users `FullOf_Bad_Ideas` and `Pauli1_Go` for their help.
 

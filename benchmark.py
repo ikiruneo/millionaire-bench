@@ -6,11 +6,12 @@ import os
 import re
 import threading
 import itertools
+from statistics import median
 
 SYSTEM_PROMPT = "Du bist ein Kandidat bei 'Wer wird Millionär'. Wähle die richtige Antwort aus den vier Optionen. Antworte AUSCHLIESSLICH mit einem einzigen Buchstaben: A, B, C oder D. Keine andere Erklärung, nur der Buchstabe! Beispiel: Wenn A die richtige Antwort ist, antworte nur: A"
-SERVER_URL = "http://localhost:1234"
+SERVER_URL = "http://localhost:8000"
 API_KEY = ""
-MODEL_NAME = "lfm2-2.6b"
+MODEL_NAME = "lfm2:8b-a1b"
 TEMPERATURE = 0.3
 TOP_K = 40
 TOP_P = 0.95
@@ -26,6 +27,12 @@ def calculate_average_amount(rounds):
     total = sum(AMOUNT_MAPPING_INT[PRIZE_AMOUNTS.get(r["correct_answers"], "0€")] for r in rounds)
     average = total / len(rounds)
     return f"{average:,.0f}€".replace(",", ".") if average >= 1000 else f"{int(average)}€"
+
+def calculate_median_amount(rounds):
+    if not rounds: return "0€"
+    amounts = [AMOUNT_MAPPING_INT[PRIZE_AMOUNTS.get(r["correct_answers"], "0€")] for r in rounds]
+    median_amount = median(amounts)
+    return f"{median_amount:,.0f}€".replace(",", ".") if median_amount >= 1000 else f"{int(median_amount)}€"
 
 model_name = MODEL_NAME
 header = f"""
@@ -120,8 +127,9 @@ for question_num in range(1, 46):
     results.append({"correct_answers": correct_answers})
 
 average_amount = calculate_average_amount(results)
+median_amount = calculate_median_amount(results)
 million_wins = sum(1 for r in results if r["correct_answers"] == 15)
-results_data = {"model": model_name, "model_parameters": {"temperature": TEMPERATURE, "top_k": TOP_K, "top_p": TOP_P}, "rounds": results, "average_final_amount": average_amount, "million_wins": million_wins}
+results_data = {"model": model_name, "model_parameters": {"temperature": TEMPERATURE, "top_k": TOP_K, "top_p": TOP_P}, "rounds": results, "average_final_amount": average_amount, "median_final_amount": median_amount, "million_wins": million_wins}
 
 base_filename = f"result_{model_name.replace('/', '-')}.json"
 result_filename = base_filename
