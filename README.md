@@ -52,6 +52,7 @@ note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 | gemma‑3‑4b                 | 4 B   | 4 B    | No       | 0    | 50 €   | 158 €     |
 | lfm2‑2.6b                  | 2.6 B | 2.6 B  | No       | 0    | 50 €   | 126 €     |
 | granite‑4.0‑h‑micro        | 3 B   | 3 B    | No       | 0    | 50 €   | 100 €     |
+| ai21-jamba-reasoning-3b    | 3B    | 3B     | Yes      | 0    | 0€     | 225€      |
 | phi‑4‑mini‑instruct        | 3 B   | 3 B    | No       | 0    | 0 €    | 157 €     |
 | llama‑3.2‑3b‑instruct      | 3 B   | 3 B    | No       | 0    | 0 €    | 125 €     |
 | ministral‑8b‑instruct‑2410 | 8 B   | 8 B    | No       | 0    | 0 €    | 60 €      |
