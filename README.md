@@ -1,14 +1,14 @@
 # "Wer wird Millionär?" LLM Benchmark
 
- i have created a benchmark for german "who wants to be millionaire" questions. there are 45x15 questions, all 45 rounds go from easy to hard and all tested models ran through all 45 rounds and got kicked out of a round if the answer was wrong, keeping the current winnings. no jokers.
+I have created a benchmark for german "who wants to be millionaire" questions. there are 45x15 questions, all 45 rounds go from easy to hard and all tested models ran through all 45 rounds and got kicked out of a round if the answer was wrong, keeping the current winnings. No jokers.
 
-i am a bit limited with the selection of llm's since i run them on my framework laptop 13 (amd ryzen 5 7640u with 32 gb ram), so i mainly used smaller llm's. also, qwen3's thinking went on for way to long for each question so i just tested non-thinking models except for gpt-oss-20b (low). but in my initial testing for qwen3-4b-thinking-2507, it seemed to worsen the quality of answers at least for the first questions.
+I am a bit limited with the selection of llm's since i run them on my framework laptop 13 (amd ryzen 5 7640u with 32 gb ram), so I mainly used smaller llm's. also, qwen3's thinking went on for way to long for each question so i just tested non-thinking models except for gpt-oss-20b (low). but in my initial testing for qwen3-4b-thinking-2507, it seemed to worsen the quality of answers at least for the first questions.
 
-the first few questions are often word-play and idioms questions needing great understanding of the german language. these proved to be very hard for most llm's but are easily solvable by the average german. once the first few questions were solved the models had an easier time answering.
+The first few questions are often word-play and idioms questions needing great understanding of the german language. These proved to be very hard for most llm's but are easily solvable by the average german. Once the first few questions were solved the models had an easier time answering.
 
-i tried to use optimal model settings and included them in the table, let me know if they could be improved. all models are quant Q4_K_M.
+I tried to use optimal model settings and included them in the table, let me know if they could be improved. all models are quant Q4_K_M.
 
-i have close to no python coding ability so the main script was created with qwen3-coder. the project (with detailed results for each model, and the queationaire) is open souce and available on github.
+I have close to no python coding ability so the main script was created with qwen3-coder. The project (with detailed results for each model, and the questionnaire) is open souce and available on github.
 
 ## Usage
 
@@ -22,7 +22,7 @@ i have close to no python coding ability so the main script was created with qwe
    python3 benchmark.py
    ```
 
-note: `benchmark_2.py` offers a more advanced implementation that goes right over my head, written by people more knowledgeable than i am. from what I understand, it's better suited for cloud-based URLs and offers concurrency and safer answer parsing.
+Note: `benchmark_2.py` offers a more advanced implementation that goes right over my head, written by people more knowledgeable than I am. From what I understand, it's better suited for cloud-based URLs and offers concurrency and safer answer parsing.
 
 ## Benchmark Results
 
@@ -58,7 +58,7 @@ note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 | ministral‑8b‑instruct‑2410 | 8 B   | 8 B    | No       | 0    | 0 €    | 60 €      |
 | qwen3‑1.7b                 | 1.7 B | 1.7 B  | No       | 0    | 0 €    | 57 €      |
 
-*Average* is the median average out of five runs, often less runs for big or thinking models due to resource limitation (one run can take multiple hours). human average winnings of the first 999 shows is 36.000€ ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
+*Average* is the median average out of five runs, often less runs for big or thinking models due to resource limitation (one run can take multiple hours). Human average winnings of the first 999 shows is 36.000€ ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
 
 ### Cloud
 
@@ -100,7 +100,7 @@ note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 | llama‑3.2‑1b‑instruct          | 1 B    | 1 B    | 0    | 0 €         | 155 €     |
 | llama‑3.2‑3b‑instruct          | 3 B    | 3 B    | 0    | 0 €         | 121 €     |
 
-1 run only. thanks to the reddit users `FullOf_Bad_Ideas` and `Pauli1_Go` for their help.
+1 run only. Thanks to the reddit users `FullOf_Bad_Ideas` and `Pauli1_Go` for their help.
 
 ### Different quant tests
 
@@ -110,7 +110,7 @@ note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 | gemma-3-4b             | 103€   | 141€ | +36%       |
 | llama-3.2-3b-instruct  | 104€   | 78€  | -25%       |
 
-ran every test 3 times and picked the median. results are very inconsistent for small models (±50%)
+Ran every test 3 times and picked the median. Results are very inconsistent for small models (±50%)
 
 ## Rules
 
