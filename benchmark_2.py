@@ -4,7 +4,6 @@ import os
 import re
 import time
 import requests
-import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from statistics import median
 

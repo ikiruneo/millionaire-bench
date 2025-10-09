@@ -115,7 +115,7 @@ for question_num in range(1, 46):
                 print(f"     └─ Correct is: '{correct_letter}'")
                 break
         except ValueError:
-            print(f"E]", flush=True)
+            print("E]", flush=True)
             q_limit = 50
             display_q = f"{question_text[:q_limit]}..." if len(question_text) > q_limit else question_text
             print(f"  └─ Error: Correct answer '{correct_answer}' not in options for Q: {display_q}")
