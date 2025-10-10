@@ -1,12 +1,10 @@
 # "Wer wird Millionär?" LLM Benchmark
 
-I have created a benchmark for german "who wants to be millionaire" questions. there are 45x15 questions, all 45 rounds go from easy to hard and all tested models ran through all 45 rounds and got kicked out of a round if the answer was wrong, keeping the current winnings. No jokers.
-
-I am a bit limited with the selection of llm's since i run them on my framework laptop 13 (amd ryzen 5 7640u with 32 gb ram), so I mainly used smaller llm's. also, qwen3's thinking went on for way to long for each question so i just tested non-thinking models except for gpt-oss-20b (low). but in my initial testing for qwen3-4b-thinking-2507, it seemed to worsen the quality of answers at least for the first questions.
+I have created a benchmark for german "who wants to be millionaire" questions. There are 45x15 questions, all 45 rounds go from easy to hard and all tested models ran through all 45 rounds and got kicked out of a round if the answer was wrong, keeping the current winnings. No jokers.
 
 The first few questions are often word-play and idioms questions needing great understanding of the german language. These proved to be very hard for most llm's but are easily solvable by the average german. Once the first few questions were solved the models had an easier time answering.
 
-I tried to use optimal model settings and included them in the table, let me know if they could be improved. all models are quant Q4_K_M.
+I am a bit limited with the selection of llm's since i run them on my framework laptop 13 (amd ryzen 5 7640u with 32 gb ram), so I mainly used smaller llm's. I tried to use optimal model settings and included them in the results.json, let me know if they could be improved. All models are quant Q4_K_M.
 
 I have close to no python coding ability so the main script was created with qwen3-coder. The project (with detailed results for each model, and the questionnaire) is open souce and available on github.
 
