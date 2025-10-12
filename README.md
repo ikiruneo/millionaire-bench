@@ -26,35 +26,34 @@ Note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 
 ### Local
 
-| Model Name             | Total | Active | Thinking | Wins |  Median |
-| :--------------------- | ----: | -----: | -------: | ---: | ------: |
-| mistral-small-3.2      |  24 B |   24 B |       No |    2 | 9 694 € |
-| qwen3-30b-a3b-2507     |  30 B |    3 B |       No |    5 | 9 000 € |
-| gemma-3-27b            |  27 B |   27 B |       No |    0 | 1 256 € |
-| gpt-oss-20b            |  21 B |    4 B |      Low |    3 | 1 256 € |
-| phi-4                  |  14 B |   14 B |       No |    1 | 1 239 € |
-| magistral-small-2509   |  24 B |   24 B |       No |    0 | 1 063 € |
-| hermes-4-14b           |  14 B |   14 B |       No |    0 |   896 € |
-| gemma-3-12b            |  12 B |   12 B |       No |    1 |   823 € |
-| qwen3-4b-thinking-2507 |   4 B |    4 B |      Yes |    1 |   499 € |
-| mistral-nemo-2407      |  12 B |   12 B |       No |    1 |   436 € |
-| granite-3.2-8b         |   8 B |    8 B |       No |    0 |   204 € |
-| granite-4.0-h-small    |  32 B |    9 B |       No |    0 |   177 € |
-| apertus:8b             |   8 B |    8 B |       No |    0 |   167 € |
-| llama-3.1-8b-instruct  |   8 B |    8 B |       No |    0 |   137 € |
-| gemma-3n-e4b           |   8 B |    4 B |       No |    0 |   121 € |
-| lfm2:8b-a1b            |   8 B |  1.5 B |       No |    0 |    90 € |
-| lfm2-2.6b              | 2.6 B |  2.6 B |       No |    0 |    87 € |
-| qwen3-4b-2507          |   4 B |    4 B |       No |    0 |    86 € |
-| qwen3-1.7b-thinking    | 1.7 B |  1.7 B |      Yes |    0 |    71 € |
-| granite-4-h-tiny       |   7 B |    1 B |       No |    0 |    66 € |
-| gemma-3-4b             |   4 B |    4 B |       No |    0 |    53 € |
-| ai21-jamba-3b          |   3 B |    3 B |      Yes |    0 |    47 € |
-| phi-4-mini-instruct    |   3 B |    3 B |       No |    0 |    41 € |
-| granite-4.0-h-micro    |   3 B |    3 B |       No |    0 |    36 € |
-| llama-3.2-3b-instruct  |   3 B |    3 B |       No |    0 |    33 € |
-| qwen3-1.7b             | 1.7 B |  1.7 B |       No |    0 |    31 € |
-| ministral-8b-2410      |   8 B |    8 B |       No |    0 |    20 € |
+| Model Name             | Total | Active | Thinking | Wins |  Median |     |
+| :--------------------- | ----: | -----: | -------: | ---: | ------: | --- |
+| mistral-small-3.2      |  24 B |   24 B |       No |    2 | 9 694 € |     |
+| qwen3-30b-a3b-2507     |  30 B |    3 B |       No |    5 | 9 000 € |     |
+| gemma-3-27b            |  27 B |   27 B |       No |    0 | 1 256 € |     |
+| gpt-oss-20b-low        |  21 B |    4 B |      Yes |    3 | 1 256 € |     |
+| phi-4                  |  14 B |   14 B |       No |    1 | 1 239 € |     |
+| hermes-4-14b           |  14 B |   14 B |       No |    0 |   896 € |     |
+| gemma-3-12b            |  12 B |   12 B |       No |    1 |   823 € |     |
+| qwen3-4b-thinking-2507 |   4 B |    4 B |      Yes |    1 |   499 € |     |
+| mistral-nemo-2407      |  12 B |   12 B |       No |    1 |   436 € |     |
+| granite-3.2-8b         |   8 B |    8 B |       No |    0 |   204 € |     |
+| granite-4.0-h-small    |  32 B |    9 B |       No |    0 |   177 € |     |
+| apertus:8b             |   8 B |    8 B |       No |    0 |   167 € |     |
+| llama-3.1-8b-instruct  |   8 B |    8 B |       No |    0 |   137 € |     |
+| gemma-3n-e4b           |   8 B |    4 B |       No |    0 |   121 € |     |
+| lfm2:8b-a1b            |   8 B |  1.5 B |       No |    0 |    90 € |     |
+| lfm2-2.6b              | 2.6 B |  2.6 B |       No |    0 |    87 € |     |
+| qwen3-4b-2507          |   4 B |    4 B |       No |    0 |    86 € |     |
+| qwen3-1.7b-thinking    | 1.7 B |  1.7 B |      Yes |    0 |    71 € |     |
+| granite-4-h-tiny       |   7 B |    1 B |       No |    0 |    66 € |     |
+| gemma-3-4b             |   4 B |    4 B |       No |    0 |    53 € |     |
+| ai21-jamba-3b          |   3 B |    3 B |      Yes |    0 |    47 € |     |
+| phi-4-mini-instruct    |   3 B |    3 B |       No |    0 |    41 € |     |
+| granite-4.0-h-micro    |   3 B |    3 B |       No |    0 |    36 € |     |
+| llama-3.2-3b-instruct  |   3 B |    3 B |       No |    0 |    33 € |     |
+| qwen3-1.7b             | 1.7 B |  1.7 B |       No |    0 |    31 € |     |
+| ministral-8b-2410      |   8 B |    8 B |       No |    0 |    20 € |     |
 
 *Average* is the median average out of five runs, often less runs for big or thinking models due to resource limitation (one run can take multiple hours). Human average winnings of the first 999 shows is 36 000€ ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
 
