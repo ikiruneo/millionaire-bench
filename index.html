@@ -11,6 +11,19 @@
             cell {
                 grid-column: span 8 !important;
             }
+            
+            .model-name {
+                min-width: 0 !important;
+            }
+            
+            .rank {
+                width: 30px !important;
+                height: 30px !important;
+            }
+            
+            .model-name-cell-spacing {
+                width: 8px !important;
+            }
         }
     </style>
 </head>
@@ -142,7 +155,7 @@
                         <td style="padding: 0;">
                             <div style="display: flex; align-items: center;">
                                 <div class="rank" style="width: 40px; height: 40px; padding: 0; flex-shrink: 0;">${item.rank}</div>
-                                <div style="width: 12px; flex-shrink: 0;"></div> <!-- Fixed 12px spacing -->
+                                <div class="model-name-cell-spacing" style="width: 12px; flex-shrink: 0;"></div> <!-- Fixed 12px spacing -->
                                 <div class="model-name" style="min-width: 200px; flex: 1;">
                                     <div style="display: flex; flex-direction: column; height: 40px; justify-content: flex-start; align-items: stretch; position: relative; top: -2px;">
                                         <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 1px; position: relative; top: -4px;">
@@ -150,8 +163,8 @@
                                                 <span class="model-name-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; font-size: 0.875rem;" title="${item.model_name}">${item.model_name}</span>
                                             </div>
                                             <div style="display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0;">
-                                                <div class="score-main" style="font-size: 0.875rem; font-weight: 400; min-width: 80px; text-align: right;" title="${detailedDeviation}">${formattedScore}€</div>
-                                                <div class="score-percentage" style="font-size: 0.875rem; color: #666; min-width: 50px; text-align: right;">${item.log_percentage.toFixed(1)}%</div>
+                                                <div class="score-main" style="font-size: 0.875rem; font-weight: 400; min-width: 60px; text-align: right;" title="${detailedDeviation}">${formattedScore}€</div>
+                                                <div class="score-percentage" style="font-size: 0.875rem; color: #666; min-width: 40px; text-align: right;">${item.log_percentage.toFixed(1)}%</div>
                                             </div>
                                         </div>
                                         <div class="score-cell" style="margin-top: 1px; flex: 1; display: flex; align-items: flex-end;">
@@ -173,7 +186,7 @@
                         <td style="padding: 0;">
                             <div style="display: flex; align-items: center;">
                                 <div class="rank" style="width: 40px; height: 40px; padding: 0; flex-shrink: 0;">${item.rank}</div>
-                                <div style="width: 12px; flex-shrink: 0;"></div> <!-- Fixed 12px spacing -->
+                                <div class="model-name-cell-spacing" style="width: 12px; flex-shrink: 0;"></div> <!-- Fixed 12px spacing -->
                                 <div class="model-name" style="min-width: 200px; flex: 1;">
                                     <div style="display: flex; flex-direction: column; height: 40px; justify-content: flex-start; align-items: stretch; position: relative; top: -2px;">
                                         <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 1px; position: relative; top: -4px;">
@@ -181,8 +194,8 @@
                                                 <span class="model-name-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; font-size: 0.875rem;" title="${item.model_name}">${item.model_name}</span>
                                             </div>
                                             <div style="display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0;">
-                                                <div class="score-main" style="font-size: 0.875rem; font-weight: 400; min-width: 80px; text-align: right;" title="${detailedDeviation}">${formattedScore}€</div>
-                                                <div class="score-percentage" style="font-size: 0.875rem; color: #666; min-width: 50px; text-align: right;">${item.log_percentage.toFixed(1)}%</div>
+                                                <div class="score-main" style="font-size: 0.875rem; font-weight: 400; min-width: 60px; text-align: right;" title="${detailedDeviation}">${formattedScore}€</div>
+                                                <div class="score-percentage" style="font-size: 0.875rem; color: #666; min-width: 40px; text-align: right;">${item.log_percentage.toFixed(1)}%</div>
                                             </div>
                                         </div>
                                         <div class="score-cell" style="margin-top: 1px; flex: 1; display: flex; align-items: flex-end;">
