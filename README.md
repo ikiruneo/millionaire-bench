@@ -53,6 +53,7 @@ https://millionaire-bench.referi.de/
 | llama-3.2-3b-instruct  |   3 B |    3 B |       No |    0 |    33 € |
 | qwen3-1.7b             | 1.7 B |  1.7 B |       No |    0 |    31 € |
 | ministral-8b-2410      |   8 B |    8 B |       No |    0 |    20 € |
+
 A model's Median Score is calculated from the average winnings of a test run, after discarding the top 5 and bottom 5 outlier rounds. The final score shown is the median (middle value) of all test runs for that model. For models tested multiple times, the range between their best and worst scores is also shown to indicate performance consistency. Human average winnings of the first 999 shows is 36 000€ ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
 
 ### Cloud
@@ -94,6 +95,7 @@ A model's Median Score is calculated from the average winnings of a test run, af
 | phi-4                  |   14 B |   14 B |    0 |     204 € |
 | llama-3.2-3b-instruct  |    3 B |    3 B |    0 |      50 € |
 | llama-3.2-1b-instruct  |    1 B |    1 B |    0 |      34 € |
+
 One run only. Thanks to the reddit users `FullOf_Bad_Ideas` and `Pauli1_Go` for their help.
 
 ## Resources
