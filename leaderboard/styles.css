@@ -26,10 +26,12 @@ h1, h2{
     font-size: 1.1rem;
     color: var(--heading-color);
     font-weight: 600;
+    margin: 0;
 }
 
 p {
     line-height: 2;
+    margin: 0 0 14px 0;
 }
 
 a {
@@ -92,16 +94,13 @@ a {
     position: relative;
 }
 
-/* Model family colors */
-.score-bar.granite-color { background-color: #1FA88C; } /* Muted teal */
-.score-bar.mistral-color { background-color: #CC5E21; } /* Warm amber-orange */
-.score-bar.gemma-color { background-color: #7648C9; }  /* Soft violet-purple */
-.score-bar.llama-color { background-color: #1E6FCC; }  /* Cool medium blue */
-.score-bar.phi-color { background-color: #0294C9; }    /* Deep cyan-blue */
-.score-bar.qwen-color { background-color: #4B42A3; }   /* Muted indigo */
-.score-bar.default-color { background-color: #666666; } /* Neutral gray */
-
-
+.score-bar.granite-color { background-color: #1FA88C; }
+.score-bar.mistral-color { background-color: #CC5E21; }
+.score-bar.gemma-color { background-color: #7648C9; }
+.score-bar.llama-color { background-color: #1E6FCC; }
+.score-bar.phi-color { background-color: #0294C9; }
+.score-bar.qwen-color { background-color: #4B42A3; }
+.score-bar.default-color { background-color: #666666; }
 
 .error-margin {
     position: absolute;
@@ -150,7 +149,6 @@ a {
     font-weight: 400;
 }
 
-/* Tooltip styling */
 .tooltip {
     position: absolute;
     background-color: var(--rank-bg);
@@ -162,12 +160,9 @@ a {
     z-index: 1000;
     white-space: pre-line;
     pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s;
     top: -40px;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .tooltip.visible {
