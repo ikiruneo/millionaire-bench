@@ -1,0 +1,33 @@
+body {
+	max-width:800px;
+	margin:2em auto;
+	display:grid;
+	grid-template-columns:repeat(8,1fr);
+	grid-column-gap:1em;
+	--grid-b:-1;
+	text-size-adjust:100%;
+	-ms-text-size-adjust:100%;
+	-moz-text-size-adjust:100%;
+	-webkit-text-size-adjust:100%;
+}
+@media(max-width: 800px){body{max-width:initial;margin:0 10px;}}
+@media(max-width: 540px){body{font-size:calc(100vw / 35)}}
+cell{margin-bottom:1.25em}
+cell[span^="1"]{--grid-a:1}
+cell[span^="2"]{--grid-a:2}
+cell[span^="3"]{--grid-a:3}
+cell[span^="4"]{--grid-a:4}
+cell[span^="5"]{--grid-a:5}
+cell[span^="6"]{--grid-a:6}
+cell[span^="7"]{--grid-a:7}
+cell[span^="8"]{--grid-a:8}
+cell[span$="-1"],cell[span="2"]{--grid-b:2}
+cell[span$="-2"],cell[span="3"]{--grid-b:3}
+cell[span$="-3"],cell[span="4"]{--grid-b:4}
+cell[span$="-4"],cell[span="5"]{--grid-b:5}
+cell[span$="-5"],cell[span="6"]{--grid-b:6}
+cell[span$="-6"],cell[span="7"]{--grid-b:7}
+cell[span$="-7"],cell[span="8"]{--grid-b:8}
+cell[span]{grid-column-end:span var(--grid-b)}
+cell[span *="-"]{grid-column-start:var(--grid-a)}
+cell[span *="-"]{grid-column-end:var(--grid-b)}

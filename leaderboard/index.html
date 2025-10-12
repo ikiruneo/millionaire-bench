@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Wer wird Millionär?" LLM Benchmark</title>
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reduce overall size on mobile devices */
+        @media (max-width: 768px) {
+            body {
+                font-size: 0.8em;
+            }
+            
+            .rank {
+                width: 32px !important;
+                height: 32px !important;
+            }
+            
+            .model-name {
+                min-width: 160px !important;
+            }
+            
+            .score-main {
+                font-size: 0.7rem !important;
+            }
+            
+            .score-percentage {
+                font-size: 0.7rem !important;
+            }
+            
+            .score-bar-container {
+                height: 11px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                font-size: 0.7em;
+            }
+            
+            .rank {
+                width: 28px !important;
+                height: 28px !important;
+            }
+            
+            .model-name {
+                min-width: 140px !important;
+            }
+            
+            .score-main {
+                font-size: 0.65rem !important;
+            }
+            
+            .score-percentage {
+                font-size: 0.65rem !important;
+            }
+            
+            .score-bar-container {
+                height: 10px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <cell span=2>
+        <h1>Wer wird Millionär?<br>LLM Benchmark</h1>
+    </cell>
+
+    <cell span=6>
+        <p>A benchmark using questions from the German version of "Who Wants to Be a Millionaire?". It consists of 45 games, each with 15 questions of increasing difficulty. All tested models played through the 45 games at least once. Each game is ended with the first incorrect answer, and the winnings at that point are recorded. No jokers were used.</p>
+        <p>The initial questions often involve wordplay and idioms, requiring a deep understanding of the German language. These proved challenging for most LLMs, though they are easily solvable by the average German. Once past these early hurdles, the models generally found the subsequent questions easier to answer.</p>
+    </cell>
+
+    <cell span=2>
+        <h2>Performance Comparison</h2>
+    </cell>
+
+    <cell span=6>
+        <table class="performance-table" style="width: 100%; table-layout: fixed;">
+            <tbody id="leaderboard-tbody">
+                <!-- Leaderboard data will be loaded here -->
+            </tbody>
+        </table>
+        <p>A model's Performance Score is calculated from the average winnings of a test run, after discarding the top 5 and bottom 5 outlier rounds. The final score shown is the median (middle value) of all test runs for that model. For models tested multiple times, the range between their best and worst scores is also shown to indicate performance consistency.</p>
+        <p>My selection of LLMs is limited as I ran them on my Framework Laptop 13 (AMD Ryzen 5 7640U with 32 GB of RAM), which necessitated the use of smaller models. All models were Q4_K_M quantized and, if available, recommended settings were used.</p><p>The entire project, including detailed results for each model and the questionnaire, is open source and available on <a href="https://github.com/ikiruneo/millionaire-bench">GitHub</a>.</p>
+    </cell>
+    
+    <script>
+        // Load leaderboard data from JSON file
+        async function loadLeaderboardData() {
+            try {
+                // Try to load the JSON file using fetch from the same directory
+                const response = await fetch('leaderboard_data.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Error loading leaderboard data:', error);
+                return [];
+            }
+        }
+        
+        // Function to populate the leaderboard
+        async function populateLeaderboard() {
+            const leaderboardData = await loadLeaderboardData();
+            if (!leaderboardData || leaderboardData.length === 0) {
+                console.error('No leaderboard data found');
+                document.getElementById('leaderboard-tbody').innerHTML = '<tr><td colspan="2">No data available. Please run the generate_leaderboard.py script to create leaderboard_data.json</td></tr>';
+                return;
+            }
+            
+            const tbody = document.getElementById('leaderboard-tbody');
+            tbody.innerHTML = ''; // Clear existing content
+            
+            // Fixed logarithmic scale where 1,000,000€ = 100%
+            const maxValue = 1000000; // 1,000,000€ is the fixed maximum
+            const a = 50.00500050005; // Constant for logarithmic scale
+            const logMaxValue = Math.log(maxValue + a) - Math.log(a); // Max value for scaling
+            
+            leaderboardData.forEach(item => {
+                const row = document.createElement('tr');
+                
+                // Calculate bar width using the fixed logarithmic scale
+                // Using the log_percentage from the Python script (pre-calculated)
+                const barWidth = item.log_percentage;
+                
+                // Determine bar color based on model family - only major distributors get distinct colors
+                let barColorClass = 'default-color'; // Default gray color for all models
+                const modelName = item.model_name.toLowerCase();
+                
+                // Assign specific colors to designated distributors
+                if (modelName.includes('gemma') || modelName.includes('google')) {
+                    barColorClass = 'gemma-color';  // Google/Gemma models - green
+                } else if (modelName.includes('mistral') || modelName.includes('magistral') || modelName.includes('ministral')) {
+                    barColorClass = 'mistral-color';  // Mistral/Magistral/Ministral models - orange
+                } else if (modelName.includes('granite') || modelName.includes('ibm')) {
+                    barColorClass = 'granite-color';  // IBM/Granite models - blue
+                } else if (modelName.includes('qwen')) {
+                    barColorClass = 'qwen-color';  // Qwen models - red
+                } else if (modelName.includes('llama') || modelName.includes('meta')) {
+                    barColorClass = 'llama-color';  // Meta/Llama models - pink
+                } else if (modelName.includes('phi') || modelName.includes('microsoft')) {
+                    barColorClass = 'phi-color';  // Microsoft/Phi models - purple
+                }
+                // All other models keep the default gray color
+                
+                // Create a custom function to format numbers with non-breaking spaces
+                function formatNumberWithNbsp(num) {
+                    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0'); // \u00A0 is non-breaking space
+                }
+                
+                // Create a simple score display
+                const formattedScore = formatNumberWithNbsp(item.bar_value);
+                
+                // Check if we have deviation data (models with multiple results)
+                if (item.low_deviation_euros !== null && item.high_deviation_euros !== null) {
+                    // Calculate the positions of error bars based on the bar value +/- euro deviations
+                    const barValue = item.bar_value;
+                    const lowValue = Math.max(0, barValue - item.low_deviation_euros);
+                    const highValue = Math.min(maxValue, barValue + item.high_deviation_euros); // Cap at fixed max for display
+                    const uncappedHighValue = barValue + item.high_deviation_euros; // Actual uncapped value for tooltip
+                    const isHighValueCapped = (barValue + item.high_deviation_euros) > maxValue; // Check if high value was capped
+                    
+                    // Calculate average of absolute deviations to represent overall uncertainty
+                    // Using the example: average = (low_deviation_euros + high_deviation_euros) / 2
+                    // This represents the average magnitude of variation regardless of direction
+                    const averageDeviation = (item.low_deviation_euros + item.high_deviation_euros) / 2;
+                    const formattedNetDeviation = formatNumberWithNbsp(Math.round(averageDeviation));
+                    
+                    // Calculate positions using the fixed logarithmic scale
+                    const logBarValue = (Math.log(barValue + a) - Math.log(a)) / logMaxValue * 100;
+                    const logLowValue = (Math.log(lowValue + a) - Math.log(a)) / logMaxValue * 100;
+                    const logHighValue = (Math.log(highValue + a) - Math.log(a)) / logMaxValue * 100;
+                    
+                    const lowBarPos = logLowValue;
+                    const barPos = logBarValue;
+                    const highBarPos = Math.min(100, logHighValue); // Cap at 100%
+                    
+                    // Calculate error bar width and position
+                    const errorBarWidth = Math.max(1, highBarPos - lowBarPos);
+                    const errorBarLeft = Math.max(0, lowBarPos);
+                    
+                    // Format the detailed deviation for the tooltip (no separators in tooltip) - use actual uncapped values
+                    const detailedDeviation = `Score: ${item.bar_value}€\nRange: ${Math.max(0, item.bar_value - item.low_deviation_euros)}€ to ${uncappedHighValue}€`;
+                    
+                    row.innerHTML = `
+                        <td style="padding: 0;">
+                            <div style="display: flex; align-items: center;">
+                                <div class="rank" style="width: 40px; height: 40px; padding: 0; flex-shrink: 0;">${item.rank}</div>
+                                <div style="width: 12px; flex-shrink: 0;"></div> <!-- Fixed 12px spacing -->
+                                <div class="model-name" style="min-width: 200px; flex: 1;">
+                                    <div style="display: flex; flex-direction: column; height: 40px; justify-content: flex-start; align-items: stretch; position: relative; top: -2px;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 1px; position: relative; top: -4px;">
+                                            <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0;">
+                                                <span class="model-name-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; font-size: 0.875rem;" title="${item.model_name}">${item.model_name}</span>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0;">
+                                                <div class="score-main" style="font-size: 0.875rem; font-weight: 400; min-width: 80px; text-align: right;" title="${detailedDeviation}">${formattedScore}€</div>
+                                                <div class="score-percentage" style="font-size: 0.875rem; color: #666; min-width: 50px; text-align: right;">${item.log_percentage.toFixed(1)}%</div>
+                                            </div>
+                                        </div>
+                                        <div class="score-cell" style="margin-top: 1px; flex: 1; display: flex; align-items: flex-end;">
+                                            <div class="score-bar-container tooltip-trigger" style="width: 100%; height: 14px; position: relative;">
+                                                <div class="score-bar ${barColorClass}" style="width: ${barWidth}%; height: 100%;"></div>
+                                                <!-- Error bar showing range of deviation -->
+                                                <div class="error-margin ${isHighValueCapped ? 'error-margin-capped' : ''}" style="left: ${errorBarLeft}%; width: ${errorBarWidth}%;"></div>
+                                                <div class="tooltip hidden">${detailedDeviation}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    `;                } else {
+                    // For models with only 1 result, show just the bar without error bars
+                    const detailedDeviation = "";
+                    row.innerHTML = `
+                        <td style="padding: 0;">
+                            <div style="display: flex; align-items: center;">
+                                <div class="rank" style="width: 40px; height: 40px; padding: 0; flex-shrink: 0;">${item.rank}</div>
+                                <div style="width: 12px; flex-shrink: 0;"></div> <!-- Fixed 12px spacing -->
+                                <div class="model-name" style="min-width: 200px; flex: 1;">
+                                    <div style="display: flex; flex-direction: column; height: 40px; justify-content: flex-start; align-items: stretch; position: relative; top: -2px;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 1px; position: relative; top: -4px;">
+                                            <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0;">
+                                                <span class="model-name-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; font-size: 0.875rem;" title="${item.model_name}">${item.model_name}</span>
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0;">
+                                                <div class="score-main" style="font-size: 0.875rem; font-weight: 400; min-width: 80px; text-align: right;" title="${detailedDeviation}">${formattedScore}€</div>
+                                                <div class="score-percentage" style="font-size: 0.875rem; color: #666; min-width: 50px; text-align: right;">${item.log_percentage.toFixed(1)}%</div>
+                                            </div>
+                                        </div>
+                                        <div class="score-cell" style="margin-top: 1px; flex: 1; display: flex; align-items: flex-end;">
+                                            <div class="score-bar-container tooltip-trigger" style="width: 100%; height: 14px; position: relative;">
+                                                <div class="score-bar ${barColorClass}" style="width: ${barWidth}%; height: 100%;"></div>
+                                                <div class="tooltip hidden"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    `;
+                }
+                
+                tbody.appendChild(row);
+            });
+        }
+
+        // Run when the page loads
+        document.addEventListener('DOMContentLoaded', populateLeaderboard);
+        
+        // Handle tooltip display
+        document.addEventListener('mouseover', function(e) {
+            const tooltipTrigger = e.target.closest('.tooltip-trigger');
+            if (tooltipTrigger) {
+                const tooltip = tooltipTrigger.querySelector('.tooltip');
+                if (tooltip && tooltip.textContent.trim() !== '') {
+                    tooltip.classList.remove('hidden');
+                    tooltip.classList.add('visible');
+                }
+            }
+        });
+        
+        document.addEventListener('mouseout', function(e) {
+            const tooltipTrigger = e.target.closest('.tooltip-trigger');
+            if (tooltipTrigger) {
+                const tooltip = tooltipTrigger.querySelector('.tooltip');
+                if (tooltip) {
+                    tooltip.classList.remove('visible');
+                    tooltip.classList.add('hidden');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
