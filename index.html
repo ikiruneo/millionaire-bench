@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>"Wer wird Millionär?" LLM Benchmark</title>
-    <link rel="stylesheet" href="grid.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="leaderboard/grid.css">
+    <link rel="stylesheet" href="leaderboard/styles.css">
     <style>
         /* Reduce overall size on mobile devices */
         @media (max-width: 768px) {
@@ -93,7 +93,7 @@
         async function loadLeaderboardData() {
             try {
                 // Try to load the JSON file using fetch from the same directory
-                const response = await fetch('leaderboard_data.json');
+                const response = await fetch('leaderboard/leaderboard_data.json');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -109,7 +109,7 @@
             const leaderboardData = await loadLeaderboardData();
             if (!leaderboardData || leaderboardData.length === 0) {
                 console.error('No leaderboard data found');
-                document.getElementById('leaderboard-tbody').innerHTML = '<tr><td colspan="2">No data available. Please run the generate_leaderboard.py script to create leaderboard_data.json</td></tr>';
+                document.getElementById('leaderboard-tbody').innerHTML = '<tr><td colspan="2">No data available. Please run the generate_leaderboard.py script in the leaderboard folder to create leaderboard_data.json</td></tr>';
                 return;
             }
             
