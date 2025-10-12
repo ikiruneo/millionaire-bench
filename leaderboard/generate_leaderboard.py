@@ -165,28 +165,7 @@ def main():
             low_deviation_percent = None
             high_deviation_percent = None
         
-        # Also get the median correct answer count for the model's name display
-        # We'll use the first file for this (arbitrary choice)
-        median_correct_answers = 0
-        median_prize = "0€"
-        
-        if files:
-            try:
-                filepath, filename = files[0]
-                with open(filepath, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                
-                # Extract correct answers from rounds for median calculation
-                rounds = data.get('rounds', [])
-                correct_answers_list = [round_data.get('correct_answers', 0) for round_data in rounds]
-                
-                if correct_answers_list:
-                    sorted_answers_for_median = sorted(correct_answers_list)
-                    median_idx = len(sorted_answers_for_median) // 2
-                    median_correct_answers = sorted_answers_for_median[median_idx]
-                    median_prize = map_correct_answers_to_prize(median_correct_answers)
-            except:
-                pass
+
         
         # Get the average final amount from one of the files for comparison
         original_average = 0
@@ -203,9 +182,7 @@ def main():
         
         model_info = {
             'model_name': model_name,
-            'median_correct_answers': median_correct_answers,
-            'median_prize': median_prize,
-            'bar_value': round(bar_value),  # This is the middle value of averages from multiple files
+            'median_value': round(bar_value),  # This is the middle value of averages from multiple files
             'low_deviation_euros': low_deviation_euros,  # Absolute deviation in Euros to lower side
             'high_deviation_euros': high_deviation_euros,  # Absolute deviation in Euros to higher side
             'original_average': original_average,
@@ -217,28 +194,33 @@ def main():
     # Find the global maximum value among all average scores
     global_max_value = max(all_average_scores) if all_average_scores else 1000000  # Default to 1M if no data
     
-    # Sort by bar value in descending order
-    sorted_leaderboard = sorted(leaderboard_data, key=lambda x: x['bar_value'], reverse=True)
+    # Sort by median_value in descending order
+    sorted_leaderboard = sorted(leaderboard_data, key=lambda x: x['median_value'], reverse=True)
     
-    # Add ranking to each model and the global maximum
+    # Add ranking to each model
     for i, model_info in enumerate(sorted_leaderboard):
         model_info['rank'] = i + 1
-        model_info['global_max_value'] = global_max_value  # Add global maximum for scaling
+    
+    # Create the final data structure with global_max_value at the top level
+    final_data = {
+        'models': sorted_leaderboard,
+        'global_max_value': global_max_value
+    }
     
     # Write leaderboard data to JSON file in www directory
     with open('leaderboard_data.json', 'w', encoding='utf-8') as f:
-        json.dump(sorted_leaderboard, f, indent=2, ensure_ascii=False)
+        json.dump(final_data, f, indent=2, ensure_ascii=False)
     
     print(f"Leaderboard data saved to leaderboard_data.json")
     print(f"Processed {len(sorted_leaderboard)} models")
     print(f"Global maximum value: {global_max_value:,}€")
     
     # Display summary
-    print("\nTop 10 performing models by middle value of averages:")
+    print("\nTop 10 performing models by median value of averages:")
     for i, model_info in enumerate(sorted_leaderboard[:10]):
         low_dev = model_info['low_deviation_euros'] if model_info['low_deviation_euros'] is not None else 'N/A'
         high_dev = model_info['high_deviation_euros'] if model_info['high_deviation_euros'] is not None else 'N/A'
-        print(f"{i+1}. {model_info['model_name']}: median answers={model_info['median_correct_answers']}, bar value={model_info['bar_value']:.0f}, deviations: -{low_dev}€/+{high_dev}€")
+        print(f"{i+1}. {model_info['model_name']}: median value={model_info['median_value']:.0f}, deviations: -{low_dev}€/+{high_dev}€")
 
 if __name__ == "__main__":
     main()

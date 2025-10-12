@@ -1,326 +1,248 @@
-[
-  {
-    "model_name": "mistral-small-3.2",
-    "median_correct_answers": 5,
-    "median_prize": "500€",
-    "bar_value": 9694,
-    "low_deviation_euros": 4481,
-    "high_deviation_euros": 2651,
-    "original_average": 63812.0,
-    "log_percentage": 53.2,
-    "rank": 1,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "qwen3-30b-a3b-2507",
-    "median_correct_answers": 3,
-    "median_prize": "200€",
-    "bar_value": 9000,
-    "low_deviation_euros": 3627,
-    "high_deviation_euros": 10853,
-    "original_average": 118111.0,
-    "log_percentage": 52.5,
-    "rank": 2,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "gemma-3-27b",
-    "median_correct_answers": 2,
-    "median_prize": "100€",
-    "bar_value": 1256,
-    "low_deviation_euros": 41,
-    "high_deviation_euros": 143,
-    "original_average": 15043.0,
-    "log_percentage": 32.9,
-    "rank": 3,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "gpt-oss-20b",
-    "median_correct_answers": 2,
-    "median_prize": "100€",
-    "bar_value": 1256,
-    "low_deviation_euros": null,
-    "high_deviation_euros": null,
-    "original_average": 80177.0,
-    "log_percentage": 32.9,
-    "rank": 4,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "phi-4",
-    "median_correct_answers": 3,
-    "median_prize": "200€",
-    "bar_value": 1239,
-    "low_deviation_euros": 284,
-    "high_deviation_euros": 634,
-    "original_average": 27946.0,
-    "log_percentage": 32.8,
-    "rank": 5,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "magistral-small-2509",
-    "median_correct_answers": 2,
-    "median_prize": "100€",
-    "bar_value": 1063,
-    "low_deviation_euros": 184,
-    "high_deviation_euros": 450,
-    "original_average": 15350.0,
-    "log_percentage": 31.3,
-    "rank": 6,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "hermes-4-14b",
-    "median_correct_answers": 2,
-    "median_prize": "100€",
-    "bar_value": 896,
-    "low_deviation_euros": 471,
-    "high_deviation_euros": 354,
-    "original_average": 5528.0,
-    "log_percentage": 29.7,
-    "rank": 7,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "gemma-3-12b",
-    "median_correct_answers": 2,
-    "median_prize": "100€",
-    "bar_value": 823,
-    "low_deviation_euros": 420,
-    "high_deviation_euros": 9,
-    "original_average": 24647.0,
-    "log_percentage": 28.9,
-    "rank": 8,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "qwen3-4b-thinking-2507",
-    "median_correct_answers": 2,
-    "median_prize": "100€",
-    "bar_value": 499,
-    "low_deviation_euros": null,
-    "high_deviation_euros": null,
-    "original_average": 27343.0,
-    "log_percentage": 24.2,
-    "rank": 9,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "mistral-nemo-instruct-2407",
-    "median_correct_answers": 2,
-    "median_prize": "100€",
-    "bar_value": 436,
-    "low_deviation_euros": 169,
-    "high_deviation_euros": 13,
-    "original_average": 34393.0,
-    "log_percentage": 23.0,
-    "rank": 10,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "granite-3.2-8b",
-    "median_correct_answers": 1,
-    "median_prize": "50€",
-    "bar_value": 204,
-    "low_deviation_euros": 3,
-    "high_deviation_euros": 50,
-    "original_average": 846.0,
-    "log_percentage": 16.4,
-    "rank": 11,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "granite-4.0-h-small",
-    "median_correct_answers": 2,
-    "median_prize": "100€",
-    "bar_value": 177,
-    "low_deviation_euros": 24,
-    "high_deviation_euros": 6,
-    "original_average": 3497.0,
-    "log_percentage": 15.3,
-    "rank": 12,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "apertus:8b",
-    "median_correct_answers": 2,
-    "median_prize": "100€",
-    "bar_value": 167,
-    "low_deviation_euros": 74,
-    "high_deviation_euros": 116,
-    "original_average": 1998.0,
-    "log_percentage": 14.8,
-    "rank": 13,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "llama-3.1-8b-instruct",
-    "median_correct_answers": 1,
-    "median_prize": "50€",
-    "bar_value": 137,
-    "low_deviation_euros": 27,
-    "high_deviation_euros": 36,
-    "original_average": 644.0,
-    "log_percentage": 13.3,
-    "rank": 14,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "gemma-3n-e4b",
-    "median_correct_answers": 1,
-    "median_prize": "50€",
-    "bar_value": 121,
-    "low_deviation_euros": 7,
-    "high_deviation_euros": 14,
-    "original_average": 380.0,
-    "log_percentage": 12.4,
-    "rank": 15,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "lfm2:8b-a1b",
-    "median_correct_answers": 1,
-    "median_prize": "50€",
-    "bar_value": 90,
-    "low_deviation_euros": 14,
-    "high_deviation_euros": 14,
-    "original_average": 1692.0,
-    "log_percentage": 10.4,
-    "rank": 16,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "lfm2-2.6b",
-    "median_correct_answers": 1,
-    "median_prize": "50€",
-    "bar_value": 87,
-    "low_deviation_euros": 4,
-    "high_deviation_euros": 1,
-    "original_average": 145.0,
-    "log_percentage": 10.2,
-    "rank": 17,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "qwen3-4b-2507",
-    "median_correct_answers": 1,
-    "median_prize": "50€",
-    "bar_value": 86,
-    "low_deviation_euros": 14,
-    "high_deviation_euros": 4,
-    "original_average": 625.0,
-    "log_percentage": 10.1,
-    "rank": 18,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "qwen3-1.7b-thinking",
-    "median_correct_answers": 1,
-    "median_prize": "50€",
-    "bar_value": 71,
-    "low_deviation_euros": 20,
-    "high_deviation_euros": 9,
-    "original_average": 286.0,
-    "log_percentage": 8.9,
-    "rank": 19,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "granite-4-h-tiny",
-    "median_correct_answers": 1,
-    "median_prize": "50€",
-    "bar_value": 66,
-    "low_deviation_euros": 20,
-    "high_deviation_euros": 4,
-    "original_average": 251.0,
-    "log_percentage": 8.5,
-    "rank": 20,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "gemma-3-4b",
-    "median_correct_answers": 1,
-    "median_prize": "50€",
-    "bar_value": 53,
-    "low_deviation_euros": 11,
-    "high_deviation_euros": 7,
-    "original_average": 65.0,
-    "log_percentage": 7.3,
-    "rank": 21,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "jamba-reasoning-3b",
-    "median_correct_answers": 0,
-    "median_prize": "0€",
-    "bar_value": 47,
-    "low_deviation_euros": null,
-    "high_deviation_euros": null,
-    "original_average": 225.0,
-    "log_percentage": 6.7,
-    "rank": 22,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "phi-4-mini-instruct",
-    "median_correct_answers": 0,
-    "median_prize": "0€",
-    "bar_value": 41,
-    "low_deviation_euros": 10,
-    "high_deviation_euros": 1,
-    "original_average": 157.0,
-    "log_percentage": 6.0,
-    "rank": 23,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "granite-4.0-h-micro",
-    "median_correct_answers": 0,
-    "median_prize": "0€",
-    "bar_value": 36,
-    "low_deviation_euros": 7,
-    "high_deviation_euros": 13,
-    "original_average": 82.0,
-    "log_percentage": 5.5,
-    "rank": 24,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "llama-3.2-3b-instruct",
-    "median_correct_answers": 0,
-    "median_prize": "0€",
-    "bar_value": 33,
-    "low_deviation_euros": 1,
-    "high_deviation_euros": 20,
-    "original_average": 411.0,
-    "log_percentage": 5.1,
-    "rank": 25,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "qwen3-1.7b",
-    "median_correct_answers": 0,
-    "median_prize": "0€",
-    "bar_value": 31,
-    "low_deviation_euros": 6,
-    "high_deviation_euros": 7,
-    "original_average": 104.0,
-    "log_percentage": 4.9,
-    "rank": 26,
-    "global_max_value": 19852.85714285714
-  },
-  {
-    "model_name": "ministral-8b-instruct-2410",
-    "median_correct_answers": 0,
-    "median_prize": "0€",
-    "bar_value": 20,
-    "low_deviation_euros": 0,
-    "high_deviation_euros": 0,
-    "original_average": 60.0,
-    "log_percentage": 3.4,
-    "rank": 27,
-    "global_max_value": 19852.85714285714
-  }
-]
+{
+  "models": [
+    {
+      "model_name": "mistral-small-3.2",
+      "median_value": 9694,
+      "low_deviation_euros": 4481,
+      "high_deviation_euros": 2651,
+      "original_average": 63812.0,
+      "log_percentage": 53.2,
+      "rank": 1
+    },
+    {
+      "model_name": "qwen3-30b-a3b-2507",
+      "median_value": 9000,
+      "low_deviation_euros": 3627,
+      "high_deviation_euros": 10853,
+      "original_average": 118111.0,
+      "log_percentage": 52.5,
+      "rank": 2
+    },
+    {
+      "model_name": "gemma-3-27b",
+      "median_value": 1256,
+      "low_deviation_euros": 41,
+      "high_deviation_euros": 143,
+      "original_average": 15039.0,
+      "log_percentage": 32.9,
+      "rank": 3
+    },
+    {
+      "model_name": "gpt-oss-20b",
+      "median_value": 1256,
+      "low_deviation_euros": null,
+      "high_deviation_euros": null,
+      "original_average": 80177.0,
+      "log_percentage": 32.9,
+      "rank": 4
+    },
+    {
+      "model_name": "phi-4",
+      "median_value": 1239,
+      "low_deviation_euros": 284,
+      "high_deviation_euros": 634,
+      "original_average": 27946.0,
+      "log_percentage": 32.8,
+      "rank": 5
+    },
+    {
+      "model_name": "magistral-small-2509",
+      "median_value": 1063,
+      "low_deviation_euros": 184,
+      "high_deviation_euros": 450,
+      "original_average": 15350.0,
+      "log_percentage": 31.3,
+      "rank": 6
+    },
+    {
+      "model_name": "hermes-4-14b",
+      "median_value": 896,
+      "low_deviation_euros": 471,
+      "high_deviation_euros": 354,
+      "original_average": 5528.0,
+      "log_percentage": 29.7,
+      "rank": 7
+    },
+    {
+      "model_name": "gemma-3-12b",
+      "median_value": 823,
+      "low_deviation_euros": 420,
+      "high_deviation_euros": 9,
+      "original_average": 24647.0,
+      "log_percentage": 28.9,
+      "rank": 8
+    },
+    {
+      "model_name": "qwen3-4b-thinking-2507",
+      "median_value": 499,
+      "low_deviation_euros": null,
+      "high_deviation_euros": null,
+      "original_average": 27343.0,
+      "log_percentage": 24.2,
+      "rank": 9
+    },
+    {
+      "model_name": "mistral-nemo-instruct-2407",
+      "median_value": 436,
+      "low_deviation_euros": 169,
+      "high_deviation_euros": 13,
+      "original_average": 34393.0,
+      "log_percentage": 23.0,
+      "rank": 10
+    },
+    {
+      "model_name": "granite-3.2-8b",
+      "median_value": 204,
+      "low_deviation_euros": 3,
+      "high_deviation_euros": 50,
+      "original_average": 846.0,
+      "log_percentage": 16.4,
+      "rank": 11
+    },
+    {
+      "model_name": "granite-4.0-h-small",
+      "median_value": 177,
+      "low_deviation_euros": 24,
+      "high_deviation_euros": 6,
+      "original_average": 3497.0,
+      "log_percentage": 15.3,
+      "rank": 12
+    },
+    {
+      "model_name": "apertus:8b",
+      "median_value": 167,
+      "low_deviation_euros": 74,
+      "high_deviation_euros": 116,
+      "original_average": 1998.0,
+      "log_percentage": 14.8,
+      "rank": 13
+    },
+    {
+      "model_name": "llama-3.1-8b-instruct",
+      "median_value": 137,
+      "low_deviation_euros": 27,
+      "high_deviation_euros": 36,
+      "original_average": 644.0,
+      "log_percentage": 13.3,
+      "rank": 14
+    },
+    {
+      "model_name": "gemma-3n-e4b",
+      "median_value": 121,
+      "low_deviation_euros": 7,
+      "high_deviation_euros": 14,
+      "original_average": 380.0,
+      "log_percentage": 12.4,
+      "rank": 15
+    },
+    {
+      "model_name": "lfm2:8b-a1b",
+      "median_value": 90,
+      "low_deviation_euros": 14,
+      "high_deviation_euros": 14,
+      "original_average": 1692.0,
+      "log_percentage": 10.4,
+      "rank": 16
+    },
+    {
+      "model_name": "lfm2-2.6b",
+      "median_value": 87,
+      "low_deviation_euros": 4,
+      "high_deviation_euros": 1,
+      "original_average": 145.0,
+      "log_percentage": 10.2,
+      "rank": 17
+    },
+    {
+      "model_name": "qwen3-4b-2507",
+      "median_value": 86,
+      "low_deviation_euros": 14,
+      "high_deviation_euros": 4,
+      "original_average": 603.0,
+      "log_percentage": 10.1,
+      "rank": 18
+    },
+    {
+      "model_name": "qwen3-1.7b-thinking",
+      "median_value": 71,
+      "low_deviation_euros": 20,
+      "high_deviation_euros": 9,
+      "original_average": 286.0,
+      "log_percentage": 8.9,
+      "rank": 19
+    },
+    {
+      "model_name": "granite-4-h-tiny",
+      "median_value": 66,
+      "low_deviation_euros": 20,
+      "high_deviation_euros": 4,
+      "original_average": 653.0,
+      "log_percentage": 8.5,
+      "rank": 20
+    },
+    {
+      "model_name": "gemma-3-4b",
+      "median_value": 53,
+      "low_deviation_euros": 11,
+      "high_deviation_euros": 7,
+      "original_average": 65.0,
+      "log_percentage": 7.3,
+      "rank": 21
+    },
+    {
+      "model_name": "jamba-reasoning-3b",
+      "median_value": 47,
+      "low_deviation_euros": null,
+      "high_deviation_euros": null,
+      "original_average": 225.0,
+      "log_percentage": 6.7,
+      "rank": 22
+    },
+    {
+      "model_name": "phi-4-mini-instruct",
+      "median_value": 41,
+      "low_deviation_euros": 10,
+      "high_deviation_euros": 1,
+      "original_average": 157.0,
+      "log_percentage": 6.0,
+      "rank": 23
+    },
+    {
+      "model_name": "granite-4.0-h-micro",
+      "median_value": 36,
+      "low_deviation_euros": 7,
+      "high_deviation_euros": 13,
+      "original_average": 82.0,
+      "log_percentage": 5.5,
+      "rank": 24
+    },
+    {
+      "model_name": "llama-3.2-3b-instruct",
+      "median_value": 33,
+      "low_deviation_euros": 1,
+      "high_deviation_euros": 20,
+      "original_average": 411.0,
+      "log_percentage": 5.1,
+      "rank": 25
+    },
+    {
+      "model_name": "qwen3-1.7b",
+      "median_value": 31,
+      "low_deviation_euros": 6,
+      "high_deviation_euros": 7,
+      "original_average": 104.0,
+      "log_percentage": 4.9,
+      "rank": 26
+    },
+    {
+      "model_name": "ministral-8b-instruct-2410",
+      "median_value": 20,
+      "low_deviation_euros": 0,
+      "high_deviation_euros": 0,
+      "original_average": 60.0,
+      "log_percentage": 3.4,
+      "rank": 27
+    }
+  ],
+  "global_max_value": 19852.85714285714
+}

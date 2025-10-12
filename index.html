@@ -7,58 +7,9 @@
     <link rel="stylesheet" href="leaderboard/grid.css">
     <link rel="stylesheet" href="leaderboard/styles.css">
     <style>
-        /* Reduce overall size on mobile devices */
-        @media (max-width: 768px) {
-            body {
-                font-size: 0.8em;
-            }
-            
-            .rank {
-                width: 32px !important;
-                height: 32px !important;
-            }
-            
-            .model-name {
-                min-width: 160px !important;
-            }
-            
-            .score-main {
-                font-size: 0.7rem !important;
-            }
-            
-            .score-percentage {
-                font-size: 0.7rem !important;
-            }
-            
-            .score-bar-container {
-                height: 11px !important;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            body {
-                font-size: 0.7em;
-            }
-            
-            .rank {
-                width: 28px !important;
-                height: 28px !important;
-            }
-            
-            .model-name {
-                min-width: 140px !important;
-            }
-            
-            .score-main {
-                font-size: 0.65rem !important;
-            }
-            
-            .score-percentage {
-                font-size: 0.65rem !important;
-            }
-            
-            .score-bar-container {
-                height: 10px !important;
+        @media (max-width: 640px) {            
+            cell {
+                grid-column: span 8 !important;
             }
         }
     </style>
@@ -106,13 +57,13 @@
         
         // Function to populate the leaderboard
         async function populateLeaderboard() {
-            const leaderboardData = await loadLeaderboardData();
-            if (!leaderboardData || leaderboardData.length === 0) {
+            const dataObject = await loadLeaderboardData();
+            if (!dataObject || !dataObject.models || dataObject.models.length === 0) {
                 console.error('No leaderboard data found');
                 document.getElementById('leaderboard-tbody').innerHTML = '<tr><td colspan="2">No data available. Please run the generate_leaderboard.py script in the leaderboard folder to create leaderboard_data.json</td></tr>';
                 return;
             }
-            
+            const leaderboardData = dataObject.models;
             const tbody = document.getElementById('leaderboard-tbody');
             tbody.innerHTML = ''; // Clear existing content
             
@@ -154,12 +105,12 @@
                 }
                 
                 // Create a simple score display
-                const formattedScore = formatNumberWithNbsp(item.bar_value);
+                const formattedScore = formatNumberWithNbsp(item.median_value);
                 
                 // Check if we have deviation data (models with multiple results)
                 if (item.low_deviation_euros !== null && item.high_deviation_euros !== null) {
                     // Calculate the positions of error bars based on the bar value +/- euro deviations
-                    const barValue = item.bar_value;
+                    const barValue = item.median_value;
                     const lowValue = Math.max(0, barValue - item.low_deviation_euros);
                     const highValue = Math.min(maxValue, barValue + item.high_deviation_euros); // Cap at fixed max for display
                     const uncappedHighValue = barValue + item.high_deviation_euros; // Actual uncapped value for tooltip
@@ -185,7 +136,7 @@
                     const errorBarLeft = Math.max(0, lowBarPos);
                     
                     // Format the detailed deviation for the tooltip (no separators in tooltip) - use actual uncapped values
-                    const detailedDeviation = `Score: ${item.bar_value}€\nRange: ${Math.max(0, item.bar_value - item.low_deviation_euros)}€ to ${uncappedHighValue}€`;
+                    const detailedDeviation = `Score: ${item.median_value}€\nRange: ${Math.max(0, item.median_value - item.low_deviation_euros)}€ to ${uncappedHighValue}€`;
                     
                     row.innerHTML = `
                         <td style="padding: 0;">
