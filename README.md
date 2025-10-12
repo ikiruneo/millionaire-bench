@@ -1,13 +1,10 @@
 # "Wer wird Millionär?" LLM Benchmark
 
-I have created a benchmark for german "who wants to be millionaire" questions. There are 45x15 questions, all 45 rounds go from easy to hard and all tested models ran through all 45 rounds and got kicked out of a round if the answer was wrong, keeping the current winnings. No jokers.
+A benchmark using questions from the German version of "Who Wants to Be a Millionaire?". It consists of 45 games, each with 15 questions of increasing difficulty. All tested models played through the 45 games at least once. Each game is ended with the first incorrect answer, and the winnings at that point are recorded. No jokers were used.
 
-The first few questions are often word-play and idioms questions needing great understanding of the german language. These proved to be very hard for most llm's but are easily solvable by the average german. Once the first few questions were solved the models had an easier time answering.
+The initial questions often involve wordplay and idioms, requiring a deep understanding of the German language. These proved challenging for most LLMs, though they are easily solvable by the average German. Once past these early hurdles, the models generally found the subsequent questions easier to answer.
 
-I am a bit limited with the selection of llm's since i run them on my framework laptop 13 (amd ryzen 5 7640u with 32 gb ram), so I mainly used smaller llm's. I tried to use optimal model settings and included them in the results.json, let me know if they could be improved. All models are quant Q4_K_M.
-
-I have close to no python coding ability so the main script was created with qwen3-coder. The project (with detailed results for each model, and the questionnaire) is open souce and available on github.
-
+My selection of LLMs is limited as I ran them on my Framework Laptop 13 (AMD Ryzen 5 7640U with 32 GB of RAM), which necessitated the use of smaller models. All models were Q4_K_M quantized and, if available, recommended settings were used.
 ## Usage
 
 1. The benchmark.py should work with local LLM servers like LM Studio and any other OpenAI API compatible URL.
@@ -25,41 +22,40 @@ Note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 ## Benchmark Results
 
 ### Local
+https://millionaire-bench.referi.de/
 
-| Model Name             | Total | Active | Thinking | Wins |  Median |     |
-| :--------------------- | ----: | -----: | -------: | ---: | ------: | --- |
-| mistral-small-3.2      |  24 B |   24 B |       No |    2 | 9 694 € |     |
-| qwen3-30b-a3b-2507     |  30 B |    3 B |       No |    5 | 9 000 € |     |
-| gemma-3-27b            |  27 B |   27 B |       No |    0 | 1 256 € |     |
-| gpt-oss-20b-low        |  21 B |    4 B |      Yes |    3 | 1 256 € |     |
-| phi-4                  |  14 B |   14 B |       No |    1 | 1 239 € |     |
-| hermes-4-14b           |  14 B |   14 B |       No |    0 |   896 € |     |
-| gemma-3-12b            |  12 B |   12 B |       No |    1 |   823 € |     |
-| qwen3-4b-thinking-2507 |   4 B |    4 B |      Yes |    1 |   499 € |     |
-| mistral-nemo-2407      |  12 B |   12 B |       No |    1 |   436 € |     |
-| granite-3.2-8b         |   8 B |    8 B |       No |    0 |   204 € |     |
-| granite-4.0-h-small    |  32 B |    9 B |       No |    0 |   177 € |     |
-| apertus:8b             |   8 B |    8 B |       No |    0 |   167 € |     |
-| llama-3.1-8b-instruct  |   8 B |    8 B |       No |    0 |   137 € |     |
-| gemma-3n-e4b           |   8 B |    4 B |       No |    0 |   121 € |     |
-| lfm2:8b-a1b            |   8 B |  1.5 B |       No |    0 |    90 € |     |
-| lfm2-2.6b              | 2.6 B |  2.6 B |       No |    0 |    87 € |     |
-| qwen3-4b-2507          |   4 B |    4 B |       No |    0 |    86 € |     |
-| qwen3-1.7b-thinking    | 1.7 B |  1.7 B |      Yes |    0 |    71 € |     |
-| granite-4-h-tiny       |   7 B |    1 B |       No |    0 |    66 € |     |
-| gemma-3-4b             |   4 B |    4 B |       No |    0 |    53 € |     |
-| ai21-jamba-3b          |   3 B |    3 B |      Yes |    0 |    47 € |     |
-| phi-4-mini-instruct    |   3 B |    3 B |       No |    0 |    41 € |     |
-| granite-4.0-h-micro    |   3 B |    3 B |       No |    0 |    36 € |     |
-| llama-3.2-3b-instruct  |   3 B |    3 B |       No |    0 |    33 € |     |
-| qwen3-1.7b             | 1.7 B |  1.7 B |       No |    0 |    31 € |     |
-| ministral-8b-2410      |   8 B |    8 B |       No |    0 |    20 € |     |
-
-*Average* is the median average out of five runs, often less runs for big or thinking models due to resource limitation (one run can take multiple hours). Human average winnings of the first 999 shows is 36 000€ ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
+| Model Name             | Total | Active | Thinking | Wins |  Median |
+| :--------------------- | ----: | -----: | -------: | ---: | ------: |
+| mistral-small-3.2      |  24 B |   24 B |       No |    2 | 9 694 € |
+| qwen3-30b-a3b-2507     |  30 B |    3 B |       No |    5 | 9 000 € |
+| gemma-3-27b            |  27 B |   27 B |       No |    0 | 1 256 € |
+| gpt-oss-20b-low        |  21 B |    4 B |      Yes |    3 | 1 256 € |
+| phi-4                  |  14 B |   14 B |       No |    1 | 1 239 € |
+| hermes-4-14b           |  14 B |   14 B |       No |    0 |   896 € |
+| gemma-3-12b            |  12 B |   12 B |       No |    1 |   823 € |
+| qwen3-4b-thinking-2507 |   4 B |    4 B |      Yes |    1 |   499 € |
+| mistral-nemo-2407      |  12 B |   12 B |       No |    1 |   436 € |
+| granite-3.2-8b         |   8 B |    8 B |       No |    0 |   204 € |
+| granite-4.0-h-small    |  32 B |    9 B |       No |    0 |   177 € |
+| apertus:8b             |   8 B |    8 B |       No |    0 |   167 € |
+| llama-3.1-8b-instruct  |   8 B |    8 B |       No |    0 |   137 € |
+| gemma-3n-e4b           |   8 B |    4 B |       No |    0 |   121 € |
+| lfm2:8b-a1b            |   8 B |  1.5 B |       No |    0 |    90 € |
+| lfm2-2.6b              | 2.6 B |  2.6 B |       No |    0 |    87 € |
+| qwen3-4b-2507          |   4 B |    4 B |       No |    0 |    86 € |
+| qwen3-1.7b-thinking    | 1.7 B |  1.7 B |      Yes |    0 |    71 € |
+| granite-4-h-tiny       |   7 B |    1 B |       No |    0 |    66 € |
+| gemma-3-4b             |   4 B |    4 B |       No |    0 |    53 € |
+| nemotron-nano-9b-v2    |   9 B |    9 B |       No |    0 |    53 € |
+| ai21-jamba-3b          |   3 B |    3 B |      Yes |    0 |    47 € |
+| phi-4-mini-instruct    |   3 B |    3 B |       No |    0 |    41 € |
+| granite-4.0-h-micro    |   3 B |    3 B |       No |    0 |    36 € |
+| llama-3.2-3b-instruct  |   3 B |    3 B |       No |    0 |    33 € |
+| qwen3-1.7b             | 1.7 B |  1.7 B |       No |    0 |    31 € |
+| ministral-8b-2410      |   8 B |    8 B |       No |    0 |    20 € |
+A model's Median Score is calculated from the average winnings of a test run, after discarding the top 5 and bottom 5 outlier rounds. The final score shown is the median (middle value) of all test runs for that model. For models tested multiple times, the range between their best and worst scores is also shown to indicate performance consistency. Human average winnings of the first 999 shows is 36 000€ ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
 
 ### Cloud
-
-Of course, here is the updated and reordered table:
 
 | Model Name             |  Total | Active | Wins |    Median |
 | :--------------------- | -----: | -----: | ---: | --------: |
@@ -98,24 +94,7 @@ Of course, here is the updated and reordered table:
 | phi-4                  |   14 B |   14 B |    0 |     204 € |
 | llama-3.2-3b-instruct  |    3 B |    3 B |    0 |      50 € |
 | llama-3.2-1b-instruct  |    1 B |    1 B |    0 |      34 € |
-
-1 run only. Thanks to the reddit users `FullOf_Bad_Ideas` and `Pauli1_Go` for their help.
-
-### Different quant tests
-
-| Model Name             | Q4_K_M | Q8_0 | Difference |
-| ---------------------- | ------ | ---- | ---------- |
-| qwen3-4b-instruct-2507 | 624€   | 705€ | +13%       |
-| gemma-3-4b             | 103€   | 141€ | +36%       |
-| llama-3.2-3b-instruct  | 104€   | 78€  | -25%       |
-
-Ran every test 3 times and picked the median. Results are very inconsistent for small models (±50%)
-
-## Rules
-
-- 45 unique rounds
-- if lost, current winnings are kept
-- no jokers
+One run only. Thanks to the reddit users `FullOf_Bad_Ideas` and `Pauli1_Go` for their help.
 
 ## Resources
 
