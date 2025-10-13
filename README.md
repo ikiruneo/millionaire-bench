@@ -25,7 +25,7 @@ https://millionaire-bench.referi.de/
 
 preview:
 
-![[preview.png]]
+![Benchmark Leaderboard](http://github.com/ikiruneo/millionaire-bench/blob/main/leaderboard/preview.png?raw=true)
 
 Human average winnings of the first 999 shows is 36 000€ ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
 
