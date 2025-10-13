@@ -4,10 +4,12 @@ import re
 import math
 from collections import defaultdict
 from statistics import mean, stdev
+
 def get_model_name_from_filename(filename):
     name = filename.replace('result_', '').replace('.json', '')
     base_name = re.sub(r'_(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20)$', '', name)
     return base_name
+
 def convert_amount_to_numeric(amount_str):
     numeric_str = amount_str.replace('€', '')
     numeric_str = numeric_str.replace('.', '')
@@ -15,6 +17,7 @@ def convert_amount_to_numeric(amount_str):
         return float(numeric_str)
     except ValueError:
         return 0.0
+
 def map_correct_answers_to_prize(correct_answers):
     prize_values = [
         "0€", "50€", "100€", "200€", "300€", "500€", 
@@ -23,6 +26,7 @@ def map_correct_answers_to_prize(correct_answers):
     ]
     index = min(int(correct_answers), 15) if correct_answers >= 0 else 0
     return prize_values[index]
+
 def convert_prize_to_numeric(prize_str):
     numeric_str = prize_str.replace('€', '')
     numeric_str = numeric_str.replace('.', '')
@@ -30,14 +34,15 @@ def convert_prize_to_numeric(prize_str):
         return int(numeric_str)
     except ValueError:
         return 0
+
 def calculate_log_percentage(value):
     a = 50.00500050005
     max_value = 1_000_000
     log_value = (math.log(value + a) - math.log(a)) / (math.log(max_value + a) - math.log(a)) * 100
     return max(0, min(100, log_value))  
-def main():
-    results_dir = '../results'
-    print("Finding the median result file for each model based on average winnings...")
+
+def process_results_directory(results_dir):
+    print(f"Finding the median result file for each model in {results_dir} based on average winnings...")
     model_files = defaultdict(list)
     for filename in os.listdir(results_dir):
         if filename.endswith('.json') and filename.startswith('result_') and not os.path.isdir(os.path.join(results_dir, filename)):
@@ -50,6 +55,7 @@ def main():
                 except json.JSONDecodeError:
                     print(f"Error decoding JSON in file: {filename}")
                     continue
+
     leaderboard_data = []
     all_average_scores = []  
     for model_name, files in model_files.items():
@@ -97,12 +103,8 @@ def main():
                     high_deviation_euros = None
             else:
                 bar_value = 0
-                low_deviation_percent = None
-                high_deviation_percent = None
         else:
             bar_value = 0
-            low_deviation_percent = None
-            high_deviation_percent = None
         original_average = 0
         if files:
             try:
@@ -122,23 +124,56 @@ def main():
             'log_percentage': float(f"{calculate_log_percentage(round(bar_value)):.1f}")  
         }
         leaderboard_data.append(model_info)
-    global_max_value = max(all_average_scores) if all_average_scores else 1000000  
+
+    global_max_value = max(all_average_scores) if all_average_scores else 1_000_000  
     sorted_leaderboard = sorted(leaderboard_data, key=lambda x: x['median_value'], reverse=True)
     for i, model_info in enumerate(sorted_leaderboard):
         model_info['rank'] = i + 1
-    final_data = {
+    return {
         'models': sorted_leaderboard,
         'global_max_value': global_max_value
     }
+
+def main():
+    # Process local models
+    local_data = process_results_directory('../results')
+    with open('leaderboard_local.json', 'w', encoding='utf-8') as f:
+        json.dump(local_data, f, indent=2, ensure_ascii=False)
+    print(f"Local leaderboard data saved to leaderboard_local.json")
+    print(f"Processed {len(local_data['models'])} local models")
+    print(f"Global maximum value: {local_data['global_max_value']:,}€")
+
+    # Process cloud models
+    cloud_data = process_results_directory('../results/cloud')
+    with open('leaderboard_cloud.json', 'w', encoding='utf-8') as f:
+        json.dump(cloud_data, f, indent=2, ensure_ascii=False)
+    print(f"Cloud leaderboard data saved to leaderboard_cloud.json")
+    print(f"Processed {len(cloud_data['models'])} cloud models")
+    print(f"Global maximum value: {cloud_data['global_max_value']:,}€")
+
+    # Also create the original combined file for backward compatibility
+    all_models = local_data['models'] + cloud_data['models']
+    all_models.sort(key=lambda x: x['median_value'], reverse=True)
+    for i, model_info in enumerate(all_models):
+        model_info['rank'] = i + 1
+    combined_data = {
+        'models': all_models,
+        'global_max_value': max(local_data['global_max_value'], cloud_data['global_max_value'])
+    }
     with open('leaderboard_data.json', 'w', encoding='utf-8') as f:
-        json.dump(final_data, f, indent=2, ensure_ascii=False)
-    print(f"Leaderboard data saved to leaderboard_data.json")
-    print(f"Processed {len(sorted_leaderboard)} models")
-    print(f"Global maximum value: {global_max_value:,}€")
-    print(f"\nAll {len(sorted_leaderboard)} processed models by median value of averages:")
-    for i, model_info in enumerate(sorted_leaderboard):
+        json.dump(combined_data, f, indent=2, ensure_ascii=False)
+    print(f"Combined leaderboard data saved to leaderboard_data.json")
+    print(f"Processed {len(all_models)} total models")
+    print(f"\nLocal models by median value of averages:")
+    for i, model_info in enumerate(local_data['models']):
         low_dev = model_info['low_deviation_euros'] if model_info['low_deviation_euros'] is not None else 'N/A'
         high_dev = model_info['high_deviation_euros'] if model_info['high_deviation_euros'] is not None else 'N/A'
         print(f"{i+1}. {model_info['model_name']}: median value={model_info['median_value']:.0f}, deviations: -{low_dev}€/+{high_dev}€")
+    print(f"\nCloud models by median value of averages:")
+    for i, model_info in enumerate(cloud_data['models']):
+        low_dev = model_info['low_deviation_euros'] if model_info['low_deviation_euros'] is not None else 'N/A'
+        high_dev = model_info['high_deviation_euros'] if model_info['high_deviation_euros'] is not None else 'N/A'
+        print(f"{i+1}. {model_info['model_name']}: median value={model_info['median_value']:.0f}, deviations: -{low_dev}€/+{high_dev}€")
+
 if __name__ == "__main__":
     main()

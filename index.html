@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>"Wer wird Millionär?" LLM Benchmark</title>
     <link rel="stylesheet" href="leaderboard/grid.css">
     <link rel="stylesheet" href="leaderboard/styles.css">
@@ -34,24 +35,76 @@
     </cell>
 
     <cell span=2>
-        <h2>Performance Comparison</h2>
+        <h2>Performance<br><a href="#" id="local-link" class="selected">Local</a> / <a href="#" id="cloud-link" class="unselected">Cloud</a></h2>
+        <div class="color-legend" id="local-legend">
+            <div class="legend-item">
+                <div class="color-marker"></div>
+                <span>Reasoning</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-marker non-thinking"></div>
+                <span>Non-Reasoning</span>
+            </div>
+        </div>
+        <div class="color-legend" id="cloud-legend" style="display: none;">
+            <div class="legend-item">
+                <div class="color-marker open-source"></div>
+                <span>Open Weight</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-marker closed-source"></div>
+                <span>Closed Weight</span>
+            </div>
+        </div>
     </cell>
 
     <cell span=6>
         <table class="performance-table" style="width: 100%; table-layout: fixed;">
             <tbody id="leaderboard-tbody">
             </tbody>
-        </table>
+        </table><br>
         <p>A model's Performance Score is calculated from the average winnings of a test run, after discarding the top 5 and bottom 5 outlier rounds. The final score shown is the median (middle value) of all test runs for that model. For models tested multiple times, the range between their best and worst scores is also shown to indicate performance consistency.</p>
         <p>My selection of LLMs is limited as I ran them on my Framework Laptop 13 (AMD Ryzen 5 7640U with 32 GB of RAM), which necessitated the use of smaller models. All models were Q4_K_M quantized and, if available, recommended settings were used.</p><p>The entire project, including detailed results for each model and the questionnaire, is open source and available on <a href="https://github.com/ikiruneo/millionaire-bench">GitHub</a>.</p>
     </cell>
     
     <script>
+        // Current leaderboard type
+        let currentLeaderboard = 'local'; // Default to local
+        
+        // Load color mapping from JSON file
+        async function loadColorMapping() {
+            try {
+                const response = await fetch('leaderboard/color_mapping.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Error loading color mapping:', error);
+                // Return a default mapping if loading fails
+                return {
+                    "local_instruct": [],
+                    "closed_source": [],
+                    "local_thinking": [],
+                    "open_source": []
+                };
+            }
+        }
+        
         // Load leaderboard data from JSON file
         async function loadLeaderboardData() {
             try {
+                let fileName;
+                if (currentLeaderboard === 'local') {
+                    fileName = 'leaderboard/leaderboard_local.json';
+                } else if (currentLeaderboard === 'cloud') {
+                    fileName = 'leaderboard/leaderboard_cloud.json';
+                } else {
+                    fileName = 'leaderboard/leaderboard_data.json'; // fallback to combined
+                }
+                
                 // Try to load the JSON file using fetch from the same directory
-                const response = await fetch('leaderboard/leaderboard_data.json');
+                const response = await fetch(fileName);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -64,10 +117,15 @@
         
         // Function to populate the leaderboard
         async function populateLeaderboard() {
-            const dataObject = await loadLeaderboardData();
+            // Load both leaderboard data and color mapping
+            const [dataObject, colorMapping] = await Promise.all([
+                loadLeaderboardData(),
+                loadColorMapping()
+            ]);
+            
             if (!dataObject || !dataObject.models || dataObject.models.length === 0) {
                 console.error('No leaderboard data found');
-                document.getElementById('leaderboard-tbody').innerHTML = '<tr><td colspan="2">No data available. Please run the generate_leaderboard.py script in the leaderboard folder to create leaderboard_data.json</td></tr>';
+                document.getElementById('leaderboard-tbody').innerHTML = '<tr><td colspan="2">No data available. Please run the generate_leaderboard.py script in the leaderboard folder to create leaderboard_local.json and leaderboard_cloud.json</td></tr>';
                 return;
             }
             const leaderboardData = dataObject.models;
@@ -79,6 +137,54 @@
             const a = 50.00500050005; // Constant for logarithmic scale
             const logMaxValue = Math.log(maxValue + a) - Math.log(a); // Max value for scaling
             
+            // Function to get color class based on color mapping
+            function getColorClass(modelName, colorMapping) {
+                const lowerModelName = modelName.toLowerCase();
+                
+                // Map category names to hex colors
+                const categoryToColor = {
+                    "local_instruct": "#CC5E21",
+                    "local_thinking": "#0294C9", 
+                    "closed_source": "#7648C9",
+                    "open_source": "#1FA88C"
+                };
+                
+                // Check each category for exact matches first
+                for (const [category, modelList] of Object.entries(colorMapping)) {
+                    if (Array.isArray(modelList)) {
+                        for (const model of modelList) {
+                            if (lowerModelName === model.toLowerCase()) {
+                                // If the model is in this category, return the color class for that category
+                                const hexColor = categoryToColor[category];
+                                if (hexColor) {
+                                    return `color-${hexColor.replace('#', '')}`;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                // If no exact match found, try partial matches as fallback
+                for (const [category, modelList] of Object.entries(colorMapping)) {
+                    if (Array.isArray(modelList)) {
+                        for (const model of modelList) {
+                            if (lowerModelName.includes(model.toLowerCase())) {
+                                // If the model contains this category's model name, return the color class for that category
+                                const hexColor = categoryToColor[category];
+                                if (hexColor) {
+                                    return `color-${hexColor.replace('#', '')}`;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                // Default fallback color
+                return 'default-color';
+            }
+            
             leaderboardData.forEach(item => {
                 const row = document.createElement('tr');
                 
@@ -86,25 +192,8 @@
                 // Using the log_percentage from the Python script (pre-calculated)
                 const barWidth = item.log_percentage;
                 
-                // Determine bar color based on model family - only major distributors get distinct colors
-                let barColorClass = 'default-color'; // Default gray color for all models
-                const modelName = item.model_name.toLowerCase();
-                
-                // Assign specific colors to designated distributors
-                if (modelName.includes('gemma') || modelName.includes('google')) {
-                    barColorClass = 'gemma-color';  // Google/Gemma models - green
-                } else if (modelName.includes('mistral') || modelName.includes('magistral') || modelName.includes('ministral')) {
-                    barColorClass = 'mistral-color';  // Mistral/Magistral/Ministral models - orange
-                } else if (modelName.includes('granite') || modelName.includes('ibm')) {
-                    barColorClass = 'granite-color';  // IBM/Granite models - blue
-                } else if (modelName.includes('qwen')) {
-                    barColorClass = 'qwen-color';  // Qwen models - red
-                } else if (modelName.includes('llama') || modelName.includes('meta')) {
-                    barColorClass = 'llama-color';  // Meta/Llama models - pink
-                } else if (modelName.includes('phi') || modelName.includes('microsoft')) {
-                    barColorClass = 'phi-color';  // Microsoft/Phi models - purple
-                }
-                // All other models keep the default gray color
+                // Determine bar color based on model name using color mapping
+                const barColorClass = getColorClass(item.model_name, colorMapping);
                 
                 // Create a custom function to format numbers with non-breaking spaces
                 function formatNumberWithNbsp(num) {
@@ -209,8 +298,86 @@
             });
         }
 
+        // Function to switch between local and cloud leaderboards
+        function switchLeaderboard(type) {
+            currentLeaderboard = type;
+            
+            // Update the selected/unselected links
+            const localLink = document.getElementById('local-link');
+            const cloudLink = document.getElementById('cloud-link');
+            
+            if (type === 'local') {
+                if (localLink) {
+                    localLink.className = 'selected';
+                }
+                if (cloudLink) {
+                    cloudLink.className = 'unselected';
+                }
+            } else if (type === 'cloud') {
+                if (localLink) {
+                    localLink.className = 'unselected';
+                }
+                if (cloudLink) {
+                    cloudLink.className = 'selected';
+                }
+            }
+            
+            // Show the appropriate legend based on the leaderboard type
+            const localLegend = document.getElementById('local-legend');
+            const cloudLegend = document.getElementById('cloud-legend');
+            
+            if (type === 'local') {
+                if (localLegend) {
+                    localLegend.style.display = 'flex';
+                }
+                if (cloudLegend) {
+                    cloudLegend.style.display = 'none';
+                }
+            } else if (type === 'cloud') {
+                if (localLegend) {
+                    localLegend.style.display = 'none';
+                }
+                if (cloudLegend) {
+                    cloudLegend.style.display = 'flex';
+                }
+            }
+            
+            // Reload the leaderboard with the new data
+            populateLeaderboard();
+        }
+        
         // Run when the page loads
-        document.addEventListener('DOMContentLoaded', populateLeaderboard);
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show the default legend (local) on initial load
+            const localLegend = document.getElementById('local-legend');
+            const cloudLegend = document.getElementById('cloud-legend');
+            if (localLegend) {
+                localLegend.style.display = 'flex';
+            }
+            if (cloudLegend) {
+                cloudLegend.style.display = 'none';
+            }
+            
+            populateLeaderboard();
+            
+            // Add event listeners to the links
+            const localLink = document.getElementById('local-link');
+            const cloudLink = document.getElementById('cloud-link');
+            
+            if (localLink) {
+                localLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switchLeaderboard('local');
+                });
+            }
+            
+            if (cloudLink) {
+                cloudLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switchLeaderboard('cloud');
+                });
+            }
+        });
         
         // Handle tooltip display
         document.addEventListener('mouseover', function(e) {
