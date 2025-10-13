@@ -6,8 +6,240 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>"Wer wird Millionär?" LLM Benchmark</title>
     <link rel="stylesheet" href="leaderboard/grid.css">
-    <link rel="stylesheet" href="leaderboard/styles.css">
     <style>
+        :root {
+    --bg-color: #000000;
+    --text-color: #d0d0d0;
+    --heading-color: #d0d0d0;
+    --link-color: #ffffff;
+    --border-color: #333333;
+    --rank-bg: #2a2a2a;
+    --bar-bg: #333333;
+    --new-tag-bg: #d1d1d1;
+    --new-tag-text: #000000;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    margin: 2rem auto;
+    padding: 2rem;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+h1, h2{
+    font-size: 1.1rem;
+    color: var(--heading-color);
+    font-weight: 600;
+    margin: 0 0 15px 0; /* Added more bottom margin */
+}
+
+p {
+    line-height: 1.7;
+    margin: 0 0 14px 0;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.selected {
+    text-decoration: none;
+    color: var(--heading-color)
+}
+
+.unselected {
+    text-decoration: none;
+    color: #666
+}
+
+.performance-table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.performance-table td {
+    padding: 1px 12px;
+    vertical-align: middle;
+}
+
+.rank {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: 400;
+    background-color: var(--rank-bg);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.model-name {
+    font-weight: 400;
+    color: var(--heading-color);
+    font-size: 0.9rem;
+}
+
+.model-name-text {
+    opacity: 0.7;
+}
+
+.score-cell {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.score-bar-container {
+    flex-grow: 1;
+    height: 14px;
+    background-color: var(--bar-bg);
+    border-radius: 3px;
+    position: relative;
+    overflow: visible;
+}
+
+.score-bar {
+    height: 100%;
+    border-radius: 3px;
+    position: relative;
+}
+
+/* New color classes based on color mapping */
+.score-bar.color-CC5E21 { background-color: #CC5E21; }
+.score-bar.color-7648C9 { background-color: #7648C9; }
+.score-bar.color-0294C9 { background-color: #0294C9; }
+.score-bar.color-1FA88C { background-color: #1FA88C; }
+.score-bar.default-color { background-color: #666666; }
+
+.error-margin {
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    background-color: var(--heading-color);
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.error-margin::before,
+.error-margin::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 8px;
+    background-color: var(--heading-color);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.error-margin::before { 
+    left: 0;
+}
+
+.error-margin::after { 
+    right: 0;
+}
+
+.error-margin.error-margin-capped::after {
+    display: none;
+}
+
+.score-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: monospace, sans-serif;
+    font-size: 0.75rem;
+    color: var(--heading-color);
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+.score-main {
+    font-weight: 400;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: var(--rank-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    color: var(--text-color);
+    z-index: 1000;
+    white-space: pre-line;
+    pointer-events: none;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip.visible {
+    opacity: 1;
+    animation: fadeIn 0.2s ease-out, zoomIn 0.2s ease-out;
+}
+
+.tooltip.hidden {
+    opacity: 0;
+}
+
+.tooltip-trigger {
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: translateX(-50%) scale(0.95); }
+    to { transform: translateX(-50%) scale(1); }
+}
+
+.color-legend {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    opacity: 0.7; /* Lower opacity to make it less prominent */
+}
+
+.color-marker {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+    background-color: #0294C9; /* Default to thinking blue */
+}
+
+.color-marker.non-thinking {
+    background-color: #CC5E21; /* Non-thinking orange */
+}
+
+.color-marker.closed-source {
+    background-color: #7648C9; /* Closed source purple */
+}
+
+.color-marker.open-source {
+    background-color: #1FA88C; /* Open source green */
+}
+
         @media (max-width: 640px) {            
             cell {
                 grid-column: span 8 !important;
