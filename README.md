@@ -23,9 +23,7 @@ Note: `benchmark_2.py` offers a more advanced implementation that goes right ove
 
 https://millionaire-bench.referi.de/
 
-preview:
-
-![Benchmark Leaderboard](http://github.com/ikiruneo/millionaire-bench/blob/main/leaderboard/preview.png?raw=true)
+[![Leaderboard Preview](http://github.com/ikiruneo/millionaire-bench/blob/main/leaderboard/preview.png?raw=true "Leaderboard Preview")](https://millionaire-bench.referi.de/)
 
 Human average winnings of the first 999 shows is 36 000€ ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)).
 
