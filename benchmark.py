@@ -9,14 +9,14 @@ import itertools
 from statistics import median
 
 SYSTEM_PROMPT = "Du bist ein Kandidat bei 'Wer wird Millionär'. Wähle die richtige Antwort aus den vier Optionen. Antworte AUSCHLIESSLICH mit einem einzigen Buchstaben: A, B, C oder D. Keine andere Erklärung, nur der Buchstabe! Beispiel: Wenn A die richtige Antwort ist, antworte nur: A"
-SERVER_URL = "http://localhost:8000"
+SERVER_URL = "http://localhost:1234" # e.g. https://openrouter.ai/api (/v1 not needed).
 API_KEY = ""
-MODEL_NAME = "lfm2:8b-a1b"
-TEMPERATURE = 0.3
+MODEL_NAME = "qwen/qwen3-1.7b"
+TEMPERATURE = 0.8
 TOP_K = 40
 TOP_P = 0.95
-FAIL_CHARS = "123456789ABCDEF"
 
+FAIL_CHARS = "123456789ABCDEF"
 PRIZE_LEVELS = ["50€", "100€", "200€", "300€", "500€", "1.000€", "2.000€", "4.000€", "8.000€", "16.000€", "32.000€", "64.000€", "125.000€", "500.000€", "1.000.000€"]
 PRIZE_AMOUNTS = {i + 1: amount for i, amount in enumerate(PRIZE_LEVELS)}
 AMOUNT_MAPPING_INT = {amount: int(amount.replace('€', '').replace('.', '')) for amount in PRIZE_LEVELS}
@@ -38,8 +38,8 @@ model_name = MODEL_NAME
 header = f"""
 Wer wird Millionär? Benchmark
 =====================================
-Model:  {model_name}
-URL:    {SERVER_URL}
+Model:    {model_name}
+URL:      {SERVER_URL}
 Sampling: T:{TEMPERATURE}, P:{TOP_P}, K:{TOP_K}
 -------------------------------------"""
 print(header)
@@ -110,21 +110,21 @@ for question_num in range(1, 46):
             else:
                 fail_char = FAIL_CHARS[current_level - 1]
                 print(f"{fail_char}]", flush=True)
-                print(f"└─ Failed at Level {current_level}")
-                q_limit = 70
-                display_q = f"{question_text[:q_limit]}..." if len(question_text) > q_limit else question_text
-                print(f"   ├─ Q: {display_q}")
-                print(f"   ├─ LLM Answer: '{llm_answer}'")
                 if verbose_mode:
-                    print(f"   ├─ Full Response: '{full_response}'")
-                print(f"   └─ Correct is: '{correct_letter}'")
+                    print(f"└─ Failed at Level {current_level}")
+                    q_limit = 70
+                    display_q = f"{question_text[:q_limit]}..." if len(question_text) > q_limit else question_text
+                    print(f"   ├─ Q: {display_q}")
+                    print(f"   ├─ LLM Answer: '{llm_answer}'")
+                    print(f"   ├─ Correct is: '{correct_letter}'")
+                    print(f"   └─ Full Response: '{full_response}'")
                 break
         except ValueError:
             print("E]", flush=True)
-            q_limit = 50
-            display_q = f"{question_text[:q_limit]}..." if len(question_text) > q_limit else question_text
-            print(f"└─ Error: Correct answer '{correct_answer}' not in options for Q: {display_q}")
             if verbose_mode:
+                q_limit = 50
+                display_q = f"{question_text[:q_limit]}..." if len(question_text) > q_limit else question_text
+                print(f"└─ Error: Correct answer '{correct_answer}' not in options for Q: {display_q}")
                 print(f"   └─ Full Response: '{full_response}'")
             break
             
@@ -137,17 +137,57 @@ median_amount = calculate_median_amount(results)
 million_wins = sum(1 for r in results if r["correct_answers"] == 15)
 results_data = {"model": model_name, "model_parameters": {"temperature": TEMPERATURE, "top_k": TOP_K, "top_p": TOP_P}, "rounds": results, "average_final_amount": average_amount, "median_final_amount": median_amount, "million_wins": million_wins}
 
-os.makedirs("results", exist_ok=True)
-base_filename = f"result_{model_name.replace('/', '-')}.json"
-result_filename = os.path.join("results", base_filename)
-counter = 2
-while os.path.exists(result_filename):
-    result_filename = os.path.join("results", f"{base_filename.rsplit('.', 1)[0]}_{counter}.json")
-    counter += 1
+if "localhost" in SERVER_URL or "127.0.0.1" in SERVER_URL:
+    default_dir = "local"
+else:
+    default_dir = "cloud"
 
-with open(result_filename, 'w', encoding='utf-8') as f:
-    json.dump(results_data, f, indent=2, ensure_ascii=False)
+print(f"\nServer URL suggests saving in results/{default_dir}/")
+save_choice = input(f"Save result in results/{default_dir}? (Y/n): ").strip().lower()
+
+if save_choice in ['n', 'no']:
+    save_option = input("Do not save=1, Save in results/cloud=2 (1/2): ").strip()
+    if save_option == "2":
+        results_dir = os.path.join("results", "cloud")
+    elif save_option == "1":
+        results_dir = None
+    else:
+        results_dir = os.path.join("results", "cloud")
+else:
+    results_dir = os.path.join("results", default_dir)
+
+if results_dir:
+    os.makedirs(results_dir, exist_ok=True)
+    base_filename = f"result_{model_name.replace('/', '-')}.json"
+    result_filename = os.path.join(results_dir, base_filename)
+    counter = 2
+    while os.path.exists(result_filename):
+        result_filename = os.path.join(results_dir, f"{base_filename.rsplit('.', 1)[0]}_{counter}.json")
+        counter += 1
+
+    with open(result_filename, 'w', encoding='utf-8') as f:
+        json.dump(results_data, f, indent=2, ensure_ascii=False)
+else:
+    result_filename = None
+    print("Results not saved.")
 
 print(f"\nAverage Amount: {average_amount} | Million Wins: {million_wins}")
 print(f"T:{TEMPERATURE}, K:{TOP_K}, P:{TOP_P}")
-print(f"Saved results to: {result_filename}")
+if result_filename:
+    print(f"Saved results to: {result_filename}")
+else:
+    print("Results not saved to file.")
+
+update_leaderboard = input("\nWant to update the Leaderboard? [Y/n] ").strip().lower()
+if update_leaderboard in ['y', 'yes', '']:
+    import subprocess
+    import os
+    try:
+        subprocess.run(["python", "update.py", "--interactive"], 
+                       cwd="leaderboard", check=True, stdin=None, stdout=None, stderr=None)
+        print("Leaderboard updated successfully!")
+    except subprocess.CalledProcessError as e:
+        print("Error running leaderboard update script.")
+        print("Return code:", e.returncode)
+    except FileNotFoundError:
+        print("Python not found. Please ensure Python is installed to update the leaderboard.")

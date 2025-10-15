@@ -118,13 +118,22 @@
       "rank": 13
     },
     {
+      "model_name": "sonar",
+      "median_value": 158433,
+      "low_deviation_euros": null,
+      "high_deviation_euros": null,
+      "original_average": 234337.0,
+      "log_percentage": 81.4,
+      "rank": 14
+    },
+    {
       "model_name": "gemini-2.5-flash",
       "median_value": 121760,
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "original_average": 205816.0,
       "log_percentage": 78.7,
-      "rank": 14
+      "rank": 15
     },
     {
       "model_name": "qwq-32b",
@@ -133,7 +142,7 @@
       "high_deviation_euros": null,
       "original_average": 197799.0,
       "log_percentage": 77.8,
-      "rank": 15
+      "rank": 16
     },
     {
       "model_name": "qwen3-235b-a22b-2507",
@@ -142,7 +151,7 @@
       "high_deviation_euros": null,
       "original_average": 163144.0,
       "log_percentage": 72.7,
-      "rank": 16
+      "rank": 17
     },
     {
       "model_name": "deepseek-chat-v3-0324",
@@ -151,7 +160,7 @@
       "high_deviation_euros": null,
       "original_average": 161492.0,
       "log_percentage": 72.4,
-      "rank": 17
+      "rank": 18
     },
     {
       "model_name": "llama-4-maverick",
@@ -160,7 +169,7 @@
       "high_deviation_euros": null,
       "original_average": 161411.0,
       "log_percentage": 72.4,
-      "rank": 18
+      "rank": 19
     },
     {
       "model_name": "c4ai-command-a-03-2025",
@@ -169,7 +178,7 @@
       "high_deviation_euros": null,
       "original_average": 155636.0,
       "log_percentage": 71.1,
-      "rank": 19
+      "rank": 20
     },
     {
       "model_name": "deepseek-chat-v3.1-non-reasoning",
@@ -178,16 +187,16 @@
       "high_deviation_euros": null,
       "original_average": 142581.0,
       "log_percentage": 67.6,
-      "rank": 20
+      "rank": 21
     },
     {
-      "model_name": "kimi-k2_1t_32b_active",
+      "model_name": "kimi-k2",
       "median_value": 32316,
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "original_average": 125136.0,
       "log_percentage": 65.4,
-      "rank": 21
+      "rank": 22
     },
     {
       "model_name": "gpt-4.1-mini",
@@ -196,7 +205,7 @@
       "high_deviation_euros": null,
       "original_average": 113616.0,
       "log_percentage": 65.2,
-      "rank": 22
+      "rank": 23
     },
     {
       "model_name": "gpt-4o-mini",
@@ -205,7 +214,7 @@
       "high_deviation_euros": null,
       "original_average": 74698.0,
       "log_percentage": 51.9,
-      "rank": 23
+      "rank": 24
     },
     {
       "model_name": "gpt-5-mini_minimal",
@@ -214,7 +223,7 @@
       "high_deviation_euros": null,
       "original_average": 53618.0,
       "log_percentage": 51.5,
-      "rank": 24
+      "rank": 25
     },
     {
       "model_name": "behemoth-123B-v1.2",
@@ -223,7 +232,7 @@
       "high_deviation_euros": null,
       "original_average": 84963.0,
       "log_percentage": 47.9,
-      "rank": 25
+      "rank": 26
     },
     {
       "model_name": "gemini-2.5-flash-lite",
@@ -232,7 +241,7 @@
       "high_deviation_euros": null,
       "original_average": 63107.0,
       "log_percentage": 45.1,
-      "rank": 26
+      "rank": 27
     },
     {
       "model_name": "qwen3-coder-480b",
@@ -241,7 +250,7 @@
       "high_deviation_euros": null,
       "original_average": 92022.0,
       "log_percentage": 38.4,
-      "rank": 27
+      "rank": 28
     },
     {
       "model_name": "gpt-4.1-nano",
@@ -250,7 +259,7 @@
       "high_deviation_euros": null,
       "original_average": 37838.0,
       "log_percentage": 35.8,
-      "rank": 28
+      "rank": 29
     },
     {
       "model_name": "llama-3.3-70b-instruct",
@@ -259,7 +268,7 @@
       "high_deviation_euros": null,
       "original_average": 58309.0,
       "log_percentage": 32.9,
-      "rank": 29
+      "rank": 30
     },
     {
       "model_name": "gpt-5-nano_minimal",
@@ -268,7 +277,7 @@
       "high_deviation_euros": null,
       "original_average": 2324.0,
       "log_percentage": 19.7,
-      "rank": 30
+      "rank": 31
     }
   ],
   "global_max_value": 902742.8571428572
