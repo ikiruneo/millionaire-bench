@@ -199,13 +199,22 @@
       "rank": 22
     },
     {
+      "model_name": "ling-mini-2.0",
+      "median_value": 46,
+      "low_deviation_euros": 9,
+      "high_deviation_euros": 4,
+      "original_average": 81.0,
+      "log_percentage": 6.6,
+      "rank": 23
+    },
+    {
       "model_name": "phi-4-mini-instruct",
       "median_value": 41,
       "low_deviation_euros": 10,
       "high_deviation_euros": 1,
       "original_average": 77.0,
       "log_percentage": 6.0,
-      "rank": 23
+      "rank": 24
     },
     {
       "model_name": "granite-4.0-h-micro",
@@ -214,7 +223,7 @@
       "high_deviation_euros": 13,
       "original_average": 103.0,
       "log_percentage": 5.5,
-      "rank": 24
+      "rank": 25
     },
     {
       "model_name": "llama-3.2-3b-instruct",
@@ -223,7 +232,7 @@
       "high_deviation_euros": 20,
       "original_average": 70.0,
       "log_percentage": 5.1,
-      "rank": 25
+      "rank": 26
     },
     {
       "model_name": "qwen3-1.7b",
@@ -232,7 +241,7 @@
       "high_deviation_euros": 7,
       "original_average": 72.0,
       "log_percentage": 4.9,
-      "rank": 26
+      "rank": 27
     },
     {
       "model_name": "ministral-8b-instruct-2410",
@@ -241,7 +250,7 @@
       "high_deviation_euros": 0,
       "original_average": 60.0,
       "log_percentage": 3.4,
-      "rank": 27
+      "rank": 28
     }
   ],
   "global_max_value": 19852.85714285714
