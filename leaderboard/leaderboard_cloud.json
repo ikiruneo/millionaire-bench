@@ -46,7 +46,7 @@
       "rank": 5
     },
     {
-      "model_name": "z-ai-glm-4.5",
+      "model_name": "glm-4.5",
       "median_value": 385330,
       "low_deviation_euros": null,
       "high_deviation_euros": null,
@@ -118,7 +118,7 @@
       "rank": 13
     },
     {
-      "model_name": "sonar",
+      "model_name": "perplexity-sonar",
       "median_value": 158433,
       "low_deviation_euros": null,
       "high_deviation_euros": null,
