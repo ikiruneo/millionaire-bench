@@ -6,7 +6,6 @@ import os
 import re
 import threading
 import itertools
-from statistics import median
 
 SYSTEM_PROMPT = "Du bist ein Kandidat bei 'Wer wird Millionär'. Wähle die richtige Antwort aus den vier Optionen. Antworte AUSCHLIESSLICH mit einem einzigen Buchstaben: A, B, C oder D. Keine andere Erklärung, nur der Buchstabe! Beispiel: Wenn A die richtige Antwort ist, antworte nur: A"
 SERVER_URL = "http://localhost:1234" # e.g. https://openrouter.ai/api (/v1 not needed).
@@ -22,17 +21,13 @@ PRIZE_AMOUNTS = {i + 1: amount for i, amount in enumerate(PRIZE_LEVELS)}
 AMOUNT_MAPPING_INT = {amount: int(amount.replace('€', '').replace('.', '')) for amount in PRIZE_LEVELS}
 AMOUNT_MAPPING_INT["0€"] = 0
 
-def calculate_average_amount(rounds):
-    if not rounds: return "0€"
-    total = sum(AMOUNT_MAPPING_INT[PRIZE_AMOUNTS.get(r["correct_answers"], "0€")] for r in rounds)
-    average = total / len(rounds)
-    return f"{average:,.0f}€".replace(",", ".") if average >= 1000 else f"{int(average)}€"
-
-def calculate_median_amount(rounds):
+def calculate_trimmed_mean_amount(rounds):
     if not rounds: return "0€"
     amounts = [AMOUNT_MAPPING_INT[PRIZE_AMOUNTS.get(r["correct_answers"], "0€")] for r in rounds]
-    median_amount = median(amounts)
-    return f"{median_amount:,.0f}€".replace(",", ".") if median_amount >= 1000 else f"{int(median_amount)}€"
+    sorted_amounts = sorted(amounts)
+    trimmed_amounts = sorted_amounts[5:-5]  # Remove top and bottom 5
+    trimmed_mean = sum(trimmed_amounts) / len(trimmed_amounts)
+    return f"{trimmed_mean:,.0f}€".replace(",", ".") if trimmed_mean >= 1000 else f"{int(trimmed_mean)}€"
 
 model_name = MODEL_NAME
 header = f"""
@@ -132,10 +127,12 @@ for question_num in range(1, 46):
         print("✓]", flush=True)
     
     results.append({"correct_answers": correct_answers})
-average_amount = calculate_average_amount(results)
-median_amount = calculate_median_amount(results)
+trimmed_mean_amount = calculate_trimmed_mean_amount(results)
 million_wins = sum(1 for r in results if r["correct_answers"] == 15)
-results_data = {"model": model_name, "model_parameters": {"temperature": TEMPERATURE, "top_k": TOP_K, "top_p": TOP_P}, "rounds": results, "average_final_amount": average_amount, "median_final_amount": median_amount, "million_wins": million_wins}
+results_data = {"model": model_name, "model_parameters": {"temperature": TEMPERATURE, "top_k": TOP_K, "top_p": TOP_P}, "rounds": results, "trimmed_mean": trimmed_mean_amount, "million_wins": million_wins}
+
+print(f"\nTrimmed Mean: {trimmed_mean_amount} | Million Wins: {million_wins}")
+print(f"T:{TEMPERATURE}, K:{TOP_K}, P:{TOP_P}")
 
 if "localhost" in SERVER_URL or "127.0.0.1" in SERVER_URL:
     default_dir = "local"
@@ -171,8 +168,6 @@ else:
     result_filename = None
     print("Results not saved.")
 
-print(f"\nAverage Amount: {average_amount} | Million Wins: {million_wins}")
-print(f"T:{TEMPERATURE}, K:{TOP_K}, P:{TOP_P}")
 if result_filename:
     print(f"Saved results to: {result_filename}")
 else:
