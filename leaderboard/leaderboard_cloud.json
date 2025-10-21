@@ -278,6 +278,15 @@
       "original_average": 2324.0,
       "log_percentage": 19.7,
       "rank": 31
+    },
+    {
+      "model_name": "ling-flash-2.0",
+      "median_value": 179,
+      "low_deviation_euros": null,
+      "high_deviation_euros": null,
+      "original_average": 24339.0,
+      "log_percentage": 15.4,
+      "rank": 32
     }
   ],
   "global_max_value": 902742.8571428572
