@@ -25,7 +25,7 @@ def calculate_trimmed_mean_amount(rounds):
     if not rounds: return "0€"
     amounts = [AMOUNT_MAPPING_INT[PRIZE_AMOUNTS.get(r["correct_answers"], "0€")] for r in rounds]
     sorted_amounts = sorted(amounts)
-    trimmed_amounts = sorted_amounts[5:-5]  # Remove top and bottom 5
+    trimmed_amounts = sorted_amounts[5:-5]
     trimmed_mean = sum(trimmed_amounts) / len(trimmed_amounts)
     return f"{trimmed_mean:,.0f}€".replace(",", ".") if trimmed_mean >= 1000 else f"{int(trimmed_mean)}€"
 
