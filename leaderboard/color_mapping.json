@@ -1,6 +1,7 @@
 {
   "local_instruct": [
     "apertus:8b",
+    "eurollm-9b-instruct",
     "gemma-3-12b",
     "gemma-3-27b",
     "gemma-3-4b",
