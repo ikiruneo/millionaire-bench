@@ -118,13 +118,22 @@
       "rank": 13
     },
     {
+      "model_name": "qwen3-4b-instruct-2507",
+      "median_value": 134,
+      "low_deviation_euros": 59,
+      "high_deviation_euros": 13,
+      "original_average": 0.0,
+      "log_percentage": 13.2,
+      "rank": 14
+    },
+    {
       "model_name": "gemma-3n-e4b",
       "median_value": 121,
       "low_deviation_euros": 7,
       "high_deviation_euros": 14,
       "original_average": 377.0,
       "log_percentage": 12.4,
-      "rank": 14
+      "rank": 15
     },
     {
       "model_name": "lfm2:8b-a1b",
@@ -133,7 +142,7 @@
       "high_deviation_euros": 14,
       "original_average": 22502.0,
       "log_percentage": 10.4,
-      "rank": 15
+      "rank": 16
     },
     {
       "model_name": "lfm2-2.6b",
@@ -142,15 +151,6 @@
       "high_deviation_euros": 1,
       "original_average": 124.0,
       "log_percentage": 10.2,
-      "rank": 16
-    },
-    {
-      "model_name": "qwen3-4b-2507",
-      "median_value": 86,
-      "low_deviation_euros": 14,
-      "high_deviation_euros": 4,
-      "original_average": 611.0,
-      "log_percentage": 10.1,
       "rank": 17
     },
     {

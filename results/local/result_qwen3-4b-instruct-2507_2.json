@@ -1,5 +1,5 @@
 {
-  "model": "qwen/qwen3-4b-2507",
+  "model": "qwen3-4b-instruct-2507",
   "model_parameters": {
     "temperature": 0.7,
     "top_k": 20,
@@ -10,10 +10,10 @@
       "correct_answers": 0
     },
     {
-      "correct_answers": 7
+      "correct_answers": 6
     },
     {
-      "correct_answers": 8
+      "correct_answers": 10
     },
     {
       "correct_answers": 1
@@ -91,7 +91,7 @@
       "correct_answers": 0
     },
     {
-      "correct_answers": 8
+      "correct_answers": 2
     },
     {
       "correct_answers": 3
@@ -127,10 +127,10 @@
       "correct_answers": 0
     },
     {
-      "correct_answers": 0
+      "correct_answers": 8
     },
     {
-      "correct_answers": 1
+      "correct_answers": 2
     },
     {
       "correct_answers": 2
@@ -142,6 +142,6 @@
       "correct_answers": 1
     }
   ],
-  "average_final_amount": "633€",
+  "trimmed_mean": "75€",
   "million_wins": 0
 }

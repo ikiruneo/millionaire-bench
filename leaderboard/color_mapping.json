@@ -24,7 +24,7 @@
     "phi-4-mini-instruct",
     "qwen3-1.7b",
     "qwen3-30b-a3b-2507",
-    "qwen3-4b-2507"
+    "qwen3-4b-instruct-2507"
   ],
   "local_thinking": [
     "gpt-oss-20b-low",

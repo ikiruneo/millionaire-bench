@@ -1,5 +1,5 @@
 {
-  "model": "qwen/qwen3-4b-2507",
+  "model": "qwen3-4b-instruct-2507",
   "model_parameters": {
     "temperature": 0.7,
     "top_k": 20,
@@ -10,70 +10,34 @@
       "correct_answers": 0
     },
     {
-      "correct_answers": 1
+      "correct_answers": 6
     },
     {
       "correct_answers": 8
     },
     {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 1
-    },
-    {
       "correct_answers": 2
     },
     {
-      "correct_answers": 2
-    },
-    {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 2
+      "correct_answers": 1
     },
     {
       "correct_answers": 0
     },
     {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 3
+      "correct_answers": 1
     },
     {
       "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
     },
     {
       "correct_answers": 0
@@ -82,39 +46,75 @@
       "correct_answers": 4
     },
     {
-      "correct_answers": 9
-    },
-    {
-      "correct_answers": 9
-    },
-    {
       "correct_answers": 0
     },
     {
-      "correct_answers": 8
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 2
     },
     {
       "correct_answers": 3
     },
     {
-      "correct_answers": 0
-    },
-    {
       "correct_answers": 2
-    },
-    {
-      "correct_answers": 2
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 1
     },
     {
       "correct_answers": 5
     },
     {
+      "correct_answers": 5
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 4
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 8
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 5
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
       "correct_answers": 0
     },
     {
@@ -127,7 +127,7 @@
       "correct_answers": 0
     },
     {
-      "correct_answers": 0
+      "correct_answers": 8
     },
     {
       "correct_answers": 1
@@ -142,6 +142,6 @@
       "correct_answers": 1
     }
   ],
-  "average_final_amount": "611€",
+  "trimmed_mean": "147€",
   "million_wins": 0
 }
