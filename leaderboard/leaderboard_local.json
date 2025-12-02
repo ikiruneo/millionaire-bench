@@ -287,15 +287,6 @@
       "original_average": 0.0,
       "log_percentage": 4.0,
       "rank": 32
-    },
-    {
-      "model_name": "ministral-8b-instruct-2410",
-      "median_value": 20,
-      "low_deviation_euros": 0,
-      "high_deviation_euros": 0,
-      "original_average": 60.0,
-      "log_percentage": 3.4,
-      "rank": 33
     }
   ],
   "global_max_value": 19852.85714285714
