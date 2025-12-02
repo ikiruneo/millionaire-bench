@@ -1,0 +1,147 @@
+{
+  "model": "ministral-3-14b-instruct-2512",
+  "model_parameters": {
+    "temperature": 0.15,
+    "top_k": 40,
+    "top_p": 0.95
+  },
+  "rounds": [
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 7
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 8
+    },
+    {
+      "correct_answers": 8
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 6
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 14
+    },
+    {
+      "correct_answers": 6
+    },
+    {
+      "correct_answers": 4
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 5
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 4
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 6
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 4
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 5
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 7
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
+    }
+  ],
+  "trimmed_mean": "1.203€",
+  "million_wins": 2
+}
