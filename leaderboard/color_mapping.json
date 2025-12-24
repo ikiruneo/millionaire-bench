@@ -32,8 +32,10 @@
   "local_thinking": [
     "gpt-oss-20b-low",
     "jamba-reasoning-3b",
+    "nvidia-nemotron-3-nano",
     "qwen3-1.7b-thinking",
-    "qwen3-4b-thinking-2507"
+    "qwen3-4b-thinking-2507",
+    "zai-org-glm-4.6v-flash"
   ],
   "cloud_closed": [
     "gemini-2.5-flash",

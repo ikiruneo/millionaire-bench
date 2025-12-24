@@ -1,100 +1,100 @@
 {
-  "model": "unsloth/ministral-3-8b-instruct-2512",
+  "model": "zai-org/glm-4.6v-flash",
   "model_parameters": {
-    "temperature": 0.15,
-    "top_k": 40,
-    "top_p": 0.95
+    "temperature": 0.8,
+    "top_k": 2,
+    "top_p": 0.6
   },
   "rounds": [
     {
-      "correct_answers": 5
-    },
-    {
       "correct_answers": 0
     },
     {
-      "correct_answers": 14
-    },
-    {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 8
-    },
-    {
-      "correct_answers": 5
-    },
-    {
       "correct_answers": 0
-    },
-    {
-      "correct_answers": 5
-    },
-    {
-      "correct_answers": 4
-    },
-    {
-      "correct_answers": 2
-    },
-    {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 1
     },
     {
       "correct_answers": 15
     },
     {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 12
+    },
+    {
+      "correct_answers": 0
+    },
+    {
       "correct_answers": 2
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 5
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 3
     },
     {
       "correct_answers": 1
     },
     {
-      "correct_answers": 5
-    },
-    {
-      "correct_answers": 0
+      "correct_answers": 1
     },
     {
       "correct_answers": 9
     },
     {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 13
+    },
+    {
       "correct_answers": 7
     },
     {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 4
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 5
+    },
+    {
+      "correct_answers": 3
+    },
+    {
       "correct_answers": 1
     },
     {
-      "correct_answers": 2
+      "correct_answers": 7
+    },
+    {
+      "correct_answers": 7
+    },
+    {
+      "correct_answers": 8
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 0
     },
     {
       "correct_answers": 2
+    },
+    {
+      "correct_answers": 6
     },
     {
       "correct_answers": 0
@@ -107,9 +107,15 @@
     },
     {
       "correct_answers": 0
+    },
+    {
+      "correct_answers": 11
     },
     {
       "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
     },
     {
       "correct_answers": 0
@@ -121,27 +127,21 @@
       "correct_answers": 4
     },
     {
-      "correct_answers": 6
-    },
-    {
-      "correct_answers": 1
-    },
-    {
       "correct_answers": 0
     },
     {
       "correct_answers": 2
     },
     {
-      "correct_answers": 3
+      "correct_answers": 7
     },
     {
-      "correct_answers": 3
+      "correct_answers": 4
     },
     {
       "correct_answers": 3
     }
   ],
-  "trimmed_mean": "194€",
-  "million_wins": 1
+  "trimmed_mean": "1.140€",
+  "million_wins": 2
 }

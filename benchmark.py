@@ -10,8 +10,8 @@ import itertools
 SYSTEM_PROMPT = "Du bist ein Kandidat bei 'Wer wird Millionär'. Wähle die richtige Antwort aus den vier Optionen. Antworte AUSCHLIESSLICH mit einem einzigen Buchstaben: A, B, C oder D. Keine andere Erklärung, nur der Buchstabe! Beispiel: Wenn A die richtige Antwort ist, antworte nur: A"
 SERVER_URL = "http://localhost:1234" # e.g. https://openrouter.ai/api (/v1 not needed).
 API_KEY = ""
-MODEL_NAME = "mistral-small-3.2"
-TEMPERATURE = 0.8
+MODEL_NAME = "essentialai/rnj-1"
+TEMPERATURE = 0.2
 TOP_K = 40
 TOP_P = 0.95
 
