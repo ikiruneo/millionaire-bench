@@ -1,5 +1,5 @@
 {
-  "model": "mistralai/ministral-3-3b",
+  "model": "ministral-3-3b-instruct-2512",
   "model_parameters": {
     "temperature": 0.15,
     "top_k": 40,
@@ -13,81 +13,6 @@
       "correct_answers": 0
     },
     {
-      "correct_answers": 2
-    },
-    {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 6
-    },
-    {
-      "correct_answers": 2
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 1
-    },
-    {
-      "correct_answers": 0
-    },
-    {
       "correct_answers": 1
     },
     {
@@ -100,25 +25,7 @@
       "correct_answers": 0
     },
     {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 3
-    },
-    {
-      "correct_answers": 6
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 0
-    },
-    {
-      "correct_answers": 0
+      "correct_answers": 1
     },
     {
       "correct_answers": 0
@@ -136,12 +43,105 @@
       "correct_answers": 0
     },
     {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 2
+    },
+    {
       "correct_answers": 0
     },
     {
       "correct_answers": 0
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 4
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 2
     }
   ],
-  "trimmed_mean": "28€",
+  "trimmed_mean": "27€",
   "million_wins": 0
 }
