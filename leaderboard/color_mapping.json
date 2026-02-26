@@ -12,9 +12,10 @@
     "granite-4.0-h-small",
     "hermes-4-14b",
     "lfm2-2.6b",
+    "lfm2-24b-a2b",
+    "lfm2.5-1.2b",
     "lfm2:8b-a1b",
     "ling-mini-2.0",
-    "liquid-lfm2.5-1.2b",
     "llama-3.1-8b-instruct",
     "llama-3.2-3b-instruct",
     "ministral-3-14b-instruct",
@@ -31,13 +32,13 @@
     "qwen3-4b-instruct-2507"
   ],
   "local_thinking": [
+    "glm-4.6-flash",
+    "glm-4.7-flash",
     "gpt-oss-20b-low",
     "jamba-reasoning-3b",
     "nvidia-nemotron-3-nano",
     "qwen3-1.7b-thinking",
-    "qwen3-4b-thinking-2507",
-    "zai-org-glm-4.6v-flash",
-    "zai-org-glm-4.7-flash"
+    "qwen3-4b-thinking-2507"
   ],
   "cloud_closed": [
     "gemini-2.5-flash",
