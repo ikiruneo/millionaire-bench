@@ -208,13 +208,22 @@
       "rank": 23
     },
     {
+      "model_name": "qwen3.5-9b",
+      "median_value": 70,
+      "low_deviation_euros": 20,
+      "high_deviation_euros": 67,
+      "original_average": 0.0,
+      "log_percentage": 8.8,
+      "rank": 24
+    },
+    {
       "model_name": "eurollm-9b-instruct",
       "median_value": 69,
       "low_deviation_euros": 7,
       "high_deviation_euros": 49,
       "original_average": 0.0,
       "log_percentage": 8.8,
-      "rank": 24
+      "rank": 25
     },
     {
       "model_name": "granite-4-h-tiny",
@@ -223,7 +232,7 @@
       "high_deviation_euros": 4,
       "original_average": 128.0,
       "log_percentage": 8.5,
-      "rank": 25
+      "rank": 26
     },
     {
       "model_name": "qwen3.5-4b",
@@ -232,7 +241,7 @@
       "high_deviation_euros": 10,
       "original_average": 0.0,
       "log_percentage": 7.6,
-      "rank": 26
+      "rank": 27
     },
     {
       "model_name": "lfm2-24b-a2b",
@@ -241,7 +250,7 @@
       "high_deviation_euros": 7,
       "original_average": 0.0,
       "log_percentage": 7.4,
-      "rank": 27
+      "rank": 28
     },
     {
       "model_name": "gemma-3-4b",
@@ -250,7 +259,7 @@
       "high_deviation_euros": 7,
       "original_average": 158.0,
       "log_percentage": 7.3,
-      "rank": 28
+      "rank": 29
     },
     {
       "model_name": "nemotron-nano-9b-v2",
@@ -259,7 +268,7 @@
       "high_deviation_euros": 13,
       "original_average": 896.0,
       "log_percentage": 7.3,
-      "rank": 29
+      "rank": 30
     },
     {
       "model_name": "jamba-reasoning-3b",
@@ -268,7 +277,7 @@
       "high_deviation_euros": null,
       "original_average": 225.0,
       "log_percentage": 6.7,
-      "rank": 30
+      "rank": 31
     },
     {
       "model_name": "ling-mini-2.0",
@@ -277,7 +286,7 @@
       "high_deviation_euros": 4,
       "original_average": 81.0,
       "log_percentage": 6.6,
-      "rank": 31
+      "rank": 32
     },
     {
       "model_name": "phi-4-mini-instruct",
@@ -286,7 +295,7 @@
       "high_deviation_euros": 1,
       "original_average": 77.0,
       "log_percentage": 6.0,
-      "rank": 32
+      "rank": 33
     },
     {
       "model_name": "ministral-3-3b-instruct",
@@ -295,7 +304,7 @@
       "high_deviation_euros": 7,
       "original_average": 0.0,
       "log_percentage": 5.8,
-      "rank": 33
+      "rank": 34
     },
     {
       "model_name": "granite-4.0-h-micro",
@@ -304,7 +313,7 @@
       "high_deviation_euros": 13,
       "original_average": 103.0,
       "log_percentage": 5.5,
-      "rank": 34
+      "rank": 35
     },
     {
       "model_name": "llama-3.2-3b-instruct",
@@ -313,7 +322,7 @@
       "high_deviation_euros": 20,
       "original_average": 70.0,
       "log_percentage": 5.1,
-      "rank": 35
+      "rank": 36
     },
     {
       "model_name": "qwen3-1.7b",
@@ -322,7 +331,7 @@
       "high_deviation_euros": 7,
       "original_average": 72.0,
       "log_percentage": 4.9,
-      "rank": 36
+      "rank": 37
     },
     {
       "model_name": "olmo-3-7b-instruct",
@@ -331,7 +340,7 @@
       "high_deviation_euros": 7,
       "original_average": 0.0,
       "log_percentage": 4.0,
-      "rank": 37
+      "rank": 38
     },
     {
       "model_name": "lfm2.5-1.2b",
@@ -340,7 +349,7 @@
       "high_deviation_euros": null,
       "original_average": 0.0,
       "log_percentage": 2.3,
-      "rank": 38
+      "rank": 39
     }
   ],
   "global_max_value": 43017.142857142855
