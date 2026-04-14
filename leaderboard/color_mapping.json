@@ -36,6 +36,7 @@
     "qwen3.5-9b"
   ],
   "local_thinking": [
+    "gemma-4-26b-a4b-thinking",
     "glm-4.6-flash",
     "glm-4.7-flash",
     "gpt-oss-20b-low",
