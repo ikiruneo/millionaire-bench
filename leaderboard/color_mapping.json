@@ -65,6 +65,7 @@
     "perplexity-sonar"
   ],
   "cloud_open": [
+    "MiniMax-M2.7",
     "behemoth-123B-v1.2",
     "c4ai-command-a-03-2025",
     "deepseek-chat-v3-0324",
