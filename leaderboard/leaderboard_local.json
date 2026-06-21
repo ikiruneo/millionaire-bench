@@ -23,7 +23,7 @@
       "median_value": 9694,
       "low_deviation_euros": 4481,
       "high_deviation_euros": 2651,
-      "original_average": 68652.0,
+      "original_average": 67781.0,
       "log_percentage": 53.2,
       "rank": 3
     },
@@ -32,7 +32,7 @@
       "median_value": 9000,
       "low_deviation_euros": 3627,
       "high_deviation_euros": 10853,
-      "original_average": 126552.0,
+      "original_average": 118001.0,
       "log_percentage": 52.5,
       "rank": 4
     },
@@ -41,7 +41,7 @@
       "median_value": 1256,
       "low_deviation_euros": 41,
       "high_deviation_euros": 143,
-      "original_average": 13666.0,
+      "original_average": 15043.0,
       "log_percentage": 32.9,
       "rank": 5
     },
@@ -86,7 +86,7 @@
       "median_value": 896,
       "low_deviation_euros": 471,
       "high_deviation_euros": 354,
-      "original_average": 26001.0,
+      "original_average": 23263.0,
       "log_percentage": 29.7,
       "rank": 10
     },
@@ -95,7 +95,7 @@
       "median_value": 823,
       "low_deviation_euros": 420,
       "high_deviation_euros": 9,
-      "original_average": 23602.0,
+      "original_average": 24291.0,
       "log_percentage": 28.9,
       "rank": 11
     },
@@ -122,7 +122,7 @@
       "median_value": 436,
       "low_deviation_euros": 169,
       "high_deviation_euros": 13,
-      "original_average": 34392.0,
+      "original_average": 12741.0,
       "log_percentage": 23.0,
       "rank": 14
     },
@@ -167,7 +167,7 @@
       "median_value": 177,
       "low_deviation_euros": 24,
       "high_deviation_euros": 6,
-      "original_average": 764.0,
+      "original_average": 3497.0,
       "log_percentage": 15.3,
       "rank": 19
     },
@@ -176,7 +176,7 @@
       "median_value": 167,
       "low_deviation_euros": 74,
       "high_deviation_euros": 116,
-      "original_average": 1711.0,
+      "original_average": 1998.0,
       "log_percentage": 14.8,
       "rank": 20
     },
@@ -185,7 +185,7 @@
       "median_value": 137,
       "low_deviation_euros": 27,
       "high_deviation_euros": 36,
-      "original_average": 514.0,
+      "original_average": 484.0,
       "log_percentage": 13.3,
       "rank": 21
     },
@@ -203,7 +203,7 @@
       "median_value": 121,
       "low_deviation_euros": 7,
       "high_deviation_euros": 14,
-      "original_average": 377.0,
+      "original_average": 394.0,
       "log_percentage": 12.4,
       "rank": 23
     },
@@ -212,7 +212,7 @@
       "median_value": 90,
       "low_deviation_euros": 14,
       "high_deviation_euros": 14,
-      "original_average": 22502.0,
+      "original_average": 303.0,
       "log_percentage": 10.4,
       "rank": 24
     },
@@ -221,7 +221,7 @@
       "median_value": 87,
       "low_deviation_euros": 4,
       "high_deviation_euros": 1,
-      "original_average": 124.0,
+      "original_average": 142.0,
       "log_percentage": 10.2,
       "rank": 25
     },
@@ -230,7 +230,7 @@
       "median_value": 71,
       "low_deviation_euros": 20,
       "high_deviation_euros": 9,
-      "original_average": 1818.0,
+      "original_average": 451.0,
       "log_percentage": 8.9,
       "rank": 26
     },
@@ -293,7 +293,7 @@
       "median_value": 53,
       "low_deviation_euros": 11,
       "high_deviation_euros": 7,
-      "original_average": 158.0,
+      "original_average": 65.0,
       "log_percentage": 7.3,
       "rank": 33
     },
@@ -302,7 +302,7 @@
       "median_value": 53,
       "low_deviation_euros": 1,
       "high_deviation_euros": 13,
-      "original_average": 896.0,
+      "original_average": 202.0,
       "log_percentage": 7.3,
       "rank": 34
     },
@@ -347,7 +347,7 @@
       "median_value": 36,
       "low_deviation_euros": 7,
       "high_deviation_euros": 13,
-      "original_average": 103.0,
+      "original_average": 100.0,
       "log_percentage": 5.5,
       "rank": 39
     },
@@ -356,7 +356,7 @@
       "median_value": 33,
       "low_deviation_euros": 1,
       "high_deviation_euros": 20,
-      "original_average": 70.0,
+      "original_average": 411.0,
       "log_percentage": 5.1,
       "rank": 40
     },
@@ -365,7 +365,7 @@
       "median_value": 31,
       "low_deviation_euros": 6,
       "high_deviation_euros": 7,
-      "original_average": 72.0,
+      "original_average": 104.0,
       "log_percentage": 4.9,
       "rank": 41
     },
