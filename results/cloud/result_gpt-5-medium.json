@@ -1,0 +1,147 @@
+{
+  "model": "gpt-5",
+  "model_parameters": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "reasoning_effort": "medium"
+  },
+  "rounds": [
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 14
+    },
+    {
+      "correct_answers": 8
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 12
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 14
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 13
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 13
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 3
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    }
+  ],
+  "trimmed_mean": "838.457€",
+  "million_wins": 33
+}
