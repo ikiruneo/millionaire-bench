@@ -1,0 +1,148 @@
+{
+  "provider": "openai",
+  "model": "gpt-5.5",
+  "model_parameters": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "reasoning_effort": "low"
+  },
+  "rounds": [
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 12
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 13
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 5
+    },
+    {
+      "correct_answers": 13
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    }
+  ],
+  "trimmed_mean": "950.000€",
+  "million_wins": 38
+}
