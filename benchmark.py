@@ -1,41 +1,53 @@
 #!/usr/bin/env python3
 import json
-import requests
+import urllib.request
+import urllib.error
 import time
 import os
 import re
 import threading
 import itertools
+import subprocess
+import sys
+import socket
+
+SERVER_URL = "http://localhost:1234" # e.g. https://openrouter.ai/api (/v1 not needed).
+API_KEY = "sk-xxx"
+MODEL_NAME = "model-name-here"
 
 SYSTEM_PROMPT = "Du bist ein Kandidat bei 'Wer wird Millionär'. Wähle die richtige Antwort aus den vier Optionen. Antworte AUSCHLIESSLICH mit einem einzigen Buchstaben: A, B, C oder D. Keine andere Erklärung, nur der Buchstabe! Beispiel: Wenn A die richtige Antwort ist, antworte nur: A"
-SERVER_URL = "http://localhost:1234" # e.g. https://openrouter.ai/api (/v1 not needed).
-API_KEY = ""
-MODEL_NAME = "zai-org/glm-4.7-flash"
-TEMPERATURE = 1
-TOP_K = 0
-TOP_P = 0.95
-
 FAIL_CHARS = "123456789ABCDEF"
 PRIZE_LEVELS = ["50€", "100€", "200€", "300€", "500€", "1.000€", "2.000€", "4.000€", "8.000€", "16.000€", "32.000€", "64.000€", "125.000€", "500.000€", "1.000.000€"]
 PRIZE_AMOUNTS = {i + 1: amount for i, amount in enumerate(PRIZE_LEVELS)}
 AMOUNT_MAPPING_INT = {amount: int(amount.replace('€', '').replace('.', '')) for amount in PRIZE_LEVELS}
 AMOUNT_MAPPING_INT["0€"] = 0
 
-def calculate_trimmed_mean_amount(rounds):
-    if not rounds: return "0€"
-    amounts = [AMOUNT_MAPPING_INT[PRIZE_AMOUNTS.get(r["correct_answers"], "0€")] for r in rounds]
-    sorted_amounts = sorted(amounts)
-    trimmed_amounts = sorted_amounts[5:-5]
-    trimmed_mean = sum(trimmed_amounts) / len(trimmed_amounts)
-    return f"{trimmed_mean:,.0f}€".replace(",", ".") if trimmed_mean >= 1000 else f"{int(trimmed_mean)}€"
 
-model_name = MODEL_NAME
+def _spinner_animation(stop_event):
+    for char in itertools.cycle(['-', '\\', '|', '/']):
+        if stop_event.is_set():
+            break
+        print(char, end='\b', flush=True)
+        time.sleep(0.2)
+
+
+def mean_to_prize(rounds):
+    if not rounds: return "0€"
+    corrects = [r["correct_answers"] for r in rounds]
+    mc = sum(corrects) / len(corrects)
+    floor_lvl = int(mc)
+    frac = mc - floor_lvl
+    prizes = [0] + [AMOUNT_MAPPING_INT[p] for p in PRIZE_LEVELS]
+    p_floor = prizes[floor_lvl]
+    p_ceil = prizes[min(floor_lvl + 1, 15)]
+    prize = p_floor + (p_ceil - p_floor) * frac
+    return f"{prize:,.0f}€".replace(",", ".") if prize >= 1000 else f"{int(prize)}€"
+
 header = f"""
 Wer wird Millionär? Benchmark
 =====================================
-Model:    {model_name}
+Model:    {MODEL_NAME}
 URL:      {SERVER_URL}
-Sampling: T:{TEMPERATURE}, P:{TOP_P}, K:{TOP_K}
 -------------------------------------"""
 print(header)
 
@@ -48,9 +60,7 @@ except (FileNotFoundError, json.JSONDecodeError) as e:
 
 verbose_mode = input("Show full LLM response? [y/N] ").strip().lower() in ['y', 'yes']
 
-session = requests.Session()
 results = []
-
 for question_num in range(1, 46):
     current_level = 1
     correct_answers = 0
@@ -65,30 +75,32 @@ for question_num in range(1, 46):
         prompt = f"{question_text}\n" + "\n".join(f"{chr(65+i)}: {opt}" for i, opt in enumerate(options))
         
         stop_event = threading.Event()
-        def _spinner_animation():
-            for char in itertools.cycle(['-', '\\', '|', '/']):
-                if stop_event.is_set(): break
-                print(char, end='\b', flush=True)
-                time.sleep(0.2)
         
-        spinner_thread = threading.Thread(target=_spinner_animation)
+        spinner_thread = threading.Thread(target=_spinner_animation, args=(stop_event,))
         spinner_thread.start()
         
         try:
-            data = {"model": model_name, "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": prompt}], "stream": False, "temperature": TEMPERATURE, "top_k": TOP_K, "top_p": TOP_P}
-            headers = {"Authorization": f"Bearer {API_KEY}"} if API_KEY else {}
-            response = session.post(f"{SERVER_URL}/v1/chat/completions", json=data, headers=headers, timeout=300)
-            if response.status_code == 200 and (choices := response.json().get("choices")):
-                response_content = choices[0].get("message", {}).get("content", "").strip()
-                if verbose_mode:
-                    full_response = response_content
-                letters = re.findall(r'\b[A-D]\b', response_content, re.IGNORECASE)
-                llm_answer = letters[-1].upper() if letters else "INVALID"
-            else:
-                llm_answer = "ERROR"
-                if verbose_mode:
-                    full_response = ""
-        except requests.exceptions.RequestException:
+            data = {"model": MODEL_NAME, "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": prompt}], "stream": False}
+            headers = {"Authorization": f"Bearer {API_KEY}", "User-Agent": "millionaire-bench/1.0"} if API_KEY else {"User-Agent": "millionaire-bench/1.0"}
+            req = urllib.request.Request(
+                f"{SERVER_URL}/v1/chat/completions",
+                data=json.dumps(data).encode("utf-8"),
+                headers={**headers, "Content-Type": "application/json"},
+                method="POST",
+            )
+            with urllib.request.urlopen(req, timeout=300) as resp:
+                response_data = json.loads(resp.read().decode("utf-8"))
+                if choices := response_data.get("choices"):
+                    response_content = choices[0].get("message", {}).get("content", "").strip()
+                    if verbose_mode:
+                        full_response = response_content
+                    letters = re.findall(r'\b[A-D]\b', response_content, re.IGNORECASE)
+                    llm_answer = letters[-1].upper() if letters else "INVALID"
+                else:
+                    llm_answer = "ERROR"
+                    if verbose_mode:
+                        full_response = ""
+        except (urllib.error.URLError, socket.timeout, OSError):
             llm_answer = "ERROR"
             if verbose_mode:
                 full_response = ""
@@ -127,12 +139,11 @@ for question_num in range(1, 46):
         print("✓]", flush=True)
     
     results.append({"correct_answers": correct_answers})
-trimmed_mean_amount = calculate_trimmed_mean_amount(results)
+prize = mean_to_prize(results)
 million_wins = sum(1 for r in results if r["correct_answers"] == 15)
-results_data = {"model": model_name, "model_parameters": {"temperature": TEMPERATURE, "top_k": TOP_K, "top_p": TOP_P}, "rounds": results, "trimmed_mean": trimmed_mean_amount, "million_wins": million_wins}
+results_data = {"model": MODEL_NAME, "rounds": results, "score": prize, "million_wins": million_wins}
 
-print(f"\nTrimmed Mean: {trimmed_mean_amount} | Million Wins: {million_wins}")
-print(f"T:{TEMPERATURE}, K:{TOP_K}, P:{TOP_P}")
+print(f"\nScore: {prize} | Million Wins: {million_wins}")
 
 if "localhost" in SERVER_URL or "127.0.0.1" in SERVER_URL:
     default_dir = "local"
@@ -155,7 +166,7 @@ else:
 
 if results_dir:
     os.makedirs(results_dir, exist_ok=True)
-    base_filename = f"result_{model_name.replace('/', '-')}.json"
+    base_filename = f"result_{MODEL_NAME.replace('/', '-')}.json"
     result_filename = os.path.join(results_dir, base_filename)
     counter = 2
     while os.path.exists(result_filename):
@@ -175,10 +186,8 @@ else:
 
 update_leaderboard = input("\nWant to update the Leaderboard? [Y/n] ").strip().lower()
 if update_leaderboard in ['y', 'yes', '']:
-    import subprocess
-    import os
     try:
-        subprocess.run(["python", "update.py"], 
+        subprocess.run([sys.executable, "update.py"], 
                        cwd="leaderboard", check=True, stdin=None, stdout=None, stderr=None)
         print("Leaderboard updated successfully!")
     except subprocess.CalledProcessError as e:

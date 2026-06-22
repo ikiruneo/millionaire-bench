@@ -10,7 +10,7 @@ The initial questions often involve wordplay and idioms, requiring a deep unders
    ```
    git clone https://github.com/ikiruneo/millionaire-bench.git
    ```
-2. Edit the `benchmark.py` (lines 12-17) for server configuration.
+2. Edit the `benchmark.py` (lines 14-16) for server configuration.
    
 3. Run the benchmark script:   
    ```

@@ -4,8 +4,11 @@ import re
 import math
 from pathlib import Path
 from collections import defaultdict
-from statistics import mean, stdev
+from statistics import stdev
 import argparse
+
+SCRIPT_DIR = Path(__file__).parent.resolve()
+
 
 def get_all_models_from_results(results_dir):
     """Get all unique model names from JSON file names in results directory."""
@@ -46,8 +49,8 @@ def save_color_mapping(color_mapping_path, color_mapping):
 def check_models():
     """Check models functionality - find unassigned and unused models."""
 
-    results_dir = Path('../results')
-    color_mapping_path = Path('./color_mapping.json')
+    results_dir = SCRIPT_DIR.parent / 'results'
+    color_mapping_path = SCRIPT_DIR / 'color_mapping.json'
 
     all_models_with_source = get_all_models_from_results(results_dir)
     all_models = set(all_models_with_source.keys())
@@ -82,8 +85,8 @@ def check_models():
 def interactive_main():
     """Interactive version of the main function that allows users to make changes directly"""
 
-    results_dir = Path('../results')
-    color_mapping_path = Path('./color_mapping.json')
+    results_dir = SCRIPT_DIR.parent / 'results'
+    color_mapping_path = SCRIPT_DIR / 'color_mapping.json'
 
     all_models_with_source = get_all_models_from_results(results_dir)
     all_base_models = set(all_models_with_source.keys())
@@ -153,30 +156,6 @@ def get_model_name_from_filename(filename):
     base_name = re.sub(r'_(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20)$', '', name)
     return base_name
 
-def convert_amount_to_numeric(amount_str):
-    numeric_str = amount_str.replace('€', '')
-    numeric_str = numeric_str.replace('.', '')
-    try:
-        return float(numeric_str)
-    except ValueError:
-        return 0.0
-
-def map_correct_answers_to_prize(correct_answers):
-    prize_values = [
-        "0€", "50€", "100€", "200€", "300€", "500€", 
-        "1.000€", "2.000€", "4.000€", "8.000€", "16.000€", 
-        "32.000€", "64.000€", "125.000€", "500.000€", "1.000.000€"
-    ]
-    index = min(int(correct_answers), 15) if correct_answers >= 0 else 0
-    return prize_values[index]
-
-def convert_prize_to_numeric(prize_str):
-    numeric_str = prize_str.replace('€', '')
-    numeric_str = numeric_str.replace('.', '')
-    try:
-        return int(numeric_str)
-    except ValueError:
-        return 0
 
 def calculate_log_percentage(value):
     a = 50.00500050005
@@ -210,18 +189,16 @@ def process_results_directory(results_dir):
                     data = json.load(f)
                 rounds = data.get('rounds', [])
                 correct_answers_list = [round_data.get('correct_answers', 0) for round_data in rounds]
-                sorted_answers = sorted(correct_answers_list)
-                n = len(sorted_answers)
-                if n > 10:  
-                    middle_35_answers = sorted_answers[5 : n - 5]  
+                if correct_answers_list:
+                    mc = sum(correct_answers_list) / len(correct_answers_list)
+                    floor_lvl = int(mc)
+                    frac = mc - floor_lvl
+                    prize_values_numeric = [0, 50, 100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 500000, 1000000]
+                    p_floor = prize_values_numeric[floor_lvl]
+                    p_ceil = prize_values_numeric[min(floor_lvl + 1, 15)]
+                    average_score = p_floor + (p_ceil - p_floor) * frac
                 else:
-                    middle_35_answers = sorted_answers
-                if middle_35_answers:
-                    prize_values = [map_correct_answers_to_prize(ca) for ca in middle_35_answers]
-                    numeric_values = [convert_prize_to_numeric(prize) for prize in prize_values]
-                    average_score = mean(numeric_values)
-                else:
-                    average_score = 0  
+                    average_score = 0
                 average_scores.append(average_score)
                 all_average_scores.append(average_score)  
             except json.JSONDecodeError:
@@ -247,23 +224,12 @@ def process_results_directory(results_dir):
                 bar_value = 0
         else:
             bar_value = 0
-        original_average = 0
-        if files:
-            try:
-                filepath, filename = files[0]
-                with open(filepath, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                avg_final_amount = data.get('average_final_amount', '0€')
-                original_average = convert_amount_to_numeric(avg_final_amount)
-            except:
-                pass
         model_info = {
             'model_name': model_name,
-            'median_value': round(bar_value),  
-            'low_deviation_euros': low_deviation_euros,  
-            'high_deviation_euros': high_deviation_euros,  
-            'original_average': original_average,
-            'log_percentage': float(f"{calculate_log_percentage(round(bar_value)):.1f}")  
+            'median_value': round(bar_value),
+            'low_deviation_euros': low_deviation_euros,
+            'high_deviation_euros': high_deviation_euros,
+            'log_percentage': float(f"{calculate_log_percentage(round(bar_value)):.1f}")
         }
         leaderboard_data.append(model_info)
 
@@ -279,12 +245,12 @@ def process_results_directory(results_dir):
 def generate_leaderboard():
     """Generate leaderboard functionality."""
 
-    local_data = process_results_directory('../results/local')
-    with open('leaderboard_local.json', 'w', encoding='utf-8') as f:
+    local_data = process_results_directory(str(SCRIPT_DIR.parent / 'results' / 'local'))
+    with open(SCRIPT_DIR / 'leaderboard_local.json', 'w', encoding='utf-8') as f:
         json.dump(local_data, f, indent=2, ensure_ascii=False)
 
-    cloud_data = process_results_directory('../results/cloud')
-    with open('leaderboard_cloud.json', 'w', encoding='utf-8') as f:
+    cloud_data = process_results_directory(str(SCRIPT_DIR.parent / 'results' / 'cloud'))
+    with open(SCRIPT_DIR / 'leaderboard_cloud.json', 'w', encoding='utf-8') as f:
         json.dump(cloud_data, f, indent=2, ensure_ascii=False)
 
     print(f"Leaderboards generated: {len(local_data['models'])} local, {len(cloud_data['models'])} cloud models")
