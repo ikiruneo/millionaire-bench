@@ -121,18 +121,18 @@
       "rank": 15
     },
     {
-      "model_name": "gemma-4-12b-it",
-      "median_value": 191,
-      "low_deviation_euros": 0,
-      "high_deviation_euros": 2,
-      "log_percentage": 15.9,
-      "rank": 16
-    },
-    {
       "model_name": "glm-4.7-flash",
       "median_value": 191,
       "low_deviation_euros": null,
       "high_deviation_euros": null,
+      "log_percentage": 15.9,
+      "rank": 16
+    },
+    {
+      "model_name": "gemma-4-12b-it",
+      "median_value": 191,
+      "low_deviation_euros": 0,
+      "high_deviation_euros": 2,
       "log_percentage": 15.9,
       "rank": 17
     },
@@ -153,18 +153,18 @@
       "rank": 19
     },
     {
-      "model_name": "granite-4.0-h-small",
-      "median_value": 149,
-      "low_deviation_euros": 20,
-      "high_deviation_euros": 9,
-      "log_percentage": 13.9,
-      "rank": 20
-    },
-    {
       "model_name": "apertus:8b",
       "median_value": 149,
       "low_deviation_euros": 47,
       "high_deviation_euros": 27,
+      "log_percentage": 13.9,
+      "rank": 20
+    },
+    {
+      "model_name": "granite-4.0-h-small",
+      "median_value": 149,
+      "low_deviation_euros": 20,
+      "high_deviation_euros": 9,
       "log_percentage": 13.9,
       "rank": 21
     },
@@ -233,18 +233,18 @@
       "rank": 29
     },
     {
-      "model_name": "qwen3.5-4b",
-      "median_value": 77,
-      "low_deviation_euros": 8,
-      "high_deviation_euros": 17,
-      "log_percentage": 9.4,
-      "rank": 30
-    },
-    {
       "model_name": "eurollm-9b-instruct",
       "median_value": 77,
       "low_deviation_euros": 4,
       "high_deviation_euros": 26,
+      "log_percentage": 9.4,
+      "rank": 30
+    },
+    {
+      "model_name": "qwen3.5-4b",
+      "median_value": 77,
+      "low_deviation_euros": 8,
+      "high_deviation_euros": 17,
       "log_percentage": 9.4,
       "rank": 31
     },
