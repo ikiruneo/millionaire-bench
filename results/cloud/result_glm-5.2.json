@@ -1,0 +1,142 @@
+{
+  "model": "glm-5.2",
+  "rounds": [
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 12
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 8
+    },
+    {
+      "correct_answers": 6
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 1
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 12
+    },
+    {
+      "correct_answers": 13
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 2
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 7
+    },
+    {
+      "correct_answers": 13
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 0
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 11
+    },
+    {
+      "correct_answers": 15
+    }
+  ],
+  "score": "91.111€",
+  "million_wins": 29
+}
