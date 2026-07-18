@@ -161,7 +161,7 @@
       "rank": 20
     },
     {
-      "model_name": "gpt-5.4-low",
+      "model_name": "gpt-5.6-sol-xhigh",
       "median_value": 200000,
       "low_deviation_euros": null,
       "high_deviation_euros": null,
@@ -177,7 +177,7 @@
       "rank": 22
     },
     {
-      "model_name": "gpt-5.6-sol-xhigh",
+      "model_name": "gpt-5.4-low",
       "median_value": 200000,
       "low_deviation_euros": null,
       "high_deviation_euros": null,
@@ -233,7 +233,7 @@
       "rank": 29
     },
     {
-      "model_name": "google_gemini-3.1-flash-lite",
+      "model_name": "gpt-5.1-medium",
       "median_value": 114156,
       "low_deviation_euros": null,
       "high_deviation_euros": null,
@@ -241,7 +241,7 @@
       "rank": 30
     },
     {
-      "model_name": "gpt-5.1-medium",
+      "model_name": "kimi-k2.6",
       "median_value": 114156,
       "low_deviation_euros": null,
       "high_deviation_euros": null,
@@ -249,12 +249,20 @@
       "rank": 31
     },
     {
+      "model_name": "google_gemini-3.1-flash-lite",
+      "median_value": 114156,
+      "low_deviation_euros": null,
+      "high_deviation_euros": null,
+      "log_percentage": 78.1,
+      "rank": 32
+    },
+    {
       "model_name": "o3-medium",
       "median_value": 112800,
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 78.0,
-      "rank": 32
+      "rank": 33
     },
     {
       "model_name": "gpt-5.6-terra-high",
@@ -262,7 +270,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 77.7,
-      "rank": 33
+      "rank": 34
     },
     {
       "model_name": "gpt-5-mini-high",
@@ -270,7 +278,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 76.5,
-      "rank": 34
+      "rank": 35
     },
     {
       "model_name": "glm-5.2",
@@ -278,7 +286,15 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 75.8,
-      "rank": 35
+      "rank": 36
+    },
+    {
+      "model_name": "qwen3.7-max",
+      "median_value": 87044,
+      "low_deviation_euros": null,
+      "high_deviation_euros": null,
+      "log_percentage": 75.4,
+      "rank": 37
     },
     {
       "model_name": "gpt-5.4-mini-medium",
@@ -286,7 +302,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 75.4,
-      "rank": 36
+      "rank": 38
     },
     {
       "model_name": "grok_grok-4.3-high",
@@ -294,7 +310,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 74.0,
-      "rank": 37
+      "rank": 39
     },
     {
       "model_name": "gpt-5.4-mini-low",
@@ -302,7 +318,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 73.6,
-      "rank": 38
+      "rank": 40
     },
     {
       "model_name": "deepseek-v4-pro",
@@ -310,7 +326,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 73.6,
-      "rank": 39
+      "rank": 41
     },
     {
       "model_name": "deepseek-v4-flash",
@@ -318,7 +334,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 71.9,
-      "rank": 40
+      "rank": 42
     },
     {
       "model_name": "gpt-5.6-terra-medium",
@@ -326,7 +342,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 71.9,
-      "rank": 41
+      "rank": 43
     },
     {
       "model_name": "gpt-5.5-none",
@@ -334,7 +350,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 71.7,
-      "rank": 42
+      "rank": 44
     },
     {
       "model_name": "o4-mini-medium",
@@ -342,7 +358,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 70.9,
-      "rank": 43
+      "rank": 45
     },
     {
       "model_name": "gpt-5-mini-medium",
@@ -350,7 +366,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 68.5,
-      "rank": 44
+      "rank": 46
     },
     {
       "model_name": "gpt-5-mini-low",
@@ -358,7 +374,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 66.1,
-      "rank": 45
+      "rank": 47
     },
     {
       "model_name": "gpt-5.4-nano-xhigh",
@@ -366,7 +382,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 63.8,
-      "rank": 46
+      "rank": 48
     },
     {
       "model_name": "MiniMax-M2.7",
@@ -374,7 +390,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 63.6,
-      "rank": 47
+      "rank": 49
     },
     {
       "model_name": "google_gemma-4-31b-it",
@@ -382,7 +398,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 63.3,
-      "rank": 48
+      "rank": 50
     },
     {
       "model_name": "gpt-5.6-terra-none",
@@ -390,7 +406,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 58.5,
-      "rank": 49
+      "rank": 51
     },
     {
       "model_name": "glm-4.5",
@@ -398,7 +414,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 58.3,
-      "rank": 50
+      "rank": 52
     },
     {
       "model_name": "qwen3-235b-a22b",
@@ -406,7 +422,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 58.2,
-      "rank": 51
+      "rank": 53
     },
     {
       "model_name": "minimax-m3",
@@ -414,7 +430,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 57.5,
-      "rank": 52
+      "rank": 54
     },
     {
       "model_name": "gpt-5-nano-high",
@@ -422,7 +438,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 56.3,
-      "rank": 53
+      "rank": 55
     },
     {
       "model_name": "gpt-4o",
@@ -430,7 +446,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 55.9,
-      "rank": 54
+      "rank": 56
     },
     {
       "model_name": "gpt-5.4-none",
@@ -438,7 +454,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 55.0,
-      "rank": 55
+      "rank": 57
     },
     {
       "model_name": "gpt-5.6-luna-none",
@@ -446,7 +462,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 55.0,
-      "rank": 56
+      "rank": 58
     },
     {
       "model_name": "google_gemma-4-26b-a4b-it",
@@ -454,7 +470,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 54.2,
-      "rank": 57
+      "rank": 59
     },
     {
       "model_name": "mimo-v2.5",
@@ -462,7 +478,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 53.3,
-      "rank": 58
+      "rank": 60
     },
     {
       "model_name": "gpt-5.4-nano-high",
@@ -470,7 +486,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 51.5,
-      "rank": 59
+      "rank": 61
     },
     {
       "model_name": "gpt-4.1",
@@ -478,7 +494,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 50.0,
-      "rank": 60
+      "rank": 62
     },
     {
       "model_name": "gpt-5.4-nano-medium",
@@ -486,7 +502,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 49.9,
-      "rank": 61
+      "rank": 63
     },
     {
       "model_name": "gemini-2.5-flash",
@@ -494,7 +510,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 47.9,
-      "rank": 62
+      "rank": 64
     },
     {
       "model_name": "gpt-5-nano-medium",
@@ -502,7 +518,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 47.2,
-      "rank": 63
+      "rank": 65
     },
     {
       "model_name": "perplexity-sonar",
@@ -510,7 +526,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 44.3,
-      "rank": 64
+      "rank": 66
     },
     {
       "model_name": "deepseek-chat-v3-0324",
@@ -518,7 +534,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 43.3,
-      "rank": 65
+      "rank": 67
     },
     {
       "model_name": "gpt-5.4-nano-low",
@@ -526,7 +542,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 42.1,
-      "rank": 66
+      "rank": 68
     },
     {
       "model_name": "openai-gpt-oss-120b",
@@ -534,7 +550,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 41.9,
-      "rank": 67
+      "rank": 69
     },
     {
       "model_name": "gpt-5-nano-low",
@@ -542,7 +558,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 41.4,
-      "rank": 68
+      "rank": 70
     },
     {
       "model_name": "c4ai-command-a-03-2025",
@@ -550,7 +566,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 40.8,
-      "rank": 69
+      "rank": 71
     },
     {
       "model_name": "kimi-k2",
@@ -558,7 +574,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 40.5,
-      "rank": 70
+      "rank": 72
     },
     {
       "model_name": "gpt-4.1-mini",
@@ -566,7 +582,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 39.7,
-      "rank": 71
+      "rank": 73
     },
     {
       "model_name": "qwq-32b",
@@ -574,7 +590,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 38.3,
-      "rank": 72
+      "rank": 74
     },
     {
       "model_name": "gpt-5.4-mini-none",
@@ -582,7 +598,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 37.4,
-      "rank": 73
+      "rank": 75
     },
     {
       "model_name": "glm-4.5-air",
@@ -590,7 +606,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 36.8,
-      "rank": 74
+      "rank": 76
     },
     {
       "model_name": "qwen3-235b-a22b-2507",
@@ -598,7 +614,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 35.7,
-      "rank": 75
+      "rank": 77
     },
     {
       "model_name": "gpt-5-mini-minimal",
@@ -606,7 +622,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 34.6,
-      "rank": 76
+      "rank": 78
     },
     {
       "model_name": "llama-4-maverick",
@@ -614,7 +630,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 34.2,
-      "rank": 77
+      "rank": 79
     },
     {
       "model_name": "gpt-4o-mini",
@@ -622,7 +638,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 33.0,
-      "rank": 78
+      "rank": 80
     },
     {
       "model_name": "deepseek-chat-v3.1-non-reasoning",
@@ -630,7 +646,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 31.8,
-      "rank": 79
+      "rank": 81
     },
     {
       "model_name": "gemini-2.5-flash-lite",
@@ -638,7 +654,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 27.3,
-      "rank": 80
+      "rank": 82
     },
     {
       "model_name": "behemoth-123B-v1.2",
@@ -646,7 +662,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 26.1,
-      "rank": 81
+      "rank": 83
     },
     {
       "model_name": "qwen3-coder-480b",
@@ -654,7 +670,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 23.3,
-      "rank": 82
+      "rank": 84
     },
     {
       "model_name": "gpt-4.1-nano",
@@ -662,7 +678,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 21.9,
-      "rank": 83
+      "rank": 85
     },
     {
       "model_name": "llama-3.3-70b-instruct",
@@ -670,7 +686,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 21.1,
-      "rank": 84
+      "rank": 86
     },
     {
       "model_name": "ling-flash-2.0",
@@ -678,7 +694,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 15.6,
-      "rank": 85
+      "rank": 87
     },
     {
       "model_name": "gpt-5-nano-minimal",
@@ -686,7 +702,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 14.4,
-      "rank": 86
+      "rank": 88
     },
     {
       "model_name": "gpt-5.4-nano-none",
@@ -694,7 +710,7 @@
       "low_deviation_euros": null,
       "high_deviation_euros": null,
       "log_percentage": 12.9,
-      "rank": 87
+      "rank": 89
     }
   ],
   "global_max_value": 644444.4444444448

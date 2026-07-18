@@ -126,6 +126,7 @@
     "google_gemma-4-26b-a4b-it",
     "google_gemma-4-31b-it",
     "kimi-k2",
+    "kimi-k2.6",
     "ling-flash-2.0",
     "llama-3.3-70b-instruct",
     "llama-4-maverick",
@@ -135,6 +136,7 @@
     "qwen3-235b-a22b",
     "qwen3-235b-a22b-2507",
     "qwen3-coder-480b",
+    "qwen3.7-max",
     "qwq-32b"
   ]
 }
