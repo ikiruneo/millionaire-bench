@@ -339,10 +339,13 @@ span {
         // Current leaderboard type
         let currentLeaderboard = 'local'; // Default to local
         
+        // Bump this version whenever leaderboard data is updated to bust browser caches
+        const DATA_VERSION = '20260904-1';
+        
         // Load color mapping from JSON file
         async function loadColorMapping() {
             try {
-                const response = await fetch('leaderboard/color_mapping.json');
+                const response = await fetch('leaderboard/color_mapping.json?v=' + DATA_VERSION);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -370,7 +373,7 @@ span {
                 }
                 
                 // Try to load the JSON file using fetch from the same directory
-                const response = await fetch(fileName);
+                const response = await fetch(fileName + '?v=' + DATA_VERSION);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
