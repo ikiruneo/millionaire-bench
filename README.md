@@ -24,9 +24,9 @@ Check the [/wiki/guide](https://github.com/ikiruneo/millionaire-bench/wiki/guide
 
 ## Benchmark Results (Local & Cloud)
 
-https://millionaire-bench.referi.de/
+[https://koray.at/millionaire-bench/](https://koray.at/millionaire-bench/)
 
-[![Leaderboard Preview](http://github.com/ikiruneo/millionaire-bench/blob/main/leaderboard/preview.png?raw=true "Leaderboard Preview")](https://millionaire-bench.referi.de/)
+[![Leaderboard Preview](http://github.com/ikiruneo/millionaire-bench/blob/main/leaderboard/preview.png?raw=true "Leaderboard Preview")](https://koray.at/millionaire-bench/)
 
 Human average winnings of the first 999 shows is 36 000€ ([source](https://www.stern.de/kultur/tv/jubilaeum-von--wer-wird-millionaer---zahlen-und-fakten-aus-999-ausgaben-3605146.html)). 
 
