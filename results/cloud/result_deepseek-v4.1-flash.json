@@ -1,0 +1,142 @@
+{
+  "model": "deepseek-v4.1-flash",
+  "rounds": [
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 12
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 8
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 7
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 6
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 10
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 12
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 7
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 5
+    },
+    {
+      "correct_answers": 13
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 5
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 15
+    },
+    {
+      "correct_answers": 9
+    },
+    {
+      "correct_answers": 12
+    },
+    {
+      "correct_answers": 15
+    }
+  ],
+  "score": "175.000€",
+  "million_wins": 31
+}
